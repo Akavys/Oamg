@@ -1,0 +1,7 @@
+gmao_moulage:
+    resource: "@GmaoMoulageBundle/Resources/config/routing.yml"
+    prefix:   /gmao
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

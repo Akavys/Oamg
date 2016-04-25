@@ -1,0 +1,34 @@
+{% extends "GmaoMoulageBundle::layout.html.twig" %}
+
+{% block title %}
+  Supprimer une presse - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h1> Supprimer une presse</h1>
+
+
+  <div class="well">
+    <form method="post" action="{{ path('gmao_moulage_supprimer_presse', {'id': presse.id}) }}"  >
+
+      etes vous sur de vouloir supprimer cette presse?
+
+      <input type="submit" class="btn btn-primary" />
+
+    </form>
+  </div>
+
+
+  <p>
+  Vous éditez un article déjà existant, ne le changez pas trop pour éviter aux membres de ne pas comprendre
+  ce qu'il se passe.
+  </p>
+  <p>
+  <a href="{{ path('gmao_moulage_liste_presse') }}"
+  class="btn">
+  <i class="icon-chevron-left"></i> Retour vers la page liste presse
+  </a> </p>
+
+
+{% endblock %}

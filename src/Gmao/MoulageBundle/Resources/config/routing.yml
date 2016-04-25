@@ -1,0 +1,29 @@
+gmao_moulage_homepage:
+    path:     /
+    defaults: { _controller: GmaoMoulageBundle:Default:index }
+
+gmao_moulage_ajouter_presse:
+    path:     /presse/ajouter
+    defaults: { _controller: GmaoMoulageBundle:Presse:ajouterPresse }
+
+gmao_moulage_liste_presse:
+    path:     /presse/liste/{page}
+    defaults: { _controller: GmaoMoulageBundle:Presse:allPresse, page: 1 }
+    requirements:
+      page: \d*
+
+gmao_moulage_liste_all_presse:
+    path:     /presse/liste/all
+    defaults: { _controller: GmaoMoulageBundle:Presse:lsAllPresse }
+
+gmao_moulage_modifier_presse:
+    path: /presse/modifier/{id}
+    defaults: { _controller: GmaoMoulageBundle:Presse:modifierPresse }
+    requirements:
+      id: \d+
+
+gmao_moulage_supprimer_presse:
+    path: /presse/supprimer/{id}
+    defaults: { _controller: GmaoMoulageBundle:Presse:supprimerPresse }
+    requirements:
+      id: \d+

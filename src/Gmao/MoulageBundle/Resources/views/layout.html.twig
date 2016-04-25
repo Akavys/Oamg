@@ -1,0 +1,16 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+  GMAO - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h1>GMAO</h1>
+
+  <hr>
+
+  {% block gmaoMoulage_body %}
+  {% endblock %}
+
+{% endblock %}

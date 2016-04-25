@@ -1,0 +1,360 @@
+<?php
+
+/* GmaoMoulageBundle:Presse:liste.html.twig */
+class __TwigTemplate_c7e29731172a49234a9ff942bbef8491ca6d4b79d624198c49a7abbcb3ef8119 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        // line 1
+        $this->parent = $this->loadTemplate("GmaoMoulageBundle::layout.html.twig", "GmaoMoulageBundle:Presse:liste.html.twig", 1);
+        $this->blocks = array(
+            'tittle' => array($this, 'block_tittle'),
+            'body' => array($this, 'block_body'),
+        );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "GmaoMoulageBundle::layout.html.twig";
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        $__internal_6b5b05e2ceef553ce9b629c3cfbb62296275fd2ee9bedd54d1db30c191b9a9b8 = $this->env->getExtension("native_profiler");
+        $__internal_6b5b05e2ceef553ce9b629c3cfbb62296275fd2ee9bedd54d1db30c191b9a9b8->enter($__internal_6b5b05e2ceef553ce9b629c3cfbb62296275fd2ee9bedd54d1db30c191b9a9b8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "GmaoMoulageBundle:Presse:liste.html.twig"));
+
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_6b5b05e2ceef553ce9b629c3cfbb62296275fd2ee9bedd54d1db30c191b9a9b8->leave($__internal_6b5b05e2ceef553ce9b629c3cfbb62296275fd2ee9bedd54d1db30c191b9a9b8_prof);
+
+    }
+
+    // line 3
+    public function block_tittle($context, array $blocks = array())
+    {
+        $__internal_ccc1558a8e556eab7b61021c0272a96cba6188921a8abb987807f48449b41018 = $this->env->getExtension("native_profiler");
+        $__internal_ccc1558a8e556eab7b61021c0272a96cba6188921a8abb987807f48449b41018->enter($__internal_ccc1558a8e556eab7b61021c0272a96cba6188921a8abb987807f48449b41018_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "tittle"));
+
+        // line 4
+        echo "  Liste - ";
+        $this->displayParentBlock("tittle", $context, $blocks);
+        echo "
+";
+        
+        $__internal_ccc1558a8e556eab7b61021c0272a96cba6188921a8abb987807f48449b41018->leave($__internal_ccc1558a8e556eab7b61021c0272a96cba6188921a8abb987807f48449b41018_prof);
+
+    }
+
+    // line 7
+    public function block_body($context, array $blocks = array())
+    {
+        $__internal_2324c7f5b075ea815beee4fc2eb0dfbf8732f4ad997ed50e84a6750336e9d71a = $this->env->getExtension("native_profiler");
+        $__internal_2324c7f5b075ea815beee4fc2eb0dfbf8732f4ad997ed50e84a6750336e9d71a->enter($__internal_2324c7f5b075ea815beee4fc2eb0dfbf8732f4ad997ed50e84a6750336e9d71a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+
+        // line 8
+        echo "
+  <br/>
+
+
+  <h2> Liste des presses</h2>
+
+  <ul>
+  ";
+        // line 24
+        echo "
+    ";
+        // line 26
+        echo "    <ul>
+    ";
+        // line 27
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["presses"]) ? $context["presses"] : $this->getContext($context, "presses")));
+        foreach ($context['_seq'] as $context["_key"] => $context["presse"]) {
+            // line 28
+            echo "    ";
+            // line 29
+            echo "
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['presse'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 31
+        echo "    </ul>
+
+
+  </ul>
+
+
+  <table id=\"example\" class=\"table table-striped table-bordered\" cellspacing=\"0\" width=\"100%\">
+        <thead>
+            <tr>
+                <th>Id Presse</th>
+                <th>Presse</th>
+                <th>Etat</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Id Presse</th>
+                <th>Presse</th>
+                <th>Etat</th>
+            </tr>
+        </tfoot>
+        <tbody>
+
+        ";
+        // line 54
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["presses"]) ? $context["presses"] : $this->getContext($context, "presses")));
+        foreach ($context['_seq'] as $context["_key"] => $context["presse"]) {
+            // line 55
+            echo "        <tr>
+            <td>";
+            // line 56
+            echo twig_escape_filter($this->env, $this->getAttribute($context["presse"], "id", array()), "html", null, true);
+            echo "</td>
+            <td>";
+            // line 57
+            echo twig_escape_filter($this->env, $this->getAttribute($context["presse"], "nomPresse", array()), "html", null, true);
+            echo "</td>
+            <td>";
+            // line 58
+            echo twig_escape_filter($this->env, $this->getAttribute($context["presse"], "etatPresse", array()), "html", null, true);
+            echo "</td>
+        </tr>
+
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['presse'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 62
+        echo "
+        </tbody>
+    </table>
+
+<nav id=\"e\" class=\"simple-pagination\">
+      <ul class=\"pagination\">
+        ";
+        // line 70
+        echo "        ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["nombrePage"]) ? $context["nombrePage"] : $this->getContext($context, "nombrePage"))));
+        foreach ($context['_seq'] as $context["_key"] => $context["p"]) {
+            // line 71
+            echo "
+        <li";
+            // line 72
+            if (($context["p"] == (isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")))) {
+                echo " class=\"active\" ";
+            }
+            echo ">
+        <a href=\"";
+            // line 73
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("gmao_moulage_liste_presse", array("page" => $context["p"])), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $context["p"], "html", null, true);
+            // line 74
+            echo "</a>
+        </li>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['p'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 77
+        echo "
+      </ul>
+</nav>
+
+<div id=\"example\"></div>
+
+
+<table id=\"datapresse\" class=\"table table-striped table-bordered\" cellspacing=\"0\" width=\"100%\">
+      <thead>
+          <tr>
+              <th>Id Presse</th>
+              <th>Presse</th>
+              <th>Etat</th>
+          </tr>
+      </thead>
+      <tfoot>
+          <tr>
+              <th>Id Presse</th>
+              <th>Presse</th>
+              <th>Etat</th>
+          </tr>
+      </tfoot>
+      <tbody>
+
+      ";
+        // line 101
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["presses"]) ? $context["presses"] : $this->getContext($context, "presses")));
+        foreach ($context['_seq'] as $context["_key"] => $context["presse"]) {
+            // line 102
+            echo "      <tr>
+          <td>";
+            // line 103
+            echo twig_escape_filter($this->env, $this->getAttribute($context["presse"], "id", array()), "html", null, true);
+            echo "</td>
+          <td>";
+            // line 104
+            echo twig_escape_filter($this->env, $this->getAttribute($context["presse"], "nomPresse", array()), "html", null, true);
+            echo "</td>
+          <td>";
+            // line 105
+            echo twig_escape_filter($this->env, $this->getAttribute($context["presse"], "etatPresse", array()), "html", null, true);
+            echo "</td>
+      </tr>
+
+      ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['presse'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 109
+        echo "
+      </tbody>
+  </table>
+
+
+";
+        
+        $__internal_2324c7f5b075ea815beee4fc2eb0dfbf8732f4ad997ed50e84a6750336e9d71a->leave($__internal_2324c7f5b075ea815beee4fc2eb0dfbf8732f4ad997ed50e84a6750336e9d71a_prof);
+
+    }
+
+    public function getTemplateName()
+    {
+        return "GmaoMoulageBundle:Presse:liste.html.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  220 => 109,  210 => 105,  206 => 104,  202 => 103,  199 => 102,  195 => 101,  169 => 77,  161 => 74,  157 => 73,  151 => 72,  148 => 71,  143 => 70,  135 => 62,  125 => 58,  121 => 57,  117 => 56,  114 => 55,  110 => 54,  85 => 31,  78 => 29,  76 => 28,  72 => 27,  69 => 26,  66 => 24,  57 => 8,  51 => 7,  41 => 4,  35 => 3,  11 => 1,);
+    }
+}
+/* {% extends "GmaoMoulageBundle::layout.html.twig" %}*/
+/* */
+/* {% block tittle %}*/
+/*   Liste - {{ parent() }}*/
+/* {% endblock %}*/
+/* */
+/* {% block body %}*/
+/* */
+/*   <br/>*/
+/* */
+/* */
+/*   <h2> Liste des presses</h2>*/
+/* */
+/*   <ul>*/
+/*   {#  {% for presse in presses %}*/
+/*       <li>*/
+/*         <a href="{{ path('gmao_moulage_liste_presse', {'id': presse.id}) }}">*/
+/*           {{ presse.nomPresse }} </a>*/
+/*           state {{ presse.etatPresse }}*/
+/*       </li>*/
+/*     {% else %}*/
+/*     <li> Pas (encore!) d'articles </li>*/
+/*     {% endfor %} #}*/
+/* */
+/*     {# … La liste devient : #}*/
+/*     <ul>*/
+/*     {% for presse in presses %}*/
+/*     {# On inclut la vue à chaque itération dans la boucle #}*/
+/* */
+/*     {% endfor %}*/
+/*     </ul>*/
+/* */
+/* */
+/*   </ul>*/
+/* */
+/* */
+/*   <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">*/
+/*         <thead>*/
+/*             <tr>*/
+/*                 <th>Id Presse</th>*/
+/*                 <th>Presse</th>*/
+/*                 <th>Etat</th>*/
+/*             </tr>*/
+/*         </thead>*/
+/*         <tfoot>*/
+/*             <tr>*/
+/*                 <th>Id Presse</th>*/
+/*                 <th>Presse</th>*/
+/*                 <th>Etat</th>*/
+/*             </tr>*/
+/*         </tfoot>*/
+/*         <tbody>*/
+/* */
+/*         {% for presse in presses %}*/
+/*         <tr>*/
+/*             <td>{{ presse.id }}</td>*/
+/*             <td>{{ presse.nomPresse }}</td>*/
+/*             <td>{{ presse.etatPresse }}</td>*/
+/*         </tr>*/
+/* */
+/*         {% endfor %}*/
+/* */
+/*         </tbody>*/
+/*     </table>*/
+/* */
+/* <nav id="e" class="simple-pagination">*/
+/*       <ul class="pagination">*/
+/*         {# On utilise la fonction range(a, b) qui crée un tableau de*/
+/*         valeurs entre a et b #}*/
+/*         {% for p in range(1, nombrePage) %}*/
+/* */
+/*         <li{% if p == page %} class="active" {% endif %}>*/
+/*         <a href="{{ path('gmao_moulage_liste_presse', {'page': p}) }}">{{ p*/
+/*         }}</a>*/
+/*         </li>*/
+/*         {% endfor %}*/
+/* */
+/*       </ul>*/
+/* </nav>*/
+/* */
+/* <div id="example"></div>*/
+/* */
+/* */
+/* <table id="datapresse" class="table table-striped table-bordered" cellspacing="0" width="100%">*/
+/*       <thead>*/
+/*           <tr>*/
+/*               <th>Id Presse</th>*/
+/*               <th>Presse</th>*/
+/*               <th>Etat</th>*/
+/*           </tr>*/
+/*       </thead>*/
+/*       <tfoot>*/
+/*           <tr>*/
+/*               <th>Id Presse</th>*/
+/*               <th>Presse</th>*/
+/*               <th>Etat</th>*/
+/*           </tr>*/
+/*       </tfoot>*/
+/*       <tbody>*/
+/* */
+/*       {% for presse in presses %}*/
+/*       <tr>*/
+/*           <td>{{ presse.id }}</td>*/
+/*           <td>{{ presse.nomPresse }}</td>*/
+/*           <td>{{ presse.etatPresse }}</td>*/
+/*       </tr>*/
+/* */
+/*       {% endfor %}*/
+/* */
+/*       </tbody>*/
+/*   </table>*/
+/* */
+/* */
+/* {% endblock %}*/
+/* */

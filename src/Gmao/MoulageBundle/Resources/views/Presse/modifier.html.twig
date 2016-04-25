@@ -1,0 +1,25 @@
+{% extends "GmaoMoulageBundle::layout.html.twig" %}
+
+{% block title %}
+  Modifier une presse - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h1> Modifier une presse</h1>
+
+  {% include "GmaoMoulageBundle:Presse:formulaire.html.twig" %}
+
+
+  <p>
+  Vous éditez un article déjà existant, ne le changez pas trop pour éviter aux membres de ne pas comprendre
+  ce qu'il se passe.
+  </p>
+  <p>
+  <a href="{{ path('gmao_moulage_liste_presse') }}"
+  class="btn">
+  <i class="icon-chevron-left"></i> Retour vers la page liste presse
+  </a> </p>
+
+
+{% endblock %}

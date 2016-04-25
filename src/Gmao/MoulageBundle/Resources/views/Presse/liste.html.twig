@@ -1,0 +1,106 @@
+{% extends "GmaoMoulageBundle::layout.html.twig" %}
+
+{% block tittle %}
+  Liste - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+
+      {# On affiche tous les messages flash dont le nom est « info » #}
+      {% for message in app.session.flashbag.get('info') %}
+      <div class="ui info message">
+        <i class="close icon"></i>
+        <div class="header">
+          <p>Information : {{ message }}</p>
+        </div>
+      </div>
+
+      {% endfor %}
+
+      <br/>
+
+  <div class="row">
+    <div class="col-sm-10 col-md-10">
+      <h2 class="ui dividing header">Liste des presses</h2>
+    </div>
+    <div class="col-sm-2 col-md-2" style="align-right">
+      <a class="ui primary button " href="{{ path('gmao_moulage_ajouter_presse') }}">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          Ajouter une presse
+      </a>
+    </div>
+  </div>
+
+<br/>
+  <table id="example" class="ui celled table">
+        <thead>
+            <tr>
+                <th>Id Presse</th>
+                <th>Presse</th>
+                <th>Etat</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Id Presse</th>
+                <th>Presse</th>
+                <th>Etat</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+        </tfoot>
+        <tbody>
+
+        {% for presse in presses %}
+        <tr>
+            <td>{{ presse.id }}</td>
+            <td>{{ presse.nomPresse }}</td>
+
+            <td>{% if presse.etatPresse == true %}<h4><span class="label label-success">Active</span></h4> {% else %}<h4><span class="label label-danger">Inactive</span></h4>{% endif %}</td>
+            <td><form action="{{ path('gmao_moulage_modifier_presse', {'id': presse.id }) }}" method="post" >
+                  <button type="submit" class="btn btn-warning">
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                  </button>
+                </form>
+            </td>
+            <td><form action="{{ path('gmao_moulage_supprimer_presse', {'id': presse.id }) }}" method="get" >
+                  <button type="submit" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                  </button>
+                </form>
+            </td>
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+    <div id="pag_presse_data1"></div>
+
+    <div id="form_num_page">
+      <form id="recherche_num_page" action="{{ path('gmao_moulage_liste_presse', {'page': 3}) }}" method="get">
+        <input id="pag" name="pag"></input>
+        <button type="submit">Aller à la page</button>
+      </form>
+    </div>
+{% endblock %}
+
+
+{% block javascriptsss %}
+
+<script type='text/javascript'>
+    var options = {
+      currentPage: {{page}},
+      totalPages: {{nombrePage}},
+      pageUrl: function(type, page, current){
+          return "{{ path('gmao_moulage_liste_presse', {'page': 1}) }}/"+page;
+      }
+    }
+    $('#pag_presse_data1').bootstrapPaginator(options);
+
+</script>
+{% endblock %}

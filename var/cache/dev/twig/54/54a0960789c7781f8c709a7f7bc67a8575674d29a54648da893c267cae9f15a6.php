@@ -23,20 +23,20 @@ class __TwigTemplate_c7e29731172a49234a9ff942bbef8491ca6d4b79d624198c49a7abbcb3e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3500b785a387117672ded07445b79b8edf8892d8ea4fb65a62a7957f6e1c26c7 = $this->env->getExtension("native_profiler");
-        $__internal_3500b785a387117672ded07445b79b8edf8892d8ea4fb65a62a7957f6e1c26c7->enter($__internal_3500b785a387117672ded07445b79b8edf8892d8ea4fb65a62a7957f6e1c26c7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "GmaoMoulageBundle:Presse:liste.html.twig"));
+        $__internal_3d09185fcb92167e8df23986bb383593ae4ff61c08859b651aca9bbc74be6713 = $this->env->getExtension("native_profiler");
+        $__internal_3d09185fcb92167e8df23986bb383593ae4ff61c08859b651aca9bbc74be6713->enter($__internal_3d09185fcb92167e8df23986bb383593ae4ff61c08859b651aca9bbc74be6713_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "GmaoMoulageBundle:Presse:liste.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_3500b785a387117672ded07445b79b8edf8892d8ea4fb65a62a7957f6e1c26c7->leave($__internal_3500b785a387117672ded07445b79b8edf8892d8ea4fb65a62a7957f6e1c26c7_prof);
+        $__internal_3d09185fcb92167e8df23986bb383593ae4ff61c08859b651aca9bbc74be6713->leave($__internal_3d09185fcb92167e8df23986bb383593ae4ff61c08859b651aca9bbc74be6713_prof);
 
     }
 
     // line 3
     public function block_tittle($context, array $blocks = array())
     {
-        $__internal_e7274583cf135327da53514d766f3dac8ecfe9f6104e79247fc37e619470f01f = $this->env->getExtension("native_profiler");
-        $__internal_e7274583cf135327da53514d766f3dac8ecfe9f6104e79247fc37e619470f01f->enter($__internal_e7274583cf135327da53514d766f3dac8ecfe9f6104e79247fc37e619470f01f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "tittle"));
+        $__internal_1e5c2e480de261fdf6988d7e2cd21276c87522e865bbf3d0d1738d524672ab29 = $this->env->getExtension("native_profiler");
+        $__internal_1e5c2e480de261fdf6988d7e2cd21276c87522e865bbf3d0d1738d524672ab29->enter($__internal_1e5c2e480de261fdf6988d7e2cd21276c87522e865bbf3d0d1738d524672ab29_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "tittle"));
 
         // line 4
         echo "  Liste - ";
@@ -44,15 +44,15 @@ class __TwigTemplate_c7e29731172a49234a9ff942bbef8491ca6d4b79d624198c49a7abbcb3e
         echo "
 ";
         
-        $__internal_e7274583cf135327da53514d766f3dac8ecfe9f6104e79247fc37e619470f01f->leave($__internal_e7274583cf135327da53514d766f3dac8ecfe9f6104e79247fc37e619470f01f_prof);
+        $__internal_1e5c2e480de261fdf6988d7e2cd21276c87522e865bbf3d0d1738d524672ab29->leave($__internal_1e5c2e480de261fdf6988d7e2cd21276c87522e865bbf3d0d1738d524672ab29_prof);
 
     }
 
     // line 7
     public function block_body($context, array $blocks = array())
     {
-        $__internal_7fddd8ac02d84ff8c78e729aa6cf565553fcdbb1116bec83e9795f54a0bbd9c0 = $this->env->getExtension("native_profiler");
-        $__internal_7fddd8ac02d84ff8c78e729aa6cf565553fcdbb1116bec83e9795f54a0bbd9c0->enter($__internal_7fddd8ac02d84ff8c78e729aa6cf565553fcdbb1116bec83e9795f54a0bbd9c0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_720129e95bd5df97bf10496ae7adec5350b525305d3e3fd4d7051c5b8acffdf9 = $this->env->getExtension("native_profiler");
+        $__internal_720129e95bd5df97bf10496ae7adec5350b525305d3e3fd4d7051c5b8acffdf9->enter($__internal_720129e95bd5df97bf10496ae7adec5350b525305d3e3fd4d7051c5b8acffdf9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 8
         echo "
@@ -174,44 +174,50 @@ class __TwigTemplate_c7e29731172a49234a9ff942bbef8491ca6d4b79d624198c49a7abbcb3e
         </tbody>
     </table>
 
-    <div id=\"pag_presse_data1\"></div>
 
-    <div id=\"form_num_page\">
-      <form id=\"recherche_num_page\" action=\"";
-        // line 85
-        echo $this->env->getExtension('routing')->getPath("gmao_moulage_liste_presse", array("page" => 3));
-        echo "\" method=\"get\">
-        <input id=\"pag\" name=\"pag\"></input>
-        <button type=\"submit\">Aller à la page</button>
-      </form>
-    </div>
+      <center><div id=\"pag_presse_data1\"></div></center>
+
+      <div id=\"form_num_page\">
+        <form class=\"form-inline\" id=\"recherche_num_page\" action=\"";
+        // line 86
+        echo $this->env->getExtension('routing')->getPath("gmao_moulage_presse_goto_page");
+        echo "\" method=\"post\">
+          <div class=\"form-group\">
+          <label for=\"pag\">Aller à la page</label>
+          <input class=\"form-control\" id=\"pag\" placeholder=\"N°Page\"></input>
+          </div>
+          <button type=\"submit\" class=\"btn btn-primary\">Valider</button>
+        </form>
+      </div>
+
+
 ";
         
-        $__internal_7fddd8ac02d84ff8c78e729aa6cf565553fcdbb1116bec83e9795f54a0bbd9c0->leave($__internal_7fddd8ac02d84ff8c78e729aa6cf565553fcdbb1116bec83e9795f54a0bbd9c0_prof);
+        $__internal_720129e95bd5df97bf10496ae7adec5350b525305d3e3fd4d7051c5b8acffdf9->leave($__internal_720129e95bd5df97bf10496ae7adec5350b525305d3e3fd4d7051c5b8acffdf9_prof);
 
     }
 
-    // line 93
+    // line 99
     public function block_javascriptsss($context, array $blocks = array())
     {
-        $__internal_8d06681c9faae8d90108b711c3b246a000b27e08dfa6fc064130605a503cbd76 = $this->env->getExtension("native_profiler");
-        $__internal_8d06681c9faae8d90108b711c3b246a000b27e08dfa6fc064130605a503cbd76->enter($__internal_8d06681c9faae8d90108b711c3b246a000b27e08dfa6fc064130605a503cbd76_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascriptsss"));
+        $__internal_87e7abf55caa4cef38d354e35477ee9f191ecb42ecbb19efe86169c2297dda28 = $this->env->getExtension("native_profiler");
+        $__internal_87e7abf55caa4cef38d354e35477ee9f191ecb42ecbb19efe86169c2297dda28->enter($__internal_87e7abf55caa4cef38d354e35477ee9f191ecb42ecbb19efe86169c2297dda28_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascriptsss"));
 
-        // line 94
+        // line 100
         echo "
 <script type='text/javascript'>
     var options = {
       currentPage: ";
-        // line 97
+        // line 103
         echo twig_escape_filter($this->env, (isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")), "html", null, true);
         echo ",
       totalPages: ";
-        // line 98
+        // line 104
         echo twig_escape_filter($this->env, (isset($context["nombrePage"]) ? $context["nombrePage"] : $this->getContext($context, "nombrePage")), "html", null, true);
         echo ",
       pageUrl: function(type, page, current){
           return \"";
-        // line 100
+        // line 106
         echo $this->env->getExtension('routing')->getPath("gmao_moulage_liste_presse", array("page" => 1));
         echo "/\"+page;
       }
@@ -221,7 +227,7 @@ class __TwigTemplate_c7e29731172a49234a9ff942bbef8491ca6d4b79d624198c49a7abbcb3e
 </script>
 ";
         
-        $__internal_8d06681c9faae8d90108b711c3b246a000b27e08dfa6fc064130605a503cbd76->leave($__internal_8d06681c9faae8d90108b711c3b246a000b27e08dfa6fc064130605a503cbd76_prof);
+        $__internal_87e7abf55caa4cef38d354e35477ee9f191ecb42ecbb19efe86169c2297dda28->leave($__internal_87e7abf55caa4cef38d354e35477ee9f191ecb42ecbb19efe86169c2297dda28_prof);
 
     }
 
@@ -237,7 +243,7 @@ class __TwigTemplate_c7e29731172a49234a9ff942bbef8491ca6d4b79d624198c49a7abbcb3e
 
     public function getDebugInfo()
     {
-        return array (  215 => 100,  210 => 98,  206 => 97,  201 => 94,  195 => 93,  182 => 85,  173 => 78,  158 => 69,  149 => 63,  141 => 62,  136 => 60,  132 => 59,  129 => 58,  125 => 57,  93 => 28,  83 => 20,  72 => 15,  67 => 12,  62 => 11,  58 => 8,  52 => 7,  42 => 4,  36 => 3,  11 => 1,);
+        return array (  221 => 106,  216 => 104,  212 => 103,  207 => 100,  201 => 99,  183 => 86,  173 => 78,  158 => 69,  149 => 63,  141 => 62,  136 => 60,  132 => 59,  129 => 58,  125 => 57,  93 => 28,  83 => 20,  72 => 15,  67 => 12,  62 => 11,  58 => 8,  52 => 7,  42 => 4,  36 => 3,  11 => 1,);
     }
 }
 /* {% extends "GmaoMoulageBundle::layout.html.twig" %}*/
@@ -321,14 +327,20 @@ class __TwigTemplate_c7e29731172a49234a9ff942bbef8491ca6d4b79d624198c49a7abbcb3e
 /*         </tbody>*/
 /*     </table>*/
 /* */
-/*     <div id="pag_presse_data1"></div>*/
 /* */
-/*     <div id="form_num_page">*/
-/*       <form id="recherche_num_page" action="{{ path('gmao_moulage_liste_presse', {'page': 3}) }}" method="get">*/
-/*         <input id="pag" name="pag"></input>*/
-/*         <button type="submit">Aller à la page</button>*/
-/*       </form>*/
-/*     </div>*/
+/*       <center><div id="pag_presse_data1"></div></center>*/
+/* */
+/*       <div id="form_num_page">*/
+/*         <form class="form-inline" id="recherche_num_page" action="{{ path('gmao_moulage_presse_goto_page') }}" method="post">*/
+/*           <div class="form-group">*/
+/*           <label for="pag">Aller à la page</label>*/
+/*           <input class="form-control" id="pag" placeholder="N°Page"></input>*/
+/*           </div>*/
+/*           <button type="submit" class="btn btn-primary">Valider</button>*/
+/*         </form>*/
+/*       </div>*/
+/* */
+/* */
 /* {% endblock %}*/
 /* */
 /* */

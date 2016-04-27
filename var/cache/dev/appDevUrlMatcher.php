@@ -139,6 +139,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_supprimer_presse')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\PresseController::supprimerPresseAction',));
                 }
 
+                // gmao_moulage_presse_goto_page
+                if ($pathinfo === '/gmao/presse/goto_page') {
+                    return array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\PresseController::gotoPagePresseAction',  '_route' => 'gmao_moulage_presse_goto_page',);
+                }
+
             }
 
         }

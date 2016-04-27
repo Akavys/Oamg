@@ -110,6 +110,21 @@ class PresseController extends Controller {
             'nombrePage' => ceil(count($presses)/10)));
   }
 
+  public function gotoPagePresseAction(Request $request) {
+
+    if ($request->getMethod()=='POST') {
+      $page =  $request->request->get('pag');
+    }
+
+    if ($page < 1) {
+      throw $this->createNotFoundException('Page inexistante (page = '.$page.')');
+    }
+
+    return $this->redirect( $this->generateUrl('gmao_moulage_liste_presse', array('page' => $page)));
+  }
+
 }
+
+
 
 ?>

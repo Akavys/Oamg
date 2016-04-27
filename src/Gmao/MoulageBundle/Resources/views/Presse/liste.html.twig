@@ -79,14 +79,19 @@
         </tbody>
     </table>
 
-    <div id="pag_presse_data1"></div>
+      <center><div id="pag_presse_data1"></div></center>
 
-    <div id="form_num_page">
-      <form id="recherche_num_page" action="{{ path('gmao_moulage_liste_presse', {'page': 3}) }}" method="get">
-        <input id="pag" name="pag"></input>
-        <button type="submit">Aller à la page</button>
-      </form>
-    </div>
+      <div id="form_num_page">
+        <form class="form-inline" id="recherche_num_page" action="{{ path('gmao_moulage_presse_goto_page') }}" method="post">
+          <div class="form-group">
+          <label for="pag">Aller à la page</label>
+          <input class="form-control" id="pag" placeholder="N°Page"></input>
+          </div>
+          <button type="submit" class="btn btn-primary">Valider</button>
+        </form>
+      </div>
+
+
 {% endblock %}
 
 

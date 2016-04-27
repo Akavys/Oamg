@@ -27,3 +27,7 @@ gmao_moulage_supprimer_presse:
     defaults: { _controller: GmaoMoulageBundle:Presse:supprimerPresse }
     requirements:
       id: \d+
+
+gmao_moulage_presse_goto_page:
+    path:     /presse/goto_page
+    defaults: { _controller: GmaoMoulageBundle:Presse:gotoPagePresse }

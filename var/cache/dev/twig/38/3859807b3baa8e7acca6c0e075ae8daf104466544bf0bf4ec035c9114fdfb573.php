@@ -21,38 +21,33 @@ class __TwigTemplate_7675f022f4c1f05952c5745fa70a22d3f06ee9d5537da1f465b63dd8fb2
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_0668a043f37e750ebf205bdde6cbdf319a6ab9bbc3f14a8744b366df04dbe5a0 = $this->env->getExtension("native_profiler");
-        $__internal_0668a043f37e750ebf205bdde6cbdf319a6ab9bbc3f14a8744b366df04dbe5a0->enter($__internal_0668a043f37e750ebf205bdde6cbdf319a6ab9bbc3f14a8744b366df04dbe5a0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@GmaoMoulage/Presse/ajouter.html.twig"));
+        $__internal_1ec594488a5e7dd9f2b84b3bb934798c887043c90207dda59a6e2ed332704c59 = $this->env->getExtension("native_profiler");
+        $__internal_1ec594488a5e7dd9f2b84b3bb934798c887043c90207dda59a6e2ed332704c59->enter($__internal_1ec594488a5e7dd9f2b84b3bb934798c887043c90207dda59a6e2ed332704c59_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@GmaoMoulage/Presse/ajouter.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_0668a043f37e750ebf205bdde6cbdf319a6ab9bbc3f14a8744b366df04dbe5a0->leave($__internal_0668a043f37e750ebf205bdde6cbdf319a6ab9bbc3f14a8744b366df04dbe5a0_prof);
+        $__internal_1ec594488a5e7dd9f2b84b3bb934798c887043c90207dda59a6e2ed332704c59->leave($__internal_1ec594488a5e7dd9f2b84b3bb934798c887043c90207dda59a6e2ed332704c59_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_e12cc1d1858486efd005ffec0a09c91bb250fa546b0be72a5017ae93c9c67f45 = $this->env->getExtension("native_profiler");
-        $__internal_e12cc1d1858486efd005ffec0a09c91bb250fa546b0be72a5017ae93c9c67f45->enter($__internal_e12cc1d1858486efd005ffec0a09c91bb250fa546b0be72a5017ae93c9c67f45_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_206c8de977cc13ab114d51e834575a22b8b7f33ed737de1a45118718dd03a69d = $this->env->getExtension("native_profiler");
+        $__internal_206c8de977cc13ab114d51e834575a22b8b7f33ed737de1a45118718dd03a69d->enter($__internal_206c8de977cc13ab114d51e834575a22b8b7f33ed737de1a45118718dd03a69d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "
-  <h2> Ajouter une presse </h2>
+  <h1> Ajouter une presse </h1>
 
   ";
         // line 7
         $this->loadTemplate("GmaoMoulageBundle:Presse:formulaire.html.twig", "@GmaoMoulage/Presse/ajouter.html.twig", 7)->display($context);
         // line 8
         echo "
-  <p>
-    Attention: cet article sera ajouté directement
-    sur la page d'accueil après validation du formulaire.
-  </p>
-
 ";
         
-        $__internal_e12cc1d1858486efd005ffec0a09c91bb250fa546b0be72a5017ae93c9c67f45->leave($__internal_e12cc1d1858486efd005ffec0a09c91bb250fa546b0be72a5017ae93c9c67f45_prof);
+        $__internal_206c8de977cc13ab114d51e834575a22b8b7f33ed737de1a45118718dd03a69d->leave($__internal_206c8de977cc13ab114d51e834575a22b8b7f33ed737de1a45118718dd03a69d_prof);
 
     }
 
@@ -75,14 +70,9 @@ class __TwigTemplate_7675f022f4c1f05952c5745fa70a22d3f06ee9d5537da1f465b63dd8fb2
 /* */
 /* {% block body %}*/
 /* */
-/*   <h2> Ajouter une presse </h2>*/
+/*   <h1> Ajouter une presse </h1>*/
 /* */
 /*   {% include "GmaoMoulageBundle:Presse:formulaire.html.twig" %}*/
-/* */
-/*   <p>*/
-/*     Attention: cet article sera ajouté directement*/
-/*     sur la page d'accueil après validation du formulaire.*/
-/*   </p>*/
 /* */
 /* {% endblock %}*/
 /* */

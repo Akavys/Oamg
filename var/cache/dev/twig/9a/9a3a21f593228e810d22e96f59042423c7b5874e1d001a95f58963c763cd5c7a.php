@@ -14,13 +14,14 @@ class __TwigTemplate_0550775989b831771196d33b944a9b19301ab23348a07e0b1bbd1e2f8e1
             'stylesheets' => array($this, 'block_stylesheets'),
             'body' => array($this, 'block_body'),
             'javascripts' => array($this, 'block_javascripts'),
+            'javascriptsss' => array($this, 'block_javascriptsss'),
         );
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7e146afac726ba100c275e629491dcfc016549aaa56ec5a53c11004bfc29ab3d = $this->env->getExtension("native_profiler");
-        $__internal_7e146afac726ba100c275e629491dcfc016549aaa56ec5a53c11004bfc29ab3d->enter($__internal_7e146afac726ba100c275e629491dcfc016549aaa56ec5a53c11004bfc29ab3d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "layout.html.twig"));
+        $__internal_0266a87f8d7df67b414079eab702a4d3aeeb642f1ce3c8551ce28ebbb59e4ed1 = $this->env->getExtension("native_profiler");
+        $__internal_0266a87f8d7df67b414079eab702a4d3aeeb642f1ce3c8551ce28ebbb59e4ed1->enter($__internal_0266a87f8d7df67b414079eab702a4d3aeeb642f1ce3c8551ce28ebbb59e4ed1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "layout.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -35,115 +36,197 @@ class __TwigTemplate_0550775989b831771196d33b944a9b19301ab23348a07e0b1bbd1e2f8e1
     ";
         // line 7
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 10
+        // line 16
         echo "  </head>
 
   <body>
-    <div class=\"contrainer\">
-      <div id=\"header\" class=\"hero-unit\">
-        <h1>GMAO Moulage</h1>
-        <p>V1.0 </p>
+
+      <link rel=\"shortcut icon\" type=\"image/png\"
+        href=\"/GmaoMoulage/Image/fav.png\" />
+      <div id=\"barre\" class=\"oc-header\">
+        <div class=\"barreh7\">
+          GMAO Moulage <font size=\"3px\">V9.8</font>
+        </div>
       </div>
 
+      <nav class=\"navbar navbar-default navbar-inverse\">
+        <div class=\"container-fluid\">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class=\"navbar-header\">
+            <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">
+              <span class=\"sr-only\">Toggle navigation</span>
+              <span class=\"icon-bar\"></span>
+              <span class=\"icon-bar\"></span>
+              <span class=\"icon-bar\"></span>
+            </button>
+            <a class=\"navbar-brand\" href=\"#\">GMAO Moulage</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
+            <ul class=\"nav navbar-nav\">
+              <li class=\"dropdown\">
+                <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Presse <span class=\"caret\"></span></a>
+                <ul class=\"dropdown-menu\">
+                  <li><a href=\"";
+        // line 47
+        echo $this->env->getExtension('routing')->getPath("gmao_moulage_liste_presse", array("page" => 1));
+        echo "\">Presse</a></li>
+                  <li><a href=\"";
+        // line 48
+        echo $this->env->getExtension('routing')->getPath("gmao_moulage_ajouter_presse");
+        echo "\">Ajouter presse</a></li>
+                </ul>
+              </li>
+            </ul>
+
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+
+    <div class=\"container-fluid\">
+
       <div class=\"row\">
-        <div id=\"menu\" class=\"span3\">
-          <h3>GMAO</h3>
+        <div id=\"menu\" class=\"col-sm-3 col-md-2 sidebar\">
+          <h3>Accès rapide</h3>
           <ul class=\"nav nav-pills nav-stacked\">
             <li><a href=\"";
-        // line 23
-        echo $this->env->getExtension('routing')->getPath("gmao_moulage_ajouter_presse");
-        echo "\">Ajouter une presse</a></li>
+        // line 64
+        echo $this->env->getExtension('routing')->getPath("gmao_moulage_liste_presse");
+        echo "\">Presse</a></li>
           </ul>
-
-          <!-- ";
-        // line 26
-        echo $this->env->getExtension('http_kernel')->renderFragment($this->env->getExtension('http_kernel')->controller("SdzBlogBundle:Blog:menu", array("nombre" => 3)));
-        echo " -->
-
-          </div>
-          <div id=\"content\" class=\"span9\">
-            ";
-        // line 30
-        $this->displayBlock('body', $context, $blocks);
-        // line 32
-        echo "          </div>
         </div>
+        <div id=\"content\" class=\"col-sm-9 col-md-10 main\">
+            ";
+        // line 68
+        $this->displayBlock('body', $context, $blocks);
+        // line 70
+        echo "        </div>
+      </div>
 
         <hr>
 
         <footer>
-          <p>The sky's the limit @ 2015 and beyond.</p>
+          <p>GMAO Moulage - DELPHI CONNECTION SYSTEMS FRANCE</p>
         </footer>
-      </div>
-
-      ";
-        // line 42
+    </div>
+    ";
+        // line 79
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 46
+        // line 89
+        echo "
+    ";
+        // line 90
+        $this->displayBlock('javascriptsss', $context, $blocks);
+        // line 92
         echo "    </body>
 </html>
 ";
         
-        $__internal_7e146afac726ba100c275e629491dcfc016549aaa56ec5a53c11004bfc29ab3d->leave($__internal_7e146afac726ba100c275e629491dcfc016549aaa56ec5a53c11004bfc29ab3d_prof);
+        $__internal_0266a87f8d7df67b414079eab702a4d3aeeb642f1ce3c8551ce28ebbb59e4ed1->leave($__internal_0266a87f8d7df67b414079eab702a4d3aeeb642f1ce3c8551ce28ebbb59e4ed1_prof);
 
     }
 
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_30fa5ab5a8cf75e1863da15f7ce82b6e138b0d3d01a8aea80554ba0b718254da = $this->env->getExtension("native_profiler");
-        $__internal_30fa5ab5a8cf75e1863da15f7ce82b6e138b0d3d01a8aea80554ba0b718254da->enter($__internal_30fa5ab5a8cf75e1863da15f7ce82b6e138b0d3d01a8aea80554ba0b718254da_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_a76f4d73fd631762c1d153ed4528cfdbbc57b8932eeb96be0be69610ecf158ed = $this->env->getExtension("native_profiler");
+        $__internal_a76f4d73fd631762c1d153ed4528cfdbbc57b8932eeb96be0be69610ecf158ed->enter($__internal_a76f4d73fd631762c1d153ed4528cfdbbc57b8932eeb96be0be69610ecf158ed_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "GMAO";
         
-        $__internal_30fa5ab5a8cf75e1863da15f7ce82b6e138b0d3d01a8aea80554ba0b718254da->leave($__internal_30fa5ab5a8cf75e1863da15f7ce82b6e138b0d3d01a8aea80554ba0b718254da_prof);
+        $__internal_a76f4d73fd631762c1d153ed4528cfdbbc57b8932eeb96be0be69610ecf158ed->leave($__internal_a76f4d73fd631762c1d153ed4528cfdbbc57b8932eeb96be0be69610ecf158ed_prof);
 
     }
 
     // line 7
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_cc96db784fc3c91a6e6e429bc3e371bdbb0e1ac1e28cb83aa17a862c63afd941 = $this->env->getExtension("native_profiler");
-        $__internal_cc96db784fc3c91a6e6e429bc3e371bdbb0e1ac1e28cb83aa17a862c63afd941->enter($__internal_cc96db784fc3c91a6e6e429bc3e371bdbb0e1ac1e28cb83aa17a862c63afd941_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_6d1b75a6aedae0ddde1d76463688fefa5d0b819c4259e9747bf7350c38e1af16 = $this->env->getExtension("native_profiler");
+        $__internal_6d1b75a6aedae0ddde1d76463688fefa5d0b819c4259e9747bf7350c38e1af16->enter($__internal_6d1b75a6aedae0ddde1d76463688fefa5d0b819c4259e9747bf7350c38e1af16_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 8
         echo "    <link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("css/bootstrap.css"), "html", null, true);
         echo "\" type=\"text/css\"/>
+    <link rel=\"stylesheet\" href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("css/style.css"), "html", null, true);
+        echo "\" type=\"text/css\"/>
+
+    <!-- semantic ui -->
+    <link rel=\"stylesheet\" href=\"";
+        // line 12
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("css/semantic.css"), "html", null, true);
+        echo "\" type=\"text/css\"/>
+    <link rel=\"stylesheet\" href=\"";
+        // line 13
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("css/semantic.min.css"), "html", null, true);
+        echo "\" type=\"text/css\"/>
+
     ";
         
-        $__internal_cc96db784fc3c91a6e6e429bc3e371bdbb0e1ac1e28cb83aa17a862c63afd941->leave($__internal_cc96db784fc3c91a6e6e429bc3e371bdbb0e1ac1e28cb83aa17a862c63afd941_prof);
+        $__internal_6d1b75a6aedae0ddde1d76463688fefa5d0b819c4259e9747bf7350c38e1af16->leave($__internal_6d1b75a6aedae0ddde1d76463688fefa5d0b819c4259e9747bf7350c38e1af16_prof);
 
     }
 
-    // line 30
+    // line 68
     public function block_body($context, array $blocks = array())
     {
-        $__internal_079ea991d5ce0c493d0263c9d79336e3077d33b8ea2c735bc4d3d5cae4f82ede = $this->env->getExtension("native_profiler");
-        $__internal_079ea991d5ce0c493d0263c9d79336e3077d33b8ea2c735bc4d3d5cae4f82ede->enter($__internal_079ea991d5ce0c493d0263c9d79336e3077d33b8ea2c735bc4d3d5cae4f82ede_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_3a9641c5743e3e427ed440160b44c3706566428f6af42bb2f4199780f4bd6fc5 = $this->env->getExtension("native_profiler");
+        $__internal_3a9641c5743e3e427ed440160b44c3706566428f6af42bb2f4199780f4bd6fc5->enter($__internal_3a9641c5743e3e427ed440160b44c3706566428f6af42bb2f4199780f4bd6fc5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 31
+        // line 69
         echo "            ";
         
-        $__internal_079ea991d5ce0c493d0263c9d79336e3077d33b8ea2c735bc4d3d5cae4f82ede->leave($__internal_079ea991d5ce0c493d0263c9d79336e3077d33b8ea2c735bc4d3d5cae4f82ede_prof);
+        $__internal_3a9641c5743e3e427ed440160b44c3706566428f6af42bb2f4199780f4bd6fc5->leave($__internal_3a9641c5743e3e427ed440160b44c3706566428f6af42bb2f4199780f4bd6fc5_prof);
 
     }
 
-    // line 42
+    // line 79
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_f052f02274c35dcf4f93f36f63ee950826b3614ed735049ce38feabbf2bc50d8 = $this->env->getExtension("native_profiler");
-        $__internal_f052f02274c35dcf4f93f36f63ee950826b3614ed735049ce38feabbf2bc50d8->enter($__internal_f052f02274c35dcf4f93f36f63ee950826b3614ed735049ce38feabbf2bc50d8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_67b5108d54342f5d962d29c4d8f4787852876ba8c1ab8f008a66fe457ed473fa = $this->env->getExtension("native_profiler");
+        $__internal_67b5108d54342f5d962d29c4d8f4787852876ba8c1ab8f008a66fe457ed473fa->enter($__internal_67b5108d54342f5d962d29c4d8f4787852876ba8c1ab8f008a66fe457ed473fa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 43
-        echo "        <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js\"></script>
-        <script type=\"text/javascript\" src=\"";
-        // line 44
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/bootstrap.js"), "html", null, true);
+        // line 80
+        echo "      <script src=\"//code.jquery.com/jquery-2.1.3.min.js\"></script>
+      <script type=\"text/javascript\" src=\"";
+        // line 81
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/bootstrap-paginator.min.js"), "html", null, true);
         echo "\"></script>
-        ";
+      <script type=\"text/javascript\" src=\"";
+        // line 82
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
+        echo "\"></script>
+
+      <!-- semantic ui -->
+      <script type=\"text/javascript\" src=\"";
+        // line 85
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/semantic.js"), "html", null, true);
+        echo "\"></script>
+      <script type=\"text/javascript\" src=\"";
+        // line 86
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/semantic.min.js"), "html", null, true);
+        echo "\"></script>
+
+    ";
         
-        $__internal_f052f02274c35dcf4f93f36f63ee950826b3614ed735049ce38feabbf2bc50d8->leave($__internal_f052f02274c35dcf4f93f36f63ee950826b3614ed735049ce38feabbf2bc50d8_prof);
+        $__internal_67b5108d54342f5d962d29c4d8f4787852876ba8c1ab8f008a66fe457ed473fa->leave($__internal_67b5108d54342f5d962d29c4d8f4787852876ba8c1ab8f008a66fe457ed473fa_prof);
+
+    }
+
+    // line 90
+    public function block_javascriptsss($context, array $blocks = array())
+    {
+        $__internal_b35ab747515f95cf3fc35edf2b1a97418929c08053a4bfe7c1e4c798376cc82c = $this->env->getExtension("native_profiler");
+        $__internal_b35ab747515f95cf3fc35edf2b1a97418929c08053a4bfe7c1e4c798376cc82c->enter($__internal_b35ab747515f95cf3fc35edf2b1a97418929c08053a4bfe7c1e4c798376cc82c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascriptsss"));
+
+        // line 91
+        echo "    ";
+        
+        $__internal_b35ab747515f95cf3fc35edf2b1a97418929c08053a4bfe7c1e4c798376cc82c->leave($__internal_b35ab747515f95cf3fc35edf2b1a97418929c08053a4bfe7c1e4c798376cc82c_prof);
 
     }
 
@@ -159,7 +242,7 @@ class __TwigTemplate_0550775989b831771196d33b944a9b19301ab23348a07e0b1bbd1e2f8e1
 
     public function getDebugInfo()
     {
-        return array (  142 => 44,  139 => 43,  133 => 42,  126 => 31,  120 => 30,  110 => 8,  104 => 7,  92 => 5,  83 => 46,  81 => 42,  69 => 32,  67 => 30,  60 => 26,  54 => 23,  39 => 10,  37 => 7,  32 => 5,  26 => 1,);
+        return array (  227 => 91,  221 => 90,  211 => 86,  207 => 85,  201 => 82,  197 => 81,  194 => 80,  188 => 79,  181 => 69,  175 => 68,  165 => 13,  161 => 12,  155 => 9,  150 => 8,  144 => 7,  132 => 5,  123 => 92,  121 => 90,  118 => 89,  116 => 79,  105 => 70,  103 => 68,  96 => 64,  77 => 48,  73 => 47,  40 => 16,  38 => 7,  33 => 5,  27 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -170,43 +253,89 @@ class __TwigTemplate_0550775989b831771196d33b944a9b19301ab23348a07e0b1bbd1e2f8e1
 /* */
 /*     {% block stylesheets %}*/
 /*     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css"/>*/
+/*     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css"/>*/
+/* */
+/*     <!-- semantic ui -->*/
+/*     <link rel="stylesheet" href="{{ asset('css/semantic.css') }}" type="text/css"/>*/
+/*     <link rel="stylesheet" href="{{ asset('css/semantic.min.css') }}" type="text/css"/>*/
+/* */
 /*     {% endblock %}*/
 /*   </head>*/
 /* */
 /*   <body>*/
-/*     <div class="contrainer">*/
-/*       <div id="header" class="hero-unit">*/
-/*         <h1>GMAO Moulage</h1>*/
-/*         <p>V1.0 </p>*/
+/* */
+/*       <link rel="shortcut icon" type="image/png"*/
+/*         href="/GmaoMoulage/Image/fav.png" />*/
+/*       <div id="barre" class="oc-header">*/
+/*         <div class="barreh7">*/
+/*           GMAO Moulage <font size="3px">V9.8</font>*/
+/*         </div>*/
 /*       </div>*/
 /* */
-/*       <div class="row">*/
-/*         <div id="menu" class="span3">*/
-/*           <h3>GMAO</h3>*/
-/*           <ul class="nav nav-pills nav-stacked">*/
-/*             <li><a href="{{ path('gmao_moulage_ajouter_presse') }}">Ajouter une presse</a></li>*/
-/*           </ul>*/
-/* */
-/*           <!-- {{ render(controller("SdzBlogBundle:Blog:menu", {'nombre': 3} )) }} -->*/
-/* */
+/*       <nav class="navbar navbar-default navbar-inverse">*/
+/*         <div class="container-fluid">*/
+/*           <!-- Brand and toggle get grouped for better mobile display -->*/
+/*           <div class="navbar-header">*/
+/*             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">*/
+/*               <span class="sr-only">Toggle navigation</span>*/
+/*               <span class="icon-bar"></span>*/
+/*               <span class="icon-bar"></span>*/
+/*               <span class="icon-bar"></span>*/
+/*             </button>*/
+/*             <a class="navbar-brand" href="#">GMAO Moulage</a>*/
 /*           </div>*/
-/*           <div id="content" class="span9">*/
+/* */
+/*           <!-- Collect the nav links, forms, and other content for toggling -->*/
+/*           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">*/
+/*             <ul class="nav navbar-nav">*/
+/*               <li class="dropdown">*/
+/*                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Presse <span class="caret"></span></a>*/
+/*                 <ul class="dropdown-menu">*/
+/*                   <li><a href="{{ path('gmao_moulage_liste_presse', {'page': 1}) }}">Presse</a></li>*/
+/*                   <li><a href="{{ path('gmao_moulage_ajouter_presse') }}">Ajouter presse</a></li>*/
+/*                 </ul>*/
+/*               </li>*/
+/*             </ul>*/
+/* */
+/*           </div><!-- /.navbar-collapse -->*/
+/*         </div><!-- /.container-fluid -->*/
+/*       </nav>*/
+/* */
+/* */
+/*     <div class="container-fluid">*/
+/* */
+/*       <div class="row">*/
+/*         <div id="menu" class="col-sm-3 col-md-2 sidebar">*/
+/*           <h3>Accès rapide</h3>*/
+/*           <ul class="nav nav-pills nav-stacked">*/
+/*             <li><a href="{{ path('gmao_moulage_liste_presse') }}">Presse</a></li>*/
+/*           </ul>*/
+/*         </div>*/
+/*         <div id="content" class="col-sm-9 col-md-10 main">*/
 /*             {% block body %}*/
 /*             {% endblock %}*/
-/*           </div>*/
 /*         </div>*/
+/*       </div>*/
 /* */
 /*         <hr>*/
 /* */
 /*         <footer>*/
-/*           <p>The sky's the limit @ 2015 and beyond.</p>*/
+/*           <p>GMAO Moulage - DELPHI CONNECTION SYSTEMS FRANCE</p>*/
 /*         </footer>*/
-/*       </div>*/
+/*     </div>*/
+/*     {% block javascripts %}*/
+/*       <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>*/
+/*       <script type="text/javascript" src="{{ asset('js/bootstrap-paginator.min.js') }}"></script>*/
+/*       <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>*/
 /* */
-/*       {% block javascripts %}*/
-/*         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>*/
-/*         <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>*/
-/*         {% endblock %}*/
+/*       <!-- semantic ui -->*/
+/*       <script type="text/javascript" src="{{ asset('js/semantic.js') }}"></script>*/
+/*       <script type="text/javascript" src="{{ asset('js/semantic.min.js') }}"></script>*/
+/* */
+/*     {% endblock %}*/
+/* */
+/*     {% block javascriptsss %}*/
+/*     {% endblock %}*/
 /*     </body>*/
 /* </html>*/
 /* */

@@ -82,10 +82,10 @@
       <center><div id="pag_presse_data1"></div></center>
 
       <div id="form_num_page">
-        <form class="form-inline" id="recherche_num_page" action="{{ path('gmao_moulage_presse_goto_page') }}" method="post">
+        <form class="form-inline" id="recherche_num_page" action="{{ path('gmao_moulage_liste_presse', {'page': 1}) }}" method="post">
           <div class="form-group">
           <label for="pag">Aller à la page</label>
-          <input class="form-control" id="pag" placeholder="N°Page"></input>
+          <input class="form-control" id="pag" name="pag" placeholder="N°Page"></input>
           </div>
           <button type="submit" class="btn btn-primary">Valider</button>
         </form>

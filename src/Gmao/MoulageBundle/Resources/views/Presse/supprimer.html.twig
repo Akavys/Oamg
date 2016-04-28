@@ -6,29 +6,21 @@
 
 {% block body %}
 
-  <h1> Supprimer une presse</h1>
-
+  <h2 class="ui dividing header"> Supprimer une presse</h2>
 
   <div class="well">
     <form method="post" action="{{ path('gmao_moulage_supprimer_presse', {'id': presse.id}) }}"  >
-
-      etes vous sur de vouloir supprimer cette presse?
-
-      <input type="submit" class="btn btn-primary" />
-
+      Êtes-vous sûr de vouloir supprimer définitivement cette presse?
+      <button type="submit" class="negative ui button" >Valider</button>
     </form>
   </div>
 
-
   <p>
-  Vous éditez un article déjà existant, ne le changez pas trop pour éviter aux membres de ne pas comprendre
-  ce qu'il se passe.
+    <a href="{{ path('gmao_moulage_liste_presse') }}" class="ui labeled icon orange button">
+      <i class="left chevron icon"></i>
+      Retour vers la page liste presse
+    </a>
   </p>
-  <p>
-  <a href="{{ path('gmao_moulage_liste_presse') }}"
-  class="btn">
-  <i class="icon-chevron-left"></i> Retour vers la page liste presse
-  </a> </p>
 
 
 {% endblock %}

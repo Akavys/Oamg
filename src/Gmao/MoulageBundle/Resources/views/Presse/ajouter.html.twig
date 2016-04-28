@@ -1,9 +1,13 @@
 {% extends "GmaoMoulageBundle::layout.html.twig" %}
 
+{% block tittle %}
+  Liste - {{ parent() }}
+{% endblock %}
+
 {% block body %}
 
-  <h1> Ajouter une presse </h1>
+  <h2 class="ui dividing header" > Ajouter une presse </h2>
 
-  {% include "GmaoMoulageBundle:Presse:formulaire.html.twig" %}
+    {% include "GmaoMoulageBundle:Presse:formulaire.html.twig" %}
 
 {% endblock %}

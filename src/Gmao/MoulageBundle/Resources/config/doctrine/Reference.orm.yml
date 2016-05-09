@@ -1,0 +1,27 @@
+Gmao\MoulageBundle\Entity\Reference:
+    type: entity
+    table: null
+    repositoryClass: Gmao\MoulageBundle\Repository\ReferenceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomReference:
+            type: string
+            length: 255
+        designation:
+            type: string
+            length: 255
+            column: Designation
+        version:
+            type: string
+            length: 255
+            column: Version
+        etatReference:
+            type: boolean
+            nullable: true
+            column: EtatReference
+    lifecycleCallbacks: {  }

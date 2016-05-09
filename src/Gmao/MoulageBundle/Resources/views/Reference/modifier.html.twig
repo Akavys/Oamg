@@ -1,0 +1,21 @@
+{% extends "GmaoMoulageBundle::layout.html.twig" %}
+
+{% block title %}
+  Modifier une référence - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2 class="ui dividing header">Modifier une référence</h2>
+
+  {% include "GmaoMoulageBundle:Reference:formulaire.html.twig" %}
+
+  <p>
+    <a href="{{ path('gmao_moulage_liste_reference') }}" class="ui orange button">
+      <i class="glyphicon glyphicon-arrow-left"></i>
+      Retour vers la page liste référence
+    </a>
+  </p>
+
+
+{% endblock %}

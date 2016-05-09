@@ -1,7 +1,9 @@
+# Routes Generales
 gmao_moulage_homepage:
     path:     /
     defaults: { _controller: GmaoMoulageBundle:Default:index }
 
+# Routes Presse
 gmao_moulage_ajouter_presse:
     path:     /presse/ajouter
     defaults: { _controller: GmaoMoulageBundle:Presse:ajouterPresse }
@@ -25,5 +27,28 @@ gmao_moulage_modifier_presse:
 gmao_moulage_supprimer_presse:
     path: /presse/supprimer/{id}
     defaults: { _controller: GmaoMoulageBundle:Presse:supprimerPresse }
+    requirements:
+      id: \d+
+
+# Routes References
+gmao_moulage_ajouter_reference:
+    path:     /reference/ajouter
+    defaults: { _controller: GmaoMoulageBundle:Reference:ajouterReference }
+
+gmao_moulage_liste_reference:
+    path:     /reference/liste/{page}
+    defaults: { _controller: GmaoMoulageBundle:Reference:allReference, page: 1 }
+    requirements:
+      page: \d*
+
+gmao_moulage_modifier_reference:
+    path: /reference/modifier/{id}
+    defaults: { _controller: GmaoMoulageBundle:Reference:modifierReference }
+    requirements:
+      id: \d+
+
+gmao_moulage_supprimer_reference:
+    path: /reference/supprimer/{id}
+    defaults: { _controller: GmaoMoulageBundle:Reference:supprimerReference }
     requirements:
       id: \d+

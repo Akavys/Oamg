@@ -21,7 +21,7 @@
         href="/GmaoMoulage/Image/fav.png" />
       <div id="barre" class="oc-header">
         <div class="barreh7">
-          GMAO Moulage <font size="3px">V9.8</font>
+          GMAO Moulage <font size="3px">V20.0</font>
         </div>
       </div>
 
@@ -48,6 +48,13 @@
                   <li><a href="{{ path('gmao_moulage_ajouter_presse') }}">Ajouter presse</a></li>
                 </ul>
               </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Référence <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ path('gmao_moulage_liste_reference', {'page': 1}) }}">Référence</a></li>
+                  <li><a href="{{ path('gmao_moulage_ajouter_reference') }}">Ajouter référence</a></li>
+                </ul>
+              </li>
             </ul>
 
           </div><!-- /.navbar-collapse -->
@@ -62,6 +69,9 @@
           <h3>Accès rapide</h3>
           <ul class="nav nav-pills nav-stacked">
             <li><a href="{{ path('gmao_moulage_liste_presse') }}">Presse</a></li>
+          </ul>
+          <ul class="nav nav-pills nav-stacked">
+            <li><a href="{{ path('gmao_moulage_liste_reference') }}">Référence</a></li>
           </ul>
         </div>
         <div id="content" class="col-sm-9 col-md-10 main">

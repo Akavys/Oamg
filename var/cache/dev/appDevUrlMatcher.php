@@ -141,6 +141,29 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            if (0 === strpos($pathinfo, '/gmao/reference')) {
+                // gmao_moulage_ajouter_reference
+                if ($pathinfo === '/gmao/reference/ajouter') {
+                    return array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\ReferenceController::ajouterReferenceAction',  '_route' => 'gmao_moulage_ajouter_reference',);
+                }
+
+                // gmao_moulage_liste_reference
+                if (0 === strpos($pathinfo, '/gmao/reference/liste') && preg_match('#^/gmao/reference/liste(?:/(?P<page>\\d*))?$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_liste_reference')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\ReferenceController::allReferenceAction',  'page' => 1,));
+                }
+
+                // gmao_moulage_modifier_reference
+                if (0 === strpos($pathinfo, '/gmao/reference/modifier') && preg_match('#^/gmao/reference/modifier/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_modifier_reference')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\ReferenceController::modifierReferenceAction',));
+                }
+
+                // gmao_moulage_supprimer_reference
+                if (0 === strpos($pathinfo, '/gmao/reference/supprimer') && preg_match('#^/gmao/reference/supprimer/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_supprimer_reference')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\ReferenceController::supprimerReferenceAction',));
+                }
+
+            }
+
         }
 
         // homepage

@@ -64,10 +64,10 @@ class Moule extends \Gmao\MoulageBundle\Entity\Moule implements \Doctrine\ORM\Pr
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'id', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'nomMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'designation', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'planMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'planMoulePrehension', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'poidsMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'lastNbrCycle', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'dateDeplacement', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'etatMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'empreintes'];
+            return ['__isInitialized__', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'id', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'nomMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'designation', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'planMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'planMoulePrehension', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'poidsMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'lastNbrCycle', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'dateDeplacement', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'etatMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'empreintes', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'alveoles'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'id', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'nomMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'designation', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'planMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'planMoulePrehension', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'poidsMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'lastNbrCycle', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'dateDeplacement', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'etatMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'empreintes'];
+        return ['__isInitialized__', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'id', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'nomMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'designation', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'planMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'planMoulePrehension', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'poidsMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'lastNbrCycle', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'dateDeplacement', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'etatMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'empreintes', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'alveoles'];
     }
 
     /**
@@ -395,6 +395,39 @@ class Moule extends \Gmao\MoulageBundle\Entity\Moule implements \Doctrine\ORM\Pr
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEmpreintes', []);
 
         return parent::getEmpreintes();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addAlveole(\Gmao\MoulageBundle\Entity\Alveole $alveole)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addAlveole', [$alveole]);
+
+        return parent::addAlveole($alveole);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeAlveole(\Gmao\MoulageBundle\Entity\Alveole $alveole)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeAlveole', [$alveole]);
+
+        return parent::removeAlveole($alveole);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAlveoles()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAlveoles', []);
+
+        return parent::getAlveoles();
     }
 
 }

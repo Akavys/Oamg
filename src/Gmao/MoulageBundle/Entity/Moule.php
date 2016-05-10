@@ -81,6 +81,11 @@ class Moule
     private $empreintes;
 
     /**
+     * @ORM\OneToMany(targetEntity="Alveole", mappedBy="moule_alveole")
+     */
+    private $alveoles;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -108,7 +113,7 @@ class Moule
     public function setNomMoule($nomMoule)
     {
         $this->nomMoule = $nomMoule;
-    
+
         return $this;
     }
 
@@ -132,7 +137,7 @@ class Moule
     public function setDesignation($designation)
     {
         $this->designation = $designation;
-    
+
         return $this;
     }
 
@@ -156,7 +161,7 @@ class Moule
     public function setPlanMoule($planMoule)
     {
         $this->planMoule = $planMoule;
-    
+
         return $this;
     }
 
@@ -180,7 +185,7 @@ class Moule
     public function setPlanMoulePrehension($planMoulePrehension)
     {
         $this->planMoulePrehension = $planMoulePrehension;
-    
+
         return $this;
     }
 
@@ -204,7 +209,7 @@ class Moule
     public function setPoidsMoule($poidsMoule)
     {
         $this->poidsMoule = $poidsMoule;
-    
+
         return $this;
     }
 
@@ -228,7 +233,7 @@ class Moule
     public function setLastNbrCycle($lastNbrCycle)
     {
         $this->lastNbrCycle = $lastNbrCycle;
-    
+
         return $this;
     }
 
@@ -252,7 +257,7 @@ class Moule
     public function setDateDeplacement($dateDeplacement)
     {
         $this->dateDeplacement = $dateDeplacement;
-    
+
         return $this;
     }
 
@@ -276,7 +281,7 @@ class Moule
     public function setEtatMoule($etatMoule)
     {
         $this->etatMoule = $etatMoule;
-    
+
         return $this;
     }
 
@@ -300,7 +305,7 @@ class Moule
     public function addEmpreinte(\Gmao\MoulageBundle\Entity\Empreinte $empreinte)
     {
         $this->empreintes[] = $empreinte;
-    
+
         return $this;
     }
 
@@ -322,5 +327,39 @@ class Moule
     public function getEmpreintes()
     {
         return $this->empreintes;
+    }
+
+    /**
+     * Add alveole
+     *
+     * @param \Gmao\MoulageBundle\Entity\Alveole $alveole
+     *
+     * @return Moule
+     */
+    public function addAlveole(\Gmao\MoulageBundle\Entity\Alveole $alveole)
+    {
+        $this->alveoles[] = $alveole;
+    
+        return $this;
+    }
+
+    /**
+     * Remove alveole
+     *
+     * @param \Gmao\MoulageBundle\Entity\Alveole $alveole
+     */
+    public function removeAlveole(\Gmao\MoulageBundle\Entity\Alveole $alveole)
+    {
+        $this->alveoles->removeElement($alveole);
+    }
+
+    /**
+     * Get alveoles
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAlveoles()
+    {
+        return $this->alveoles;
     }
 }

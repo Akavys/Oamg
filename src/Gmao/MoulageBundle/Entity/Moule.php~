@@ -1,0 +1,83 @@
+<?php
+
+namespace Gmao\MoulageBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Moule
+ *
+ * @ORM\Table(name="moule")
+ * @ORM\Entity(repositoryClass="Gmao\MoulageBundle\Repository\MouleRepository")
+*/
+class Moule
+{
+  /**
+   * @var int
+   *
+   * @ORM\Column(name="id", type="integer")
+   * @ORM\Id
+   * @ORM\GeneratedValue(strategy="AUTO")
+   */
+  private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomMoule", type="string", length=255)
+     */
+    private $nomMoule;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="designation", type="string", length=255)
+     */
+    private $designation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="planMoule", type="text")
+     */
+    private $planMoule;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="planMoulePrehension", type="text", nullable=true)
+     */
+    private $planMoulePrehension;
+
+    /**
+    * @var int
+     * @ORM\Column(name="poidsMoule", type="integer", nullable=true)
+     */
+    private $poidsMoule;
+
+    /**
+    * @var int
+     * @ORM\Column(name="lastNbrCycle", type="bigint", nullable=true)
+     */
+    private $lastNbrCycle;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateDeplacement", type="datetime", nullable=true)
+     */
+    private $dateDeplacement;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="etatMoule", type="boolean")
+     */
+    private $etatMoule;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Empreinte", mappedBy="moule")
+     */
+    private $empreintes;
+
+}

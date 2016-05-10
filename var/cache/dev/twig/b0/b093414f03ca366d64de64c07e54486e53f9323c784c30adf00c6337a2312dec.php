@@ -22,20 +22,20 @@ class __TwigTemplate_c9b5089732de4d1a06d198e0b15a20fbb493cc262cae85a5406515860a6
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d973f525c3165cb61b3cdee6a09b790849986aae3c96a114fbf5c898a090d319 = $this->env->getExtension("native_profiler");
-        $__internal_d973f525c3165cb61b3cdee6a09b790849986aae3c96a114fbf5c898a090d319->enter($__internal_d973f525c3165cb61b3cdee6a09b790849986aae3c96a114fbf5c898a090d319_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "GmaoMoulageBundle:Presse:supprimer.html.twig"));
+        $__internal_464c0c54defaf19d0927dfdc9f1db4de6c540259dddeb009193d6ebc4a80222e = $this->env->getExtension("native_profiler");
+        $__internal_464c0c54defaf19d0927dfdc9f1db4de6c540259dddeb009193d6ebc4a80222e->enter($__internal_464c0c54defaf19d0927dfdc9f1db4de6c540259dddeb009193d6ebc4a80222e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "GmaoMoulageBundle:Presse:supprimer.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_d973f525c3165cb61b3cdee6a09b790849986aae3c96a114fbf5c898a090d319->leave($__internal_d973f525c3165cb61b3cdee6a09b790849986aae3c96a114fbf5c898a090d319_prof);
+        $__internal_464c0c54defaf19d0927dfdc9f1db4de6c540259dddeb009193d6ebc4a80222e->leave($__internal_464c0c54defaf19d0927dfdc9f1db4de6c540259dddeb009193d6ebc4a80222e_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_46e5b749b7c3d123b418aebeccd1a52fdfcd5a44d22d37e7873e1a8b9bf2716c = $this->env->getExtension("native_profiler");
-        $__internal_46e5b749b7c3d123b418aebeccd1a52fdfcd5a44d22d37e7873e1a8b9bf2716c->enter($__internal_46e5b749b7c3d123b418aebeccd1a52fdfcd5a44d22d37e7873e1a8b9bf2716c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_70a276dc620fb10cab8d0a425da77b8f378a98b082e817aa4cae75264deadbd8 = $this->env->getExtension("native_profiler");
+        $__internal_70a276dc620fb10cab8d0a425da77b8f378a98b082e817aa4cae75264deadbd8->enter($__internal_70a276dc620fb10cab8d0a425da77b8f378a98b082e817aa4cae75264deadbd8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 4
         echo "  Supprimer une presse - ";
@@ -43,15 +43,15 @@ class __TwigTemplate_c9b5089732de4d1a06d198e0b15a20fbb493cc262cae85a5406515860a6
         echo "
 ";
         
-        $__internal_46e5b749b7c3d123b418aebeccd1a52fdfcd5a44d22d37e7873e1a8b9bf2716c->leave($__internal_46e5b749b7c3d123b418aebeccd1a52fdfcd5a44d22d37e7873e1a8b9bf2716c_prof);
+        $__internal_70a276dc620fb10cab8d0a425da77b8f378a98b082e817aa4cae75264deadbd8->leave($__internal_70a276dc620fb10cab8d0a425da77b8f378a98b082e817aa4cae75264deadbd8_prof);
 
     }
 
     // line 7
     public function block_body($context, array $blocks = array())
     {
-        $__internal_50a8c20d8ae98cac00ed369dc93e1678744ac2bb306544911a8c6c8c22a92c0a = $this->env->getExtension("native_profiler");
-        $__internal_50a8c20d8ae98cac00ed369dc93e1678744ac2bb306544911a8c6c8c22a92c0a->enter($__internal_50a8c20d8ae98cac00ed369dc93e1678744ac2bb306544911a8c6c8c22a92c0a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_f09fb1dc367709d777d877b61307d282907231289eaf2e6750f6ee14f4c5f3ad = $this->env->getExtension("native_profiler");
+        $__internal_f09fb1dc367709d777d877b61307d282907231289eaf2e6750f6ee14f4c5f3ad->enter($__internal_f09fb1dc367709d777d877b61307d282907231289eaf2e6750f6ee14f4c5f3ad_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 8
         echo "
@@ -71,8 +71,8 @@ class __TwigTemplate_c9b5089732de4d1a06d198e0b15a20fbb493cc262cae85a5406515860a6
     <a href=\"";
         // line 19
         echo $this->env->getExtension('routing')->getPath("gmao_moulage_liste_presse");
-        echo "\" class=\"ui labeled icon orange button\">
-      <i class=\"left chevron icon\"></i>
+        echo "\" class=\"ui orange button\">
+      <i class=\"glyphicon glyphicon-arrow-left\"></i>
       Retour vers la page liste presse
     </a>
   </p>
@@ -80,7 +80,7 @@ class __TwigTemplate_c9b5089732de4d1a06d198e0b15a20fbb493cc262cae85a5406515860a6
 
 ";
         
-        $__internal_50a8c20d8ae98cac00ed369dc93e1678744ac2bb306544911a8c6c8c22a92c0a->leave($__internal_50a8c20d8ae98cac00ed369dc93e1678744ac2bb306544911a8c6c8c22a92c0a_prof);
+        $__internal_f09fb1dc367709d777d877b61307d282907231289eaf2e6750f6ee14f4c5f3ad->leave($__internal_f09fb1dc367709d777d877b61307d282907231289eaf2e6750f6ee14f4c5f3ad_prof);
 
     }
 
@@ -117,8 +117,8 @@ class __TwigTemplate_c9b5089732de4d1a06d198e0b15a20fbb493cc262cae85a5406515860a6
 /*   </div>*/
 /* */
 /*   <p>*/
-/*     <a href="{{ path('gmao_moulage_liste_presse') }}" class="ui labeled icon orange button">*/
-/*       <i class="left chevron icon"></i>*/
+/*     <a href="{{ path('gmao_moulage_liste_presse') }}" class="ui orange button">*/
+/*       <i class="glyphicon glyphicon-arrow-left"></i>*/
 /*       Retour vers la page liste presse*/
 /*     </a>*/
 /*   </p>*/

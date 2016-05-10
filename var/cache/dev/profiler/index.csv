@@ -133,3 +133,15 @@ da3ba0,::1,GET,http://localhost/Oamg/web/app_dev.php/gmao/reference/liste,146286
 c56dd4,::1,GET,http://localhost/Oamg/web/app_dev.php/gmao/presse/liste,1462870095,,200
 119ff4,::1,GET,http://localhost/Oamg/web/app_dev.php/gmao/reference/liste,1462870141,,200
 20905f,::1,GET,http://localhost/Oamg/web/app_dev.php/gmao/presse/ajouter,1462877841,,200
+a496c0,::1,GET,http://localhost/Oamg/web/app_dev.php/gmao/presse/ajouter,1462891643,,200
+4d4a2e,::1,GET,http://localhost/Oamg/web/app_dev.php/gmao/presse/liste,1462891646,7fe8b1,200
+7fe8b1,::1,GET,http://localhost/Oamg/web/app_dev.php/gmao/presse/liste,1462891646,,500
+cbdfed,::1,GET,http://localhost/Oamg/web/app_dev.php/gmao/reference/liste,1462891681,,200
+6bc925,::1,GET,http://localhost/Oamg/web/app_dev.php/gmao/presse/liste,1462891685,c96989,200
+c96989,::1,GET,http://localhost/Oamg/web/app_dev.php/gmao/presse/liste,1462891685,,500
+817d92,::1,GET,http://localhost/Oamg/web/app_dev.php/gmao/presse/liste,1462891845,,200
+8d4439,::1,POST,http://localhost/Oamg/web/app_dev.php/gmao/presse/modifier/1,1462891848,,200
+4ee8a1,::1,GET,http://localhost/Oamg/web/app_dev.php/gmao/presse/liste,1462891851,,200
+4312b8,::1,GET,http://localhost/Oamg/web/app_dev.php/gmao/presse/supprimer/1,1462891854,,200
+34af8d,::1,GET,http://localhost/Oamg/web/app_dev.php/gmao/presse/liste,1462891857,,200
+9046c0,::1,GET,http://localhost/Oamg/web/app_dev.php/gmao/reference/liste,1462891859,,200

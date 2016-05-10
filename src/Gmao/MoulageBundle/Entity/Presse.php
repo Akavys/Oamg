@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Presse
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Gmao\MoulageBundle\Entity\PresseRepository")
+ * @ORM\Entity(repositoryClass="Gmao\MoulageBundle\Repository\PresseRepository")
  */
 class Presse
 {

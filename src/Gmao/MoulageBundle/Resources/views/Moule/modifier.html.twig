@@ -1,0 +1,21 @@
+{% extends "GmaoMoulageBundle::layout.html.twig" %}
+
+{% block title %}
+  Modifier un moule - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2 class="ui dividing header">Modifier un moule</h2>
+
+  {% include "GmaoMoulageBundle:Moule:formulaire.html.twig" %}
+
+  <p>
+    <a href="{{ path('gmao_moulage_liste_moule') }}" class="ui orange button">
+      <i class="glyphicon glyphicon-arrow-left"></i>
+      Retour vers la page liste moule
+    </a>
+  </p>
+
+
+{% endblock %}

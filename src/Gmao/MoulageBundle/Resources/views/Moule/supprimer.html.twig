@@ -1,0 +1,26 @@
+{% extends "GmaoMoulageBundle::layout.html.twig" %}
+
+{% block title %}
+  Supprimer un moule - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2 class="ui dividing header"> Supprimer un moule</h2>
+
+  <div class="well">
+    <form method="post" action="{{ path('gmao_moulage_supprimer_moule', {'id': moule.id}) }}"  >
+      Êtes-vous sûr de vouloir supprimer définitivement ce moule?
+      <button type="submit" class="negative ui button" >Valider</button>
+    </form>
+  </div>
+
+  <p>
+    <a href="{{ path('gmao_moulage_liste_moule') }}" class="ui orange button">
+      <i class="glyphicon glyphicon-arrow-left"></i>
+      Retour vers la page liste moule
+    </a>
+  </p>
+
+
+{% endblock %}

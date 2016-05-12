@@ -1,0 +1,13 @@
+{% extends "GmaoMoulageBundle::layout.html.twig" %}
+
+{% block tittle %}
+  Ajouter - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2 class="ui dividing header" > Ajouter un moule </h2>
+
+    {% include "GmaoMoulageBundle:Moule:formulaire.html.twig" %}
+
+{% endblock %}

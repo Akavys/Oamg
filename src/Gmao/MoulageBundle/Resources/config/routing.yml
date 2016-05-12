@@ -52,3 +52,26 @@ gmao_moulage_supprimer_reference:
     defaults: { _controller: GmaoMoulageBundle:Reference:supprimerReference }
     requirements:
       id: \d+
+
+# Routes Moule
+gmao_moulage_ajouter_moule:
+    path:     /moule/ajouter
+    defaults: { _controller: GmaoMoulageBundle:Moule:ajouterMoule }
+
+gmao_moulage_liste_moule:
+    path:     /moule/liste/{page}
+    defaults: { _controller: GmaoMoulageBundle:Moule:allMoule, page: 1 }
+    requirements:
+      page: \d*
+
+gmao_moulage_modifier_moule:
+    path: /moule/modifier/{id}
+    defaults: { _controller: GmaoMoulageBundle:Moule:modifierMoule }
+    requirements:
+      id: \d+
+
+gmao_moulage_supprimer_moule:
+    path: /moule/supprimer/{id}
+    defaults: { _controller: GmaoMoulageBundle:Moule:supprimerMoule }
+    requirements:
+      id: \d+

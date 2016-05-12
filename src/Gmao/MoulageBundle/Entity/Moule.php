@@ -76,7 +76,7 @@ class Moule
     private $etatMoule;
 
     /**
-     * @ORM\OneToMany(targetEntity="Empreinte", mappedBy="moule")
+     * @ORM\OneToMany(targetEntity="Empreinte", mappedBy="moule", cascade={"persist"})
      */
     private $empreintes;
 
@@ -339,7 +339,7 @@ class Moule
     public function addAlveole(\Gmao\MoulageBundle\Entity\Alveole $alveole)
     {
         $this->alveoles[] = $alveole;
-    
+
         return $this;
     }
 

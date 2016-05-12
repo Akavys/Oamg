@@ -2,6 +2,9 @@
 
 namespace Gmao\MoulageBundle\Repository;
 
+use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
+
 /**
  * MouleRepository
  *
@@ -10,4 +13,20 @@ namespace Gmao\MoulageBundle\Repository;
  */
 class MouleRepository extends \Doctrine\ORM\EntityRepository
 {
+
+  public function getMoules($nombreParPage, $page) {
+
+    if($page < 1) {
+      throw new \InvalidArgumentException('L\'argument $page ne peut être inférieur à 1 (valeur : "'.$page.'").');
+    }
+
+    $query = $this->createQueryBuilder('r')
+                  ->getQuery();
+
+                  $query->setFirstResult(($page-1) * $nombreParPage)
+                          ->setMaxResults($nombreParPage);
+
+    return new Paginator($query);
+  }
+
 }

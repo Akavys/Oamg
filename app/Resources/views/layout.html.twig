@@ -55,6 +55,13 @@
                   <li><a href="{{ path('gmao_moulage_ajouter_reference') }}">Ajouter référence</a></li>
                 </ul>
               </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Moule <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ path('gmao_moulage_liste_moule', {'page': 1}) }}">Moule</a></li>
+                  <li><a href="{{ path('gmao_moulage_ajouter_moule') }}">Ajouter moule</a></li>
+                </ul>
+              </li>
             </ul>
 
           </div><!-- /.navbar-collapse -->
@@ -72,6 +79,9 @@
           </ul>
           <ul class="nav nav-pills nav-stacked">
             <li><a href="{{ path('gmao_moulage_liste_reference') }}">Référence</a></li>
+          </ul>
+          <ul class="nav nav-pills nav-stacked">
+            <li><a href="{{ path('gmao_moulage_liste_moule') }}">Moule</a></li>
           </ul>
         </div>
         <div id="content" class="col-sm-9 col-md-10 main">

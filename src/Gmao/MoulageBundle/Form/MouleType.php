@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 use Gmao\MoulageBundle\Form\EmpreinteType;
+use Gmao\MoulageBundle\Form\AlveoleType;
 
 class MouleType extends AbstractType
 {
@@ -30,6 +31,7 @@ class MouleType extends AbstractType
             ->add('lastNbrCycle', TextType::class, array('required'=>false, 'label'=>"Nombre de cycle du moule", 'attr' => array('placeholder' => 'Ex.: 0')))
             ->add('etatMoule', CheckboxType::class, array('required'=>false, 'label'=>"Etat Moule"))
             ->add('empreintes', CollectionType::class, array('entry_type' => EmpreinteType::class, 'allow_add' => true, 'allow_delete' => true))
+            ->add('alveoles', CollectionType::class, array('entry_type' => AlveoleType::class, 'allow_add' => true, 'allow_delete' => true))
 ;
         ;
     }

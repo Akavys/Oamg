@@ -64,10 +64,10 @@ class Alveole extends \Gmao\MoulageBundle\Entity\Alveole implements \Doctrine\OR
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Alveole' . "\0" . 'id', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Alveole' . "\0" . 'nomAlveole', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Alveole' . "\0" . 'etatAlveole', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Alveole' . "\0" . 'moule_aleole'];
+            return ['__isInitialized__', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Alveole' . "\0" . 'id', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Alveole' . "\0" . 'nomAlveole', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Alveole' . "\0" . 'etatAlveole', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Alveole' . "\0" . 'moule_alveole'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Alveole' . "\0" . 'id', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Alveole' . "\0" . 'nomAlveole', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Alveole' . "\0" . 'etatAlveole', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Alveole' . "\0" . 'moule_aleole'];
+        return ['__isInitialized__', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Alveole' . "\0" . 'id', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Alveole' . "\0" . 'nomAlveole', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Alveole' . "\0" . 'etatAlveole', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Alveole' . "\0" . 'moule_alveole'];
     }
 
     /**
@@ -235,23 +235,23 @@ class Alveole extends \Gmao\MoulageBundle\Entity\Alveole implements \Doctrine\OR
     /**
      * {@inheritDoc}
      */
-    public function setMouleAleole(\Gmao\MoulageBundle\Entity\Moule $mouleAleole = NULL)
+    public function setMouleAlveole(\Gmao\MoulageBundle\Entity\Moule $mouleAlveole = NULL)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setMouleAleole', [$mouleAleole]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setMouleAlveole', [$mouleAlveole]);
 
-        return parent::setMouleAleole($mouleAleole);
+        return parent::setMouleAlveole($mouleAlveole);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getMouleAleole()
+    public function getMouleAlveole()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMouleAleole', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMouleAlveole', []);
 
-        return parent::getMouleAleole();
+        return parent::getMouleAlveole();
     }
 
 }

@@ -9,6 +9,8 @@
     {{ form_row(form.empreintes) }}
     <a href="#" id="add_empreinte" class="btn btn-default">Ajouter une empreinte</a>
 
+    {{ form_row(form.alveoles) }}
+    <a href="#" id="add_alveole" class="btn btn-default">Ajouter une alvéole</a>
 
 
     <button type="submit" class="btn btn-success" >Valider</button>
@@ -82,6 +84,57 @@ function addDeleteLink($prototype) {
     $prototype.remove();
 
     e.preventDefault(); // évite qu'un # apparaisse dans l'URL
+    return false;
+  });
+}
+});
+
+
+
+
+$(document).ready(function() {
+
+var $container = $('div#moule_alveoles');
+
+var index = $container.find(':input').length;
+
+$('#add_alveole').click(function(e) {
+  addAlveole($container);
+  e.preventDefault();
+  return false;
+});
+
+if (index == 0) {
+  addAlveole($container);
+} else {
+  $container.children('div').each(function() {
+  addDeleteLink($(this));
+  });
+}
+
+function addAlveole($container) {
+  var template = $container.attr('data-prototype')
+    .replace(/__name__label__/g, 'Alvéole n°' + (index+1))
+    .replace(/__name__/g,        index);
+
+  var $prototype = $(template);
+
+  addDeleteLink($prototype);
+
+  $container.append($prototype);
+
+  index++;
+}
+
+function addDeleteLink($prototype) {
+  var $deleteLink = $('<a href="#" class="btn btn-danger">Supprimer</a>');
+
+  $prototype.append($deleteLink);
+
+  $deleteLink.click(function(e) {
+    $prototype.remove();
+
+    e.preventDefault();
     return false;
   });
 }

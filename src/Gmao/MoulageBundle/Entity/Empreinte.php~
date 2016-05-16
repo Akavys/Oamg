@@ -37,9 +37,69 @@ class Empreinte
 
     /**
      * @ORM\ManyToOne(targetEntity="Moule", inversedBy="empreintes")
-     * @ORM\JoinColumn(name="moule_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="moule_id", referencedColumnName="id", nullable=false)
      */
-     private $moule;
+     private $moule_empreinte;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nomEmpreinte
+     *
+     * @param string $nomEmpreinte
+     *
+     * @return Empreinte
+     */
+    public function setNomEmpreinte($nomEmpreinte)
+    {
+        $this->nomEmpreinte = $nomEmpreinte;
+
+        return $this;
+    }
+
+    /**
+     * Get nomEmpreinte
+     *
+     * @return string
+     */
+    public function getNomEmpreinte()
+    {
+        return $this->nomEmpreinte;
+    }
+
+    /**
+     * Set etatEmpreinte
+     *
+     * @param boolean $etatEmpreinte
+     *
+     * @return Empreinte
+     */
+    public function setEtatEmpreinte($etatEmpreinte)
+    {
+        $this->etatEmpreinte = $etatEmpreinte;
+
+        return $this;
+    }
+
+    /**
+     * Get etatEmpreinte
+     *
+     * @return boolean
+     */
+    public function getEtatEmpreinte()
+    {
+        return $this->etatEmpreinte;
+    }
+
+    
 }

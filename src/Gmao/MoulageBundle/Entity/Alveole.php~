@@ -39,7 +39,7 @@ class Alveole
      * @ORM\ManyToOne(targetEntity="Moule", inversedBy="alveoles")
      * @ORM\JoinColumn(name="moule_id", referencedColumnName="id")
      */
-     private $moule_aleole;
+     private $moule_alveole;
 
     /**
      * Get id
@@ -97,5 +97,29 @@ class Alveole
     public function getEtatAlveole()
     {
         return $this->etatAlveole;
+    }
+
+    /**
+     * Set mouleAlveole
+     *
+     * @param \Gmao\MoulageBundle\Entity\Moule $mouleAlveole
+     *
+     * @return Alveole
+     */
+    public function setMouleAlveole(\Gmao\MoulageBundle\Entity\Moule $mouleAlveole = null)
+    {
+        $this->moule_alveole = $mouleAlveole;
+
+        return $this;
+    }
+
+    /**
+     * Get mouleAlveole
+     *
+     * @return \Gmao\MoulageBundle\Entity\Moule
+     */
+    public function getMouleAlveole()
+    {
+        return $this->moule_alveole;
     }
 }

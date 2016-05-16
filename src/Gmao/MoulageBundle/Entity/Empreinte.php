@@ -37,9 +37,9 @@ class Empreinte
 
     /**
      * @ORM\ManyToOne(targetEntity="Moule", inversedBy="empreintes")
-     * @ORM\JoinColumn(name="moule_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="moule_id", referencedColumnName="id", nullable=false)
      */
-     private $moule;
+     private $moule_empreinte;
 
 
 
@@ -101,27 +101,29 @@ class Empreinte
         return $this->etatEmpreinte;
     }
 
+
+
     /**
-     * Set moule
+     * Set mouleEmpreinte
      *
-     * @param \Gmao\MoulageBundle\Entity\Moule $moule
+     * @param \Gmao\MoulageBundle\Entity\Moule $mouleEmpreinte
      *
      * @return Empreinte
      */
-    public function setMoule(\Gmao\MoulageBundle\Entity\Moule $moule = null)
+    public function setMouleEmpreinte(\Gmao\MoulageBundle\Entity\Moule $mouleEmpreinte)
     {
-        $this->moule = $moule;
+        $this->moule_empreinte = $mouleEmpreinte;
 
         return $this;
     }
 
     /**
-     * Get moule
+     * Get mouleEmpreinte
      *
      * @return \Gmao\MoulageBundle\Entity\Moule
      */
-    public function getMoule()
+    public function getMouleEmpreinte()
     {
-        return $this->moule;
+        return $this->moule_empreinte;
     }
 }

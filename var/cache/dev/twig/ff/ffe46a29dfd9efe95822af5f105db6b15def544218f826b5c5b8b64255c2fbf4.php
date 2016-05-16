@@ -1,0 +1,128 @@
+<?php
+
+/* GmaoMoulageBundle:Reference:supprimer.html.twig */
+class __TwigTemplate_63c43258f3b1b9da8290cee4da4d43186589889f801cdfc4476bfaa1b3be3262 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        // line 1
+        $this->parent = $this->loadTemplate("GmaoMoulageBundle::layout.html.twig", "GmaoMoulageBundle:Reference:supprimer.html.twig", 1);
+        $this->blocks = array(
+            'title' => array($this, 'block_title'),
+            'body' => array($this, 'block_body'),
+        );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "GmaoMoulageBundle::layout.html.twig";
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        $__internal_88a63618deb5abcaee1521a7baa3a7df6dc14b8e7933909d32bed4cf3c1cb97c = $this->env->getExtension("native_profiler");
+        $__internal_88a63618deb5abcaee1521a7baa3a7df6dc14b8e7933909d32bed4cf3c1cb97c->enter($__internal_88a63618deb5abcaee1521a7baa3a7df6dc14b8e7933909d32bed4cf3c1cb97c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "GmaoMoulageBundle:Reference:supprimer.html.twig"));
+
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_88a63618deb5abcaee1521a7baa3a7df6dc14b8e7933909d32bed4cf3c1cb97c->leave($__internal_88a63618deb5abcaee1521a7baa3a7df6dc14b8e7933909d32bed4cf3c1cb97c_prof);
+
+    }
+
+    // line 3
+    public function block_title($context, array $blocks = array())
+    {
+        $__internal_cfd483a876b618f6ea236f3e948a56b40950571200204e7082897241de5ed753 = $this->env->getExtension("native_profiler");
+        $__internal_cfd483a876b618f6ea236f3e948a56b40950571200204e7082897241de5ed753->enter($__internal_cfd483a876b618f6ea236f3e948a56b40950571200204e7082897241de5ed753_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+
+        // line 4
+        echo "  Supprimer une référence - ";
+        $this->displayParentBlock("title", $context, $blocks);
+        echo "
+";
+        
+        $__internal_cfd483a876b618f6ea236f3e948a56b40950571200204e7082897241de5ed753->leave($__internal_cfd483a876b618f6ea236f3e948a56b40950571200204e7082897241de5ed753_prof);
+
+    }
+
+    // line 7
+    public function block_body($context, array $blocks = array())
+    {
+        $__internal_d619e7f0cd77172948e8e34bdb8313fcfa8d0955045cf36f9acf9f131a80337c = $this->env->getExtension("native_profiler");
+        $__internal_d619e7f0cd77172948e8e34bdb8313fcfa8d0955045cf36f9acf9f131a80337c->enter($__internal_d619e7f0cd77172948e8e34bdb8313fcfa8d0955045cf36f9acf9f131a80337c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+
+        // line 8
+        echo "
+  <h2 class=\"ui dividing header\"> Supprimer une référence</h2>
+
+  <div class=\"well\">
+    <form method=\"post\" action=\"";
+        // line 12
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("gmao_moulage_supprimer_reference", array("id" => $this->getAttribute((isset($context["reference"]) ? $context["reference"] : $this->getContext($context, "reference")), "id", array()))), "html", null, true);
+        echo "\"  >
+      Êtes-vous sûr de vouloir supprimer définitivement cette référence?
+      <button type=\"submit\" class=\"negative ui button\" >Valider</button>
+    </form>
+  </div>
+
+  <p>
+    <a href=\"";
+        // line 19
+        echo $this->env->getExtension('routing')->getPath("gmao_moulage_liste_reference");
+        echo "\" class=\"ui orange button\">
+      <i class=\"glyphicon glyphicon-arrow-left\"></i>
+      Retour vers la page liste référence
+    </a>
+  </p>
+
+
+";
+        
+        $__internal_d619e7f0cd77172948e8e34bdb8313fcfa8d0955045cf36f9acf9f131a80337c->leave($__internal_d619e7f0cd77172948e8e34bdb8313fcfa8d0955045cf36f9acf9f131a80337c_prof);
+
+    }
+
+    public function getTemplateName()
+    {
+        return "GmaoMoulageBundle:Reference:supprimer.html.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  73 => 19,  63 => 12,  57 => 8,  51 => 7,  41 => 4,  35 => 3,  11 => 1,);
+    }
+}
+/* {% extends "GmaoMoulageBundle::layout.html.twig" %}*/
+/* */
+/* {% block title %}*/
+/*   Supprimer une référence - {{ parent() }}*/
+/* {% endblock %}*/
+/* */
+/* {% block body %}*/
+/* */
+/*   <h2 class="ui dividing header"> Supprimer une référence</h2>*/
+/* */
+/*   <div class="well">*/
+/*     <form method="post" action="{{ path('gmao_moulage_supprimer_reference', {'id': reference.id}) }}"  >*/
+/*       Êtes-vous sûr de vouloir supprimer définitivement cette référence?*/
+/*       <button type="submit" class="negative ui button" >Valider</button>*/
+/*     </form>*/
+/*   </div>*/
+/* */
+/*   <p>*/
+/*     <a href="{{ path('gmao_moulage_liste_reference') }}" class="ui orange button">*/
+/*       <i class="glyphicon glyphicon-arrow-left"></i>*/
+/*       Retour vers la page liste référence*/
+/*     </a>*/
+/*   </p>*/
+/* */
+/* */
+/* {% endblock %}*/
+/* */

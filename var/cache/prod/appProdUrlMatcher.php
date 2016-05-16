@@ -91,6 +91,29 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
             }
 
+            if (0 === strpos($pathinfo, '/gmao/moule')) {
+                // gmao_moulage_ajouter_moule
+                if ($pathinfo === '/gmao/moule/ajouter') {
+                    return array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\MouleController::ajouterMouleAction',  '_route' => 'gmao_moulage_ajouter_moule',);
+                }
+
+                // gmao_moulage_liste_moule
+                if (0 === strpos($pathinfo, '/gmao/moule/liste') && preg_match('#^/gmao/moule/liste(?:/(?P<page>\\d*))?$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_liste_moule')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\MouleController::allMouleAction',  'page' => 1,));
+                }
+
+                // gmao_moulage_modifier_moule
+                if (0 === strpos($pathinfo, '/gmao/moule/modifier') && preg_match('#^/gmao/moule/modifier/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_modifier_moule')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\MouleController::modifierMouleAction',));
+                }
+
+                // gmao_moulage_supprimer_moule
+                if (0 === strpos($pathinfo, '/gmao/moule/supprimer') && preg_match('#^/gmao/moule/supprimer/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_supprimer_moule')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\MouleController::supprimerMouleAction',));
+                }
+
+            }
+
         }
 
         // homepage

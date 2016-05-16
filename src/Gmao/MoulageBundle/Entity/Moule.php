@@ -76,12 +76,12 @@ class Moule
     private $etatMoule;
 
     /**
-     * @ORM\OneToMany(targetEntity="Empreinte", mappedBy="moule", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Empreinte", mappedBy="moule_empreinte", cascade={"persist", "remove"})
      */
     private $empreintes;
 
     /**
-     * @ORM\OneToMany(targetEntity="Alveole", mappedBy="moule_alveole")
+     * @ORM\OneToMany(targetEntity="Alveole", mappedBy="moule_alveole", cascade={"persist", "remove"})
      */
     private $alveoles;
 
@@ -91,6 +91,7 @@ class Moule
     public function __construct()
     {
         $this->empreintes = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->alveoles = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -305,7 +306,9 @@ class Moule
     public function addEmpreinte(\Gmao\MoulageBundle\Entity\Empreinte $empreinte)
     {
         $this->empreintes[] = $empreinte;
-
+        //Ajouter en plus
+        $empreinte->setMouleEmpreinte($this);
+    //    var_dump($this);
         return $this;
     }
 
@@ -339,7 +342,7 @@ class Moule
     public function addAlveole(\Gmao\MoulageBundle\Entity\Alveole $alveole)
     {
         $this->alveoles[] = $alveole;
-
+        $alveole->setMouleAlveole($this);
         return $this;
     }
 

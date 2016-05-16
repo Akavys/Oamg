@@ -3,6 +3,7 @@
 namespace Gmao\MoulageBundle\Controller;
 
 use Gmao\MoulageBundle\Entity\Moule;
+use Gmao\MoulageBundle\Entity\Empreinte;
 use Gmao\MoulageBundle\Form\MouleType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -19,6 +20,17 @@ class MouleController extends Controller {
       $form->handleRequest($request);
 
       if ($form->isValid()) {
+
+        foreach (($moule->getEmpreintes())
+              as $numObject =>$object) {
+          $moule->addEmpreinte($object);
+        }
+
+        foreach (($moule->getAlveoles())
+              as $numObject =>$object) {
+          $moule->addAlveole($object);
+        }
+
         $em = $this->getDoctrine()->getManager();
         $em->persist($moule);
         $em->flush();

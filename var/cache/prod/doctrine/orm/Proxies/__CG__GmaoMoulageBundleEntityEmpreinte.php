@@ -64,10 +64,10 @@ class Empreinte extends \Gmao\MoulageBundle\Entity\Empreinte implements \Doctrin
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Empreinte' . "\0" . 'id', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Empreinte' . "\0" . 'nomEmpreinte', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Empreinte' . "\0" . 'etatEmpreinte', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Empreinte' . "\0" . 'moule'];
+            return ['__isInitialized__', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Empreinte' . "\0" . 'id', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Empreinte' . "\0" . 'nomEmpreinte', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Empreinte' . "\0" . 'etatEmpreinte', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Empreinte' . "\0" . 'moule_empreinte'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Empreinte' . "\0" . 'id', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Empreinte' . "\0" . 'nomEmpreinte', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Empreinte' . "\0" . 'etatEmpreinte', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Empreinte' . "\0" . 'moule'];
+        return ['__isInitialized__', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Empreinte' . "\0" . 'id', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Empreinte' . "\0" . 'nomEmpreinte', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Empreinte' . "\0" . 'etatEmpreinte', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Empreinte' . "\0" . 'moule_empreinte'];
     }
 
     /**
@@ -235,23 +235,23 @@ class Empreinte extends \Gmao\MoulageBundle\Entity\Empreinte implements \Doctrin
     /**
      * {@inheritDoc}
      */
-    public function setMoule(\Gmao\MoulageBundle\Entity\Moule $moule = NULL)
+    public function setMouleEmpreinte(\Gmao\MoulageBundle\Entity\Moule $mouleEmpreinte)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setMoule', [$moule]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setMouleEmpreinte', [$mouleEmpreinte]);
 
-        return parent::setMoule($moule);
+        return parent::setMouleEmpreinte($mouleEmpreinte);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getMoule()
+    public function getMouleEmpreinte()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMoule', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMouleEmpreinte', []);
 
-        return parent::getMoule();
+        return parent::getMouleEmpreinte();
     }
 
 }

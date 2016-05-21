@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Presse
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Gmao\MoulageBundle\Entity\PresseRepository")
+ * @ORM\Entity(repositoryClass="Gmao\MoulageBundle\Repository\PresseRepository")
  */
 class Presse
 {
@@ -35,6 +35,13 @@ class Presse
      * @ORM\Column(name="etatPresse", type="boolean")
      */
     private $etatPresse;
+
+    /**
+      * @ORM\ManyToOne(targetEntity="Moule",
+      * inversedBy="presses")
+      * @ORM\JoinColumn(nullable=false)
+      */
+      private $moules;
 
 
     /**

@@ -36,6 +36,13 @@ class Presse
      */
     private $etatPresse;
 
+    /**
+      * @ORM\ManyToOne(targetEntity="Moule",
+      * inversedBy="presses")
+      * @ORM\JoinColumn(nullable=false)
+      */
+      private $moules;
+
 
     /**
      * Get id
@@ -93,5 +100,29 @@ class Presse
     public function getEtatPresse()
     {
         return $this->etatPresse;
+    }
+
+    /**
+     * Set moules
+     *
+     * @param \Gmao\MoulageBundle\Entity\Moule $moules
+     *
+     * @return Presse
+     */
+    public function setMoules(\Gmao\MoulageBundle\Entity\Moule $moules)
+    {
+        $this->moules = $moules;
+
+        return $this;
+    }
+
+    /**
+     * Get moules
+     *
+     * @return \Gmao\MoulageBundle\Entity\Moule
+     */
+    public function getMoules()
+    {
+        return $this->moules;
     }
 }

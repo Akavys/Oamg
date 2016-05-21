@@ -86,6 +86,12 @@ class Moule
     private $alveoles;
 
     /**
+      * @ORM\OneToMany(targetEntity="Presse",
+      * mappedBy="moules")
+      */
+    private $presses;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -364,5 +370,40 @@ class Moule
     public function getAlveoles()
     {
         return $this->alveoles;
+    }
+
+    /**
+     * Add press
+     *
+     * @param \Gmao\MoulageBundle\Entity\Presse $press
+     *
+     * @return Moule
+     */
+    public function addPress(\Gmao\MoulageBundle\Entity\Presse $press)
+    {
+        $this->presses[] = $press;
+        $presses->setMoule($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove press
+     *
+     * @param \Gmao\MoulageBundle\Entity\Presse $press
+     */
+    public function removePress(\Gmao\MoulageBundle\Entity\Presse $press)
+    {
+        $this->presses->removeElement($press);
+    }
+
+    /**
+     * Get presses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPresses()
+    {
+        return $this->presses;
     }
 }

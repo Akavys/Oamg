@@ -37,14 +37,6 @@ class Presse
     private $etatPresse;
 
     /**
-      * @ORM\ManyToOne(targetEntity="Moule",
-      * inversedBy="presses")
-      * @ORM\JoinColumn(nullable=false)
-      */
-      private $moules;
-
-
-    /**
      * Get id
      *
      * @return int

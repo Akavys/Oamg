@@ -40,6 +40,7 @@
                 <th>Moule</th>
                 <th>Désignation</th>
                 <th>Presses</th>
+                <th>Références</th>
                 <th>Etat</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>
@@ -51,6 +52,7 @@
               <th>Moule</th>
               <th>Désignation</th>
               <th>Presses</th>
+              <th>Références</th>
               <th>Etat</th>
               <th>Modifier</th>
               <th>Supprimer</th>
@@ -64,7 +66,7 @@
             <td>{{ moule.nomMoule }}</td>
             <td>{{ moule.designation }}</td>
             <td>{% for p in moule.presses %} {{ p.nomPresse }} {% endfor %}</td>
-
+            <td>{% for r in moule.references %} {{ r.nomReference }} {% endfor %}</td>
             <td>{% if moule.etatMoule == true %}<h4><span class="label label-success">Active</span></h4> {% else %}<h4><span class="label label-danger">Inactive</span></h4>{% endif %}</td>
             <td><form action="{{ path('gmao_moulage_modifier_moule', {'id': moule.id }) }}" method="post" >
                   <button type="submit" class="btn btn-warning">

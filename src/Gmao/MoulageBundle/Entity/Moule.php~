@@ -86,11 +86,15 @@ class Moule
     private $alveoles;
 
     /**
-      * @ORM\OneToMany(targetEntity="Presse",
-      * mappedBy="moules")
-      */
+     * @ORM\ManyToMany(targetEntity="Presse", cascade={"persist"})
+     */
     private $presses;
-    
+
+    /**
+    * @ORM\ManyToMany(targetEntity="Reference", cascade={"persist"})
+    */
+    private $references;
+
     /**
      * Constructor
      */
@@ -98,6 +102,7 @@ class Moule
     {
         $this->empreintes = new \Doctrine\Common\Collections\ArrayCollection();
         $this->alveoles = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->presses = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -370,5 +375,39 @@ class Moule
     public function getAlveoles()
     {
         return $this->alveoles;
+    }
+
+    /**
+     * Add press
+     *
+     * @param \Gmao\MoulageBundle\Entity\Presse $press
+     *
+     * @return Moule
+     */
+    public function addPress(\Gmao\MoulageBundle\Entity\Presse $press)
+    {
+        $this->presses[] = $press;
+
+        return $this;
+    }
+
+    /**
+     * Remove press
+     *
+     * @param \Gmao\MoulageBundle\Entity\Presse $press
+     */
+    public function removePress(\Gmao\MoulageBundle\Entity\Presse $press)
+    {
+        $this->presses->removeElement($press);
+    }
+
+    /**
+     * Get presses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPresses()
+    {
+        return $this->presses;
     }
 }

@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 use Gmao\MoulageBundle\Form\EmpreinteType;
 use Gmao\MoulageBundle\Form\AlveoleType;
@@ -32,6 +33,8 @@ class MouleType extends AbstractType
             ->add('etatMoule', CheckboxType::class, array('required'=>false, 'label'=>"Etat Moule"))
             ->add('empreintes', CollectionType::class, array('entry_type' => EmpreinteType::class, 'allow_add' => true, 'allow_delete' => true))
             ->add('alveoles', CollectionType::class, array('entry_type' => AlveoleType::class, 'allow_add' => true, 'allow_delete' => true))
+            ->add('presses', EntityType::class, array('class' => 'GmaoMoulageBundle:Presse', 'choice_label' => 'nomPresse', 'multiple' => true))
+            ->add('references', EntityType::class, array('class' => 'GmaoMoulageBundle:Reference', 'choice_label' => 'nomReference', 'multiple' => true))
 ;
         ;
     }

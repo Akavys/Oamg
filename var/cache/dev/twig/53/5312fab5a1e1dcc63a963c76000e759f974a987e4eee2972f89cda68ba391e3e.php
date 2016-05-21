@@ -23,20 +23,20 @@ class __TwigTemplate_c23186e5e87724b70bac90d5df0d48585443c6fff7884b40bdb945c0f6e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_263bb9d99a3c0ac9bedd13d82c4cec74b5ebec2c74ccc7b6de8aead08046312a = $this->env->getExtension("native_profiler");
-        $__internal_263bb9d99a3c0ac9bedd13d82c4cec74b5ebec2c74ccc7b6de8aead08046312a->enter($__internal_263bb9d99a3c0ac9bedd13d82c4cec74b5ebec2c74ccc7b6de8aead08046312a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "GmaoMoulageBundle:Moule:liste.html.twig"));
+        $__internal_d8fc2f7645fa1e747256e19b5e1cdaeaa71eb135ff0d94c7d433a6fc03421f98 = $this->env->getExtension("native_profiler");
+        $__internal_d8fc2f7645fa1e747256e19b5e1cdaeaa71eb135ff0d94c7d433a6fc03421f98->enter($__internal_d8fc2f7645fa1e747256e19b5e1cdaeaa71eb135ff0d94c7d433a6fc03421f98_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "GmaoMoulageBundle:Moule:liste.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_263bb9d99a3c0ac9bedd13d82c4cec74b5ebec2c74ccc7b6de8aead08046312a->leave($__internal_263bb9d99a3c0ac9bedd13d82c4cec74b5ebec2c74ccc7b6de8aead08046312a_prof);
+        $__internal_d8fc2f7645fa1e747256e19b5e1cdaeaa71eb135ff0d94c7d433a6fc03421f98->leave($__internal_d8fc2f7645fa1e747256e19b5e1cdaeaa71eb135ff0d94c7d433a6fc03421f98_prof);
 
     }
 
     // line 3
     public function block_tittle($context, array $blocks = array())
     {
-        $__internal_e21151196620f822e85bdbd0c4cd3f0b6809e1c483331b86ab25414cf37ff4ed = $this->env->getExtension("native_profiler");
-        $__internal_e21151196620f822e85bdbd0c4cd3f0b6809e1c483331b86ab25414cf37ff4ed->enter($__internal_e21151196620f822e85bdbd0c4cd3f0b6809e1c483331b86ab25414cf37ff4ed_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "tittle"));
+        $__internal_555b2de00e619f412dd33f1531218e546e393d191e9d8f77b71c7b1f94a3c661 = $this->env->getExtension("native_profiler");
+        $__internal_555b2de00e619f412dd33f1531218e546e393d191e9d8f77b71c7b1f94a3c661->enter($__internal_555b2de00e619f412dd33f1531218e546e393d191e9d8f77b71c7b1f94a3c661_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "tittle"));
 
         // line 4
         echo "  Liste - ";
@@ -44,15 +44,15 @@ class __TwigTemplate_c23186e5e87724b70bac90d5df0d48585443c6fff7884b40bdb945c0f6e
         echo "
 ";
         
-        $__internal_e21151196620f822e85bdbd0c4cd3f0b6809e1c483331b86ab25414cf37ff4ed->leave($__internal_e21151196620f822e85bdbd0c4cd3f0b6809e1c483331b86ab25414cf37ff4ed_prof);
+        $__internal_555b2de00e619f412dd33f1531218e546e393d191e9d8f77b71c7b1f94a3c661->leave($__internal_555b2de00e619f412dd33f1531218e546e393d191e9d8f77b71c7b1f94a3c661_prof);
 
     }
 
     // line 7
     public function block_body($context, array $blocks = array())
     {
-        $__internal_aa491439331a279a4c35bad73ad68741fa0622567dbdf38cb66715222774f374 = $this->env->getExtension("native_profiler");
-        $__internal_aa491439331a279a4c35bad73ad68741fa0622567dbdf38cb66715222774f374->enter($__internal_aa491439331a279a4c35bad73ad68741fa0622567dbdf38cb66715222774f374_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_bdb57d9c836fc12c60d391b78ae8c063be334fd779204579b6b224f884b9956f = $this->env->getExtension("native_profiler");
+        $__internal_bdb57d9c836fc12c60d391b78ae8c063be334fd779204579b6b224f884b9956f->enter($__internal_bdb57d9c836fc12c60d391b78ae8c063be334fd779204579b6b224f884b9956f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 8
         echo "
@@ -106,6 +106,7 @@ class __TwigTemplate_c23186e5e87724b70bac90d5df0d48585443c6fff7884b40bdb945c0f6e
                 <th>Moule</th>
                 <th>Désignation</th>
                 <th>Presses</th>
+                <th>Références</th>
                 <th>Etat</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>
@@ -117,6 +118,7 @@ class __TwigTemplate_c23186e5e87724b70bac90d5df0d48585443c6fff7884b40bdb945c0f6e
               <th>Moule</th>
               <th>Désignation</th>
               <th>Presses</th>
+              <th>Références</th>
               <th>Etat</th>
               <th>Modifier</th>
               <th>Supprimer</th>
@@ -125,26 +127,26 @@ class __TwigTemplate_c23186e5e87724b70bac90d5df0d48585443c6fff7884b40bdb945c0f6e
         <tbody>
 
         ";
-        // line 61
+        // line 63
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["moules"]) ? $context["moules"] : $this->getContext($context, "moules")));
         foreach ($context['_seq'] as $context["_key"] => $context["moule"]) {
-            // line 62
+            // line 64
             echo "        <tr>
             <td>";
-            // line 63
+            // line 65
             echo twig_escape_filter($this->env, $this->getAttribute($context["moule"], "id", array()), "html", null, true);
             echo "</td>
             <td>";
-            // line 64
+            // line 66
             echo twig_escape_filter($this->env, $this->getAttribute($context["moule"], "nomMoule", array()), "html", null, true);
             echo "</td>
             <td>";
-            // line 65
+            // line 67
             echo twig_escape_filter($this->env, $this->getAttribute($context["moule"], "designation", array()), "html", null, true);
             echo "</td>
             <td>";
-            // line 66
+            // line 68
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["moule"], "presses", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["p"]) {
@@ -156,9 +158,21 @@ class __TwigTemplate_c23186e5e87724b70bac90d5df0d48585443c6fff7884b40bdb945c0f6e
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['p'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
             echo "</td>
-
             <td>";
-            // line 68
+            // line 69
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["moule"], "references", array()));
+            foreach ($context['_seq'] as $context["_key"] => $context["r"]) {
+                echo " ";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["r"], "nomReference", array()), "html", null, true);
+                echo " ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['r'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            echo "</td>
+            <td>";
+            // line 70
             if (($this->getAttribute($context["moule"], "etatMoule", array()) == true)) {
                 echo "<h4><span class=\"label label-success\">Active</span></h4> ";
             } else {
@@ -166,7 +180,7 @@ class __TwigTemplate_c23186e5e87724b70bac90d5df0d48585443c6fff7884b40bdb945c0f6e
             }
             echo "</td>
             <td><form action=\"";
-            // line 69
+            // line 71
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("gmao_moulage_modifier_moule", array("id" => $this->getAttribute($context["moule"], "id", array()))), "html", null, true);
             echo "\" method=\"post\" >
                   <button type=\"submit\" class=\"btn btn-warning\">
@@ -175,7 +189,7 @@ class __TwigTemplate_c23186e5e87724b70bac90d5df0d48585443c6fff7884b40bdb945c0f6e
                 </form>
             </td>
             <td><form action=\"";
-            // line 75
+            // line 77
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("gmao_moulage_supprimer_moule", array("id" => $this->getAttribute($context["moule"], "id", array()))), "html", null, true);
             echo "\" method=\"get\" >
                   <button type=\"submit\" class=\"btn btn-danger\">
@@ -190,7 +204,7 @@ class __TwigTemplate_c23186e5e87724b70bac90d5df0d48585443c6fff7884b40bdb945c0f6e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['moule'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 84
+        // line 86
         echo "
         </tbody>
     </table>
@@ -199,7 +213,7 @@ class __TwigTemplate_c23186e5e87724b70bac90d5df0d48585443c6fff7884b40bdb945c0f6e
 
       <div id=\"form_num_page\">
         <form class=\"form-inline\" id=\"recherche_num_page\" action=\"";
-        // line 91
+        // line 93
         echo $this->env->getExtension('routing')->getPath("gmao_moulage_liste_moule", array("page" => 1));
         echo "\" method=\"post\">
           <div class=\"form-group\">
@@ -213,31 +227,31 @@ class __TwigTemplate_c23186e5e87724b70bac90d5df0d48585443c6fff7884b40bdb945c0f6e
 
 ";
         
-        $__internal_aa491439331a279a4c35bad73ad68741fa0622567dbdf38cb66715222774f374->leave($__internal_aa491439331a279a4c35bad73ad68741fa0622567dbdf38cb66715222774f374_prof);
+        $__internal_bdb57d9c836fc12c60d391b78ae8c063be334fd779204579b6b224f884b9956f->leave($__internal_bdb57d9c836fc12c60d391b78ae8c063be334fd779204579b6b224f884b9956f_prof);
 
     }
 
-    // line 104
+    // line 106
     public function block_javascriptsss($context, array $blocks = array())
     {
-        $__internal_398f0b833ea07d8c1d580796b6d550a272c5177864a2b9d81e5a498939497f0f = $this->env->getExtension("native_profiler");
-        $__internal_398f0b833ea07d8c1d580796b6d550a272c5177864a2b9d81e5a498939497f0f->enter($__internal_398f0b833ea07d8c1d580796b6d550a272c5177864a2b9d81e5a498939497f0f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascriptsss"));
+        $__internal_db7a4d4dd5b7e3086efd51090048850e2bbf5874e5403586d66b86cb9560f598 = $this->env->getExtension("native_profiler");
+        $__internal_db7a4d4dd5b7e3086efd51090048850e2bbf5874e5403586d66b86cb9560f598->enter($__internal_db7a4d4dd5b7e3086efd51090048850e2bbf5874e5403586d66b86cb9560f598_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascriptsss"));
 
-        // line 105
+        // line 107
         echo "
 <script type='text/javascript'>
     var options = {
       currentPage: ";
-        // line 108
+        // line 110
         echo twig_escape_filter($this->env, (isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")), "html", null, true);
         echo ",
       totalPages: ";
-        // line 109
+        // line 111
         echo twig_escape_filter($this->env, (isset($context["nombrePage"]) ? $context["nombrePage"] : $this->getContext($context, "nombrePage")), "html", null, true);
         echo ",
       pageUrl: function(type, page, current){
           return \"";
-        // line 111
+        // line 113
         echo $this->env->getExtension('routing')->getPath("gmao_moulage_liste_moule", array("page" => 1));
         echo "/\"+page;
       }
@@ -247,7 +261,7 @@ class __TwigTemplate_c23186e5e87724b70bac90d5df0d48585443c6fff7884b40bdb945c0f6e
 </script>
 ";
         
-        $__internal_398f0b833ea07d8c1d580796b6d550a272c5177864a2b9d81e5a498939497f0f->leave($__internal_398f0b833ea07d8c1d580796b6d550a272c5177864a2b9d81e5a498939497f0f_prof);
+        $__internal_db7a4d4dd5b7e3086efd51090048850e2bbf5874e5403586d66b86cb9560f598->leave($__internal_db7a4d4dd5b7e3086efd51090048850e2bbf5874e5403586d66b86cb9560f598_prof);
 
     }
 
@@ -263,7 +277,7 @@ class __TwigTemplate_c23186e5e87724b70bac90d5df0d48585443c6fff7884b40bdb945c0f6e
 
     public function getDebugInfo()
     {
-        return array (  241 => 111,  236 => 109,  232 => 108,  227 => 105,  221 => 104,  203 => 91,  194 => 84,  179 => 75,  170 => 69,  162 => 68,  148 => 66,  144 => 65,  140 => 64,  136 => 63,  133 => 62,  129 => 61,  93 => 28,  83 => 20,  72 => 15,  67 => 12,  62 => 11,  58 => 8,  52 => 7,  42 => 4,  36 => 3,  11 => 1,);
+        return array (  255 => 113,  250 => 111,  246 => 110,  241 => 107,  235 => 106,  217 => 93,  208 => 86,  193 => 77,  184 => 71,  176 => 70,  163 => 69,  150 => 68,  146 => 67,  142 => 66,  138 => 65,  135 => 64,  131 => 63,  93 => 28,  83 => 20,  72 => 15,  67 => 12,  62 => 11,  58 => 8,  52 => 7,  42 => 4,  36 => 3,  11 => 1,);
     }
 }
 /* {% extends "GmaoMoulageBundle::layout.html.twig" %}*/
@@ -308,6 +322,7 @@ class __TwigTemplate_c23186e5e87724b70bac90d5df0d48585443c6fff7884b40bdb945c0f6e
 /*                 <th>Moule</th>*/
 /*                 <th>Désignation</th>*/
 /*                 <th>Presses</th>*/
+/*                 <th>Références</th>*/
 /*                 <th>Etat</th>*/
 /*                 <th>Modifier</th>*/
 /*                 <th>Supprimer</th>*/
@@ -319,6 +334,7 @@ class __TwigTemplate_c23186e5e87724b70bac90d5df0d48585443c6fff7884b40bdb945c0f6e
 /*               <th>Moule</th>*/
 /*               <th>Désignation</th>*/
 /*               <th>Presses</th>*/
+/*               <th>Références</th>*/
 /*               <th>Etat</th>*/
 /*               <th>Modifier</th>*/
 /*               <th>Supprimer</th>*/
@@ -332,7 +348,7 @@ class __TwigTemplate_c23186e5e87724b70bac90d5df0d48585443c6fff7884b40bdb945c0f6e
 /*             <td>{{ moule.nomMoule }}</td>*/
 /*             <td>{{ moule.designation }}</td>*/
 /*             <td>{% for p in moule.presses %} {{ p.nomPresse }} {% endfor %}</td>*/
-/* */
+/*             <td>{% for r in moule.references %} {{ r.nomReference }} {% endfor %}</td>*/
 /*             <td>{% if moule.etatMoule == true %}<h4><span class="label label-success">Active</span></h4> {% else %}<h4><span class="label label-danger">Inactive</span></h4>{% endif %}</td>*/
 /*             <td><form action="{{ path('gmao_moulage_modifier_moule', {'id': moule.id }) }}" method="post" >*/
 /*                   <button type="submit" class="btn btn-warning">*/

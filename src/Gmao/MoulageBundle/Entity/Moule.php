@@ -86,10 +86,14 @@ class Moule
     private $alveoles;
 
     /**
-      * @ORM\OneToMany(targetEntity="Presse",
-      * mappedBy="moules")
-      */
+     * @ORM\ManyToMany(targetEntity="Presse", cascade={"persist"})
+     */
     private $presses;
+
+    /**
+    * @ORM\ManyToMany(targetEntity="Reference", cascade={"persist"})
+    */
+    private $references;
 
     /**
      * Constructor
@@ -98,6 +102,7 @@ class Moule
     {
         $this->empreintes = new \Doctrine\Common\Collections\ArrayCollection();
         $this->alveoles = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->presses = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -382,7 +387,6 @@ class Moule
     public function addPress(\Gmao\MoulageBundle\Entity\Presse $press)
     {
         $this->presses[] = $press;
-        $presses->setMoule($this);
 
         return $this;
     }
@@ -405,5 +409,39 @@ class Moule
     public function getPresses()
     {
         return $this->presses;
+    }
+
+    /**
+     * Add reference
+     *
+     * @param \Gmao\MoulageBundle\Entity\Reference $reference
+     *
+     * @return Moule
+     */
+    public function addReference(\Gmao\MoulageBundle\Entity\Reference $reference)
+    {
+        $this->references[] = $reference;
+
+        return $this;
+    }
+
+    /**
+     * Remove reference
+     *
+     * @param \Gmao\MoulageBundle\Entity\Reference $reference
+     */
+    public function removeReference(\Gmao\MoulageBundle\Entity\Reference $reference)
+    {
+        $this->references->removeElement($reference);
+    }
+
+    /**
+     * Get references
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getReferences()
+    {
+        return $this->references;
     }
 }

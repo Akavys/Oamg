@@ -6,14 +6,15 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
-use Gmao\MoulageBundle\Form\EmpreinteType;
 use Gmao\MoulageBundle\Form\AlveoleType;
+use Gmao\MoulageBundle\Form\EmpreinteType;
+use Gmao\MoulageBundle\Repository\PresseRepository;
+use Gmao\MoulageBundle\Repository\ReferenceRepository;
 
 class MouleType extends AbstractType
 {
@@ -33,9 +34,23 @@ class MouleType extends AbstractType
             ->add('etatMoule', CheckboxType::class, array('required'=>false, 'label'=>"Etat Moule"))
             ->add('empreintes', CollectionType::class, array('entry_type' => EmpreinteType::class, 'allow_add' => true, 'allow_delete' => true))
             ->add('alveoles', CollectionType::class, array('entry_type' => AlveoleType::class, 'allow_add' => true, 'allow_delete' => true))
-            ->add('presses', EntityType::class, array('class' => 'GmaoMoulageBundle:Presse', 'choice_label' => 'nomPresse', 'multiple' => true))
-            ->add('references', EntityType::class, array('class' => 'GmaoMoulageBundle:Reference', 'choice_label' => 'nomReference', 'multiple' => true))
-;
+            ->add('presses', EntityType::class, array(
+            		'class' => 'GmaoMoulageBundle:Presse', 
+            		'choice_label' => 'nomPresse', 
+            		'multiple' => true, 
+            		'query_builder' => function(PresseRepository $repo_presse) {
+            			return $repo_presse->getLsTruePresse();
+            		}
+            		
+            ))
+            ->add('references', EntityType::class, array(
+            		'class' => 'GmaoMoulageBundle:Reference', 
+            		'choice_label' => 'nomReference', 
+            		'multiple' => true, 
+            		'query_builder' => function(ReferenceRepository $repo_ref) {
+            			return $repo_ref->getLsTrueReference();
+            		}
+            ));
         ;
     }
 

@@ -64,10 +64,10 @@ class Moule extends \Gmao\MoulageBundle\Entity\Moule implements \Doctrine\ORM\Pr
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'id', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'nomMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'designation', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'planMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'planMoulePrehension', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'poidsMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'lastNbrCycle', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'dateDeplacement', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'etatMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'empreintes', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'alveoles'];
+            return ['__isInitialized__', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'id', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'nomMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'designation', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'planMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'planMoulePrehension', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'poidsMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'lastNbrCycle', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'dateDeplacement', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'etatMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'empreintes', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'alveoles', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'presses', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'references'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'id', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'nomMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'designation', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'planMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'planMoulePrehension', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'poidsMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'lastNbrCycle', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'dateDeplacement', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'etatMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'empreintes', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'alveoles'];
+        return ['__isInitialized__', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'id', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'nomMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'designation', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'planMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'planMoulePrehension', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'poidsMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'lastNbrCycle', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'dateDeplacement', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'etatMoule', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'empreintes', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'alveoles', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'presses', '' . "\0" . 'Gmao\\MoulageBundle\\Entity\\Moule' . "\0" . 'references'];
     }
 
     /**
@@ -428,6 +428,72 @@ class Moule extends \Gmao\MoulageBundle\Entity\Moule implements \Doctrine\ORM\Pr
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAlveoles', []);
 
         return parent::getAlveoles();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addPress(\Gmao\MoulageBundle\Entity\Presse $press)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addPress', [$press]);
+
+        return parent::addPress($press);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removePress(\Gmao\MoulageBundle\Entity\Presse $press)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removePress', [$press]);
+
+        return parent::removePress($press);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPresses()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPresses', []);
+
+        return parent::getPresses();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addReference(\Gmao\MoulageBundle\Entity\Reference $reference)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addReference', [$reference]);
+
+        return parent::addReference($reference);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeReference(\Gmao\MoulageBundle\Entity\Reference $reference)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeReference', [$reference]);
+
+        return parent::removeReference($reference);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getReferences()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getReferences', []);
+
+        return parent::getReferences();
     }
 
 }

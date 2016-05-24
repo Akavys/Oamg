@@ -1,0 +1,21 @@
+{% extends "GmaoMoulageBundle::layout.html.twig" %}
+
+{% block title %}
+  Modifier une équipe - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2 class="ui dividing header">Modifier le nom d'une équipe</h2>
+
+  {% include "GmaoMoulageBundle:Equipe:formulaire.html.twig" %}
+
+  <p>
+    <a href="{{ path('gmao_moulage_liste_equipe') }}" class="ui orange button">
+      <i class="glyphicon glyphicon-arrow-left"></i>
+      Retour vers la page liste équipe
+    </a>
+  </p>
+
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "GmaoMoulageBundle::layout.html.twig" %}
+
+{% block title %}
+  Modifier type de défaut - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2 class="ui dividing header">Modifier le type de défaut</h2>
+
+  {% include "GmaoMoulageBundle:DefautNiveau1:formulaire.html.twig" %}
+
+  <p>
+    <a href="{{ path('gmao_moulage_liste_defaut_niveau1') }}" class="ui orange button">
+      <i class="glyphicon glyphicon-arrow-left"></i>
+      Retour vers la page liste type de défaut
+    </a>
+  </p>
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "GmaoMoulageBundle::layout.html.twig" %}
+
+{% block tittle %}
+  Ajouter - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2 class="ui dividing header" > Ajouter type de défaut </h2>
+
+    {% include "GmaoMoulageBundle:DefautNiveau1:formulaire.html.twig" %}
+
+{% endblock %}

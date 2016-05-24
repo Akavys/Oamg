@@ -1,0 +1,13 @@
+{% extends "GmaoMoulageBundle::layout.html.twig" %}
+
+{% block tittle %}
+  Ajouter - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2 class="ui dividing header" > Ajouter une équipe </h2>
+
+    {% include "GmaoMoulageBundle:Equipe:formulaire.html.twig" %}
+
+{% endblock %}

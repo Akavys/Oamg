@@ -1,123 +1,172 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title> {% block title %}GMAO{% endblock %}</title>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{% block title %}GMAO{% endblock %}</title> {% block stylesheets
+%}
+<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"
+	type="text/css" />
+<link rel="stylesheet" href="{{ asset('css/style.css') }}"
+	type="text/css" />
 
-    {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css"/>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css"/>
+<!-- semantic ui -->
+<link rel="stylesheet" href="{{ asset('css/semantic.css') }}"
+	type="text/css" />
+<link rel="stylesheet" href="{{ asset('css/semantic.min.css') }}"
+	type="text/css" />
 
-    <!-- semantic ui -->
-    <link rel="stylesheet" href="{{ asset('css/semantic.css') }}" type="text/css"/>
-    <link rel="stylesheet" href="{{ asset('css/semantic.min.css') }}" type="text/css"/>
+{% endblock %}
+</head>
 
-    {% endblock %}
-  </head>
+<body>
 
-  <body>
+	<link rel="shortcut icon" type="image/png"
+		href="/GmaoMoulage/Image/fav.png" />
+	<div id="barre" class="oc-header">
+		<div class="barreh7">
+			GMAO Moulage <font size="3px">V20.0</font>
+		</div>
+	</div>
 
-      <link rel="shortcut icon" type="image/png"
-        href="/GmaoMoulage/Image/fav.png" />
-      <div id="barre" class="oc-header">
-        <div class="barreh7">
-          GMAO Moulage <font size="3px">V20.0</font>
-        </div>
-      </div>
+	<nav class="navbar navbar-default navbar-inverse">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">GMAO Moulage</a>
+			</div>
 
-      <nav class="navbar navbar-default navbar-inverse">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">GMAO Moulage</a>
-          </div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="dropdown"><a
+						href="{{ path('gmao_moulage_liste_presse', {'page': 1}) }}"
+						class="dropdown-toggle" data-toggle="dropdown" role="button"
+						aria-haspopup="true" aria-expanded="false">Presse <span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a
+								href="{{ path('gmao_moulage_liste_presse', {'page': 1}) }}">Presse</a></li>
+							<li><a href="{{ path('gmao_moulage_ajouter_presse') }}">Ajouter
+									presse</a></li>
+						</ul></li>
+					<li class="dropdown"><a
+						href="{{ path('gmao_moulage_liste_reference', {'page': 1}) }}"
+						class="dropdown-toggle" data-toggle="dropdown" role="button"
+						aria-haspopup="true" aria-expanded="false">Référence <span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a
+								href="{{ path('gmao_moulage_liste_reference', {'page': 1}) }}">Référence</a></li>
+							<li><a href="{{ path('gmao_moulage_ajouter_reference') }}">Ajouter
+									référence</a></li>
+						</ul></li>
+					<li class="dropdown"><a
+						href="{{ path('gmao_moulage_liste_moule', {'page': 1}) }}"
+						class="dropdown-toggle" data-toggle="dropdown" role="button"
+						aria-haspopup="true" aria-expanded="false">Moule <span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="{{ path('gmao_moulage_liste_moule', {'page': 1}) }}">Moule</a></li>
+							<li><a href="{{ path('gmao_moulage_ajouter_moule') }}">Ajouter
+									moule</a></li>
+						</ul></li>
+					<li class="dropdown"><a
+						href="{{ path('gmao_moulage_liste_loc_defaut', {'page': 1}) }}"
+						class="dropdown-toggle" data-toggle="dropdown" role="button"
+						aria-haspopup="true" aria-expanded="false">Localisation défaut <span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a
+								href="{{ path('gmao_moulage_liste_loc_defaut', {'page': 1}) }}">Localisation
+									défaut</a></li>
+							<li><a href="{{ path('gmao_moulage_ajouter_loc_defaut') }}">Ajouter
+									localisation défaut</a></li>
+						</ul></li>
+					<li class="dropdown"><a
+						href="{{ path('gmao_moulage_liste_equipe', {'page': 1}) }}"
+						class="dropdown-toggle" data-toggle="dropdown" role="button"
+						aria-haspopup="true" aria-expanded="false">Équipe <span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a
+								href="{{ path('gmao_moulage_liste_equipe', {'page': 1}) }}">Équipe</a></li>
+							<li><a href="{{ path('gmao_moulage_ajouter_equipe') }}">Ajouter
+									équipe</a></li>
+						</ul></li>
+					<li class="dropdown"><a
+						href="{{ path('gmao_moulage_liste_defaut_niveau1', {'page': 1}) }}"
+						class="dropdown-toggle" data-toggle="dropdown" role="button"
+						aria-haspopup="true" aria-expanded="false">Type de défaut <span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a
+								href="{{ path('gmao_moulage_liste_defaut_niveau1', {'page': 1}) }}">Type
+									défaut</a></li>
+							<li><a href="{{ path('gmao_moulage_ajouter_defaut_niveau1') }}">Ajouter
+									type défaut</a></li>
+						</ul></li>
+				</ul>
 
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="dropdown">
-                <a href="{{ path('gmao_moulage_liste_presse', {'page': 1}) }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Presse <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="{{ path('gmao_moulage_liste_presse', {'page': 1}) }}">Presse</a></li>
-                  <li><a href="{{ path('gmao_moulage_ajouter_presse') }}">Ajouter presse</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="{{ path('gmao_moulage_liste_reference', {'page': 1}) }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Référence <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="{{ path('gmao_moulage_liste_reference', {'page': 1}) }}">Référence</a></li>
-                  <li><a href="{{ path('gmao_moulage_ajouter_reference') }}">Ajouter référence</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="{{ path('gmao_moulage_liste_moule', {'page': 1}) }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Moule <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="{{ path('gmao_moulage_liste_moule', {'page': 1}) }}">Moule</a></li>
-                  <li><a href="{{ path('gmao_moulage_ajouter_moule') }}">Ajouter moule</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="{{ path('gmao_moulage_liste_loc_defaut', {'page': 1}) }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Localisation défaut <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="{{ path('gmao_moulage_liste_loc_defaut', {'page': 1}) }}">Localisation défaut</a></li>
-                  <li><a href="{{ path('gmao_moulage_ajouter_loc_defaut') }}">Ajouter localisation défaut</a></li>
-                </ul>
-              </li>
-            </ul>
-
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
 
 
-    <div class="container-fluid">
+	<div class="container-fluid">
 
-      <div class="row">
-        <div id="menu" class="col-sm-3 col-md-2 sidebar">
-          <h3>Accès rapide</h3>
-          <ul class="nav nav-pills nav-stacked">
-            <li><a href="{{ path('gmao_moulage_liste_presse') }}">Presse</a></li>
-          </ul>
-          <ul class="nav nav-pills nav-stacked">
-            <li><a href="{{ path('gmao_moulage_liste_reference') }}">Référence</a></li>
-          </ul>
-          <ul class="nav nav-pills nav-stacked">
-            <li><a href="{{ path('gmao_moulage_liste_moule') }}">Moule</a></li>
-          </ul>
-          <ul class="nav nav-pills nav-stacked">
-            <li><a href="{{ path('gmao_moulage_liste_loc_defaut') }}">Localisation défaut</a></li>
-          </ul>
-        </div>
-        <div id="content" class="col-sm-9 col-md-10 main">
-            {% block body %}
-            {% endblock %}
-        </div>
-      </div>
+		<div class="row">
+			<div id="menu" class="col-sm-3 col-md-2 sidebar">
+				<h3>Accès rapide</h3>
+				<ul class="nav nav-pills nav-stacked">
+					<li><a href="{{ path('gmao_moulage_liste_presse') }}">Presse</a></li>
+				</ul>
+				<ul class="nav nav-pills nav-stacked">
+					<li><a href="{{ path('gmao_moulage_liste_reference') }}">Référence</a></li>
+				</ul>
+				<ul class="nav nav-pills nav-stacked">
+					<li><a href="{{ path('gmao_moulage_liste_moule') }}">Moule</a></li>
+				</ul>
+				<ul class="nav nav-pills nav-stacked">
+					<li><a href="{{ path('gmao_moulage_liste_loc_defaut') }}">Localisation
+							défaut</a></li>
+				</ul>
+				<ul class="nav nav-pills nav-stacked">
+					<li><a href="{{ path('gmao_moulage_liste_equipe') }}">Équipe</a></li>
+				</ul>
+				<ul class="nav nav-pills nav-stacked">
+					<li><a href="{{ path('gmao_moulage_liste_defaut_niveau1') }}">Type de défaut</a></li>
+				</ul>
+			</div>
+			<div id="content" class="col-sm-9 col-md-10 main">{% block body %} {%
+				endblock %}</div>
+		</div>
 
-        <hr>
+		<hr>
 
-        <footer>
-          <p>GMAO Moulage - DELPHI CONNECTION SYSTEMS FRANCE</p>
-        </footer>
-    </div>
-    {% block javascripts %}
-      <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-      <script type="text/javascript" src="{{ asset('js/bootstrap-paginator.min.js') }}"></script>
-      <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+		<footer>
+			<p>GMAO Moulage - DELPHI CONNECTION SYSTEMS FRANCE</p>
+		</footer>
+	</div>
+	{% block javascripts %}
+	<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript"
+		src="{{ asset('js/bootstrap-paginator.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
 
-      <!-- semantic ui -->
-      <script type="text/javascript" src="{{ asset('js/semantic.js') }}"></script>
-      <script type="text/javascript" src="{{ asset('js/semantic.min.js') }}"></script>
+	<!-- semantic ui -->
+	<script type="text/javascript" src="{{ asset('js/semantic.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/semantic.min.js') }}"></script>
 
-    {% endblock %}
-
-    {% block javascriptsss %}
-    {% endblock %}
-    </body>
+	{% endblock %} {% block javascriptsss %} {% endblock %}
+</body>
 </html>

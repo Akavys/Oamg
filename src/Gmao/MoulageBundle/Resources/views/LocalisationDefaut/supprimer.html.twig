@@ -1,24 +1,24 @@
 {% extends "GmaoMoulageBundle::layout.html.twig" %}
 
 {% block title %}
-  Supprimer une localisation d�faut - {{ parent() }}
+  Supprimer une localisation défaut - {{ parent() }}
 {% endblock %}
 
 {% block body %}
 
-  <h2 class="ui dividing header"> Supprimer une localisation défaut</h2>
+  <h2 class="ui dividing header"> Supprimer une équipe</h2>
 
   <div class="well">
-    <form method="post" action="{{ path('gmao_moulage_supprimer_loc_defaut', {'id': locDefaut.id}) }}"  >
-      Êtes-vous sûr de vouloir supprimer définitivement cette localisation défaut?
+    <form method="post" action="{{ path('gmao_moulage_supprimer_equipe', {'id': equipe.id}) }}"  >
+      Êtes-vous sûr de vouloir supprimer définitivement cette équipe?
       <button type="submit" class="negative ui button" >Valider</button>
     </form>
   </div>
 
   <p>
-    <a href="{{ path('gmao_moulage_liste_loc_defaut') }}" class="ui orange button">
+    <a href="{{ path('gmao_moulage_liste_equipe') }}" class="ui orange button">
       <i class="glyphicon glyphicon-arrow-left"></i>
-      Retour vers la page liste localisation défaut
+      Retour vers la page liste équipe
     </a>
   </p>
 

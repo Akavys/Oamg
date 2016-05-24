@@ -98,3 +98,49 @@ gmao_moulage_supprimer_loc_defaut:
     defaults: { _controller: GmaoMoulageBundle:LocalisationDefaut:supprimerLocalisationDefaut }
     requirements:
       id: \d+
+      
+# Routes Equipes
+gmao_moulage_ajouter_equipe:
+    path:     /equipe/ajouter
+    defaults: { _controller: GmaoMoulageBundle:Equipe:ajouterEquipe }
+
+gmao_moulage_liste_equipe:
+    path:     /equipe/liste/{page}
+    defaults: { _controller: GmaoMoulageBundle:Equipe:allEquipe, page: 1 }
+    requirements:
+      page: \d*
+
+gmao_moulage_modifier_equipe:
+    path: /equipe/modifier/{id}
+    defaults: { _controller: GmaoMoulageBundle:Equipe:modifierEquipe }
+    requirements:
+      id: \d+
+
+gmao_moulage_supprimer_equipe:
+    path: /equipe/supprimer/{id}
+    defaults: { _controller: GmaoMoulageBundle:Equipe:supprimerEquipe }
+    requirements:
+      id: \d+
+
+# Routes defaut Niveau1
+gmao_moulage_ajouter_defaut_niveau1:
+    path:     /defaut_niveau1/ajouter
+    defaults: { _controller: GmaoMoulageBundle:DefautNiveau1:ajouterDefautNiveau1 }
+
+gmao_moulage_liste_defaut_niveau1:
+    path:     /defaut_niveau1/liste/{page}
+    defaults: { _controller: GmaoMoulageBundle:DefautNiveau1:allDefautNiveau1, page: 1 }
+    requirements:
+      page: \d*
+
+gmao_moulage_modifier_defaut_niveau1:
+    path: /defaut_niveau1/modifier/{id}
+    defaults: { _controller: GmaoMoulageBundle:DefautNiveau1:modifierDefautNiveau1 }
+    requirements:
+      id: \d+
+
+gmao_moulage_supprimer_defaut_niveau1:
+    path: /defaut_niveau1/supprimer/{id}
+    defaults: { _controller: GmaoMoulageBundle:DefautNiveau1:supprimerDefautNiveau1 }
+    requirements:
+      id: \d+

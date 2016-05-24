@@ -15,7 +15,7 @@ class ReferenceRepository extends \Doctrine\ORM\EntityRepository {
 	
 	public function getReferences($nombreParPage, $page) {
 		if ($page < 1) {
-			throw new \InvalidArgumentException ( 'L\'argument $page ne peut être inférieur à  1 (valeur : "' . $page . '").' );
+			throw new \InvalidArgumentException ( 'L\'argument $page ne peut Ãªtre infÃ©rieur Ã  1 (valeur : "' . $page . '").' );
 		}
 		
 		$query = $this->createQueryBuilder ( 'r' )->getQuery ();

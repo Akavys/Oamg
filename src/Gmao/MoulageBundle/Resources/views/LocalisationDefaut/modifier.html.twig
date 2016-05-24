@@ -1,0 +1,21 @@
+{% extends "GmaoMoulageBundle::layout.html.twig" %}
+
+{% block title %}
+  Modifier une localisation d�faut - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2 class="ui dividing header">Modifier une localisation défaut</h2>
+
+  {% include "GmaoMoulageBundle:LocalisationDefaut:formulaire.html.twig" %}
+
+  <p>
+    <a href="{{ path('gmao_moulage_liste_loc_defaut') }}" class="ui orange button">
+      <i class="glyphicon glyphicon-arrow-left"></i>
+      Retour vers la page liste localisation défaut
+    </a>
+  </p>
+
+
+{% endblock %}

@@ -3,10 +3,9 @@
 namespace Gmao\MoulageBundle\Controller;
 
 use Gmao\MoulageBundle\Entity\Moule;
-use Gmao\MoulageBundle\Entity\Empreinte;
 use Gmao\MoulageBundle\Form\MouleType;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class MouleController extends Controller {
 

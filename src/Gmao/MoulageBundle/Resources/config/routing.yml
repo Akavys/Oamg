@@ -75,3 +75,26 @@ gmao_moulage_supprimer_moule:
     defaults: { _controller: GmaoMoulageBundle:Moule:supprimerMoule }
     requirements:
       id: \d+
+      
+# Routes LocalisationDefaut
+gmao_moulage_ajouter_loc_defaut:
+    path:     /loc_defaut/ajouter
+    defaults: { _controller: GmaoMoulageBundle:LocalisationDefaut:ajouterLocalisationDefaut }
+
+gmao_moulage_liste_loc_defaut:
+    path:     /loc_defaut/liste/{page}
+    defaults: { _controller: GmaoMoulageBundle:LocalisationDefaut:allLocalisationDefaut, page: 1 }
+    requirements:
+      page: \d*
+
+gmao_moulage_modifier_loc_defaut:
+    path: /loc_defaut/modifier/{id}
+    defaults: { _controller: GmaoMoulageBundle:LocalisationDefaut:modifierLocalisationDefaut }
+    requirements:
+      id: \d+
+
+gmao_moulage_supprimer_loc_defaut:
+    path: /loc_defaut/supprimer/{id}
+    defaults: { _controller: GmaoMoulageBundle:LocalisationDefaut:supprimerLocalisationDefaut }
+    requirements:
+      id: \d+

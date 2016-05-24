@@ -187,6 +187,29 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            if (0 === strpos($pathinfo, '/gmao/loc_defaut')) {
+                // gmao_moulage_ajouter_loc_defaut
+                if ($pathinfo === '/gmao/loc_defaut/ajouter') {
+                    return array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\LocalisationDefautController::ajouterLocalisationDefautAction',  '_route' => 'gmao_moulage_ajouter_loc_defaut',);
+                }
+
+                // gmao_moulage_liste_loc_defaut
+                if (0 === strpos($pathinfo, '/gmao/loc_defaut/liste') && preg_match('#^/gmao/loc_defaut/liste(?:/(?P<page>\\d*))?$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_liste_loc_defaut')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\LocalisationDefautController::allLocalisationDefautAction',  'page' => 1,));
+                }
+
+                // gmao_moulage_modifier_loc_defaut
+                if (0 === strpos($pathinfo, '/gmao/loc_defaut/modifier') && preg_match('#^/gmao/loc_defaut/modifier/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_modifier_loc_defaut')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\LocalisationDefautController::modifierLocalisationDefautAction',));
+                }
+
+                // gmao_moulage_supprimer_loc_defaut
+                if (0 === strpos($pathinfo, '/gmao/loc_defaut/supprimer') && preg_match('#^/gmao/loc_defaut/supprimer/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_supprimer_loc_defaut')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\LocalisationDefautController::supprimerLocalisationDefautAction',));
+                }
+
+            }
+
         }
 
         // homepage

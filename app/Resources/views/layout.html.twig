@@ -42,24 +42,31 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Presse <span class="caret"></span></a>
+                <a href="{{ path('gmao_moulage_liste_presse', {'page': 1}) }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Presse <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="{{ path('gmao_moulage_liste_presse', {'page': 1}) }}">Presse</a></li>
                   <li><a href="{{ path('gmao_moulage_ajouter_presse') }}">Ajouter presse</a></li>
                 </ul>
               </li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Référence <span class="caret"></span></a>
+                <a href="{{ path('gmao_moulage_liste_reference', {'page': 1}) }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Référence <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="{{ path('gmao_moulage_liste_reference', {'page': 1}) }}">Référence</a></li>
                   <li><a href="{{ path('gmao_moulage_ajouter_reference') }}">Ajouter référence</a></li>
                 </ul>
               </li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Moule <span class="caret"></span></a>
+                <a href="{{ path('gmao_moulage_liste_moule', {'page': 1}) }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Moule <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="{{ path('gmao_moulage_liste_moule', {'page': 1}) }}">Moule</a></li>
                   <li><a href="{{ path('gmao_moulage_ajouter_moule') }}">Ajouter moule</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="{{ path('gmao_moulage_liste_loc_defaut', {'page': 1}) }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Localisation défaut <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ path('gmao_moulage_liste_loc_defaut', {'page': 1}) }}">Localisation défaut</a></li>
+                  <li><a href="{{ path('gmao_moulage_ajouter_loc_defaut') }}">Ajouter localisation défaut</a></li>
                 </ul>
               </li>
             </ul>
@@ -82,6 +89,9 @@
           </ul>
           <ul class="nav nav-pills nav-stacked">
             <li><a href="{{ path('gmao_moulage_liste_moule') }}">Moule</a></li>
+          </ul>
+          <ul class="nav nav-pills nav-stacked">
+            <li><a href="{{ path('gmao_moulage_liste_loc_defaut') }}">Localisation défaut</a></li>
           </ul>
         </div>
         <div id="content" class="col-sm-9 col-md-10 main">

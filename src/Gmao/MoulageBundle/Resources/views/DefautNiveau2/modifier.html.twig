@@ -1,0 +1,21 @@
+{% extends "GmaoMoulageBundle::layout.html.twig" %}
+
+{% block title %}
+  Modifier nature de défaut - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2 class="ui dividing header">Modifier la nature de défaut</h2>
+
+  {% include "GmaoMoulageBundle:DefautNiveau2:formulaire.html.twig" %}
+
+  <p>
+    <a href="{{ path('gmao_moulage_liste_defaut_niveau2') }}" class="ui orange button">
+      <i class="glyphicon glyphicon-arrow-left"></i>
+      Retour vers la page liste nature de défaut
+    </a>
+  </p>
+
+
+{% endblock %}

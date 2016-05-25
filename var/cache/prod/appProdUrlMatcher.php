@@ -114,6 +114,101 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
             }
 
+            if (0 === strpos($pathinfo, '/gmao/loc_defaut')) {
+                // gmao_moulage_ajouter_loc_defaut
+                if ($pathinfo === '/gmao/loc_defaut/ajouter') {
+                    return array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\LocalisationDefautController::ajouterLocalisationDefautAction',  '_route' => 'gmao_moulage_ajouter_loc_defaut',);
+                }
+
+                // gmao_moulage_liste_loc_defaut
+                if (0 === strpos($pathinfo, '/gmao/loc_defaut/liste') && preg_match('#^/gmao/loc_defaut/liste(?:/(?P<page>\\d*))?$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_liste_loc_defaut')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\LocalisationDefautController::allLocalisationDefautAction',  'page' => 1,));
+                }
+
+                // gmao_moulage_modifier_loc_defaut
+                if (0 === strpos($pathinfo, '/gmao/loc_defaut/modifier') && preg_match('#^/gmao/loc_defaut/modifier/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_modifier_loc_defaut')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\LocalisationDefautController::modifierLocalisationDefautAction',));
+                }
+
+                // gmao_moulage_supprimer_loc_defaut
+                if (0 === strpos($pathinfo, '/gmao/loc_defaut/supprimer') && preg_match('#^/gmao/loc_defaut/supprimer/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_supprimer_loc_defaut')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\LocalisationDefautController::supprimerLocalisationDefautAction',));
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/gmao/equipe')) {
+                // gmao_moulage_ajouter_equipe
+                if ($pathinfo === '/gmao/equipe/ajouter') {
+                    return array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\EquipeController::ajouterEquipeAction',  '_route' => 'gmao_moulage_ajouter_equipe',);
+                }
+
+                // gmao_moulage_liste_equipe
+                if (0 === strpos($pathinfo, '/gmao/equipe/liste') && preg_match('#^/gmao/equipe/liste(?:/(?P<page>\\d*))?$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_liste_equipe')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\EquipeController::allEquipeAction',  'page' => 1,));
+                }
+
+                // gmao_moulage_modifier_equipe
+                if (0 === strpos($pathinfo, '/gmao/equipe/modifier') && preg_match('#^/gmao/equipe/modifier/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_modifier_equipe')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\EquipeController::modifierEquipeAction',));
+                }
+
+                // gmao_moulage_supprimer_equipe
+                if (0 === strpos($pathinfo, '/gmao/equipe/supprimer') && preg_match('#^/gmao/equipe/supprimer/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_supprimer_equipe')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\EquipeController::supprimerEquipeAction',));
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/gmao/defaut_niveau')) {
+                if (0 === strpos($pathinfo, '/gmao/defaut_niveau1')) {
+                    // gmao_moulage_ajouter_defaut_niveau1
+                    if ($pathinfo === '/gmao/defaut_niveau1/ajouter') {
+                        return array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\DefautNiveau1Controller::ajouterDefautNiveau1Action',  '_route' => 'gmao_moulage_ajouter_defaut_niveau1',);
+                    }
+
+                    // gmao_moulage_liste_defaut_niveau1
+                    if (0 === strpos($pathinfo, '/gmao/defaut_niveau1/liste') && preg_match('#^/gmao/defaut_niveau1/liste(?:/(?P<page>\\d*))?$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_liste_defaut_niveau1')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\DefautNiveau1Controller::allDefautNiveau1Action',  'page' => 1,));
+                    }
+
+                    // gmao_moulage_modifier_defaut_niveau1
+                    if (0 === strpos($pathinfo, '/gmao/defaut_niveau1/modifier') && preg_match('#^/gmao/defaut_niveau1/modifier/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_modifier_defaut_niveau1')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\DefautNiveau1Controller::modifierDefautNiveau1Action',));
+                    }
+
+                    // gmao_moulage_supprimer_defaut_niveau1
+                    if (0 === strpos($pathinfo, '/gmao/defaut_niveau1/supprimer') && preg_match('#^/gmao/defaut_niveau1/supprimer/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_supprimer_defaut_niveau1')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\DefautNiveau1Controller::supprimerDefautNiveau1Action',));
+                    }
+
+                }
+
+                if (0 === strpos($pathinfo, '/gmao/defaut_niveau2')) {
+                    // gmao_moulage_ajouter_defaut_niveau2
+                    if ($pathinfo === '/gmao/defaut_niveau2/ajouter') {
+                        return array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\DefautNiveau2Controller::ajouterDefautNiveau2Action',  '_route' => 'gmao_moulage_ajouter_defaut_niveau2',);
+                    }
+
+                    // gmao_moulage_liste_defaut_niveau2
+                    if (0 === strpos($pathinfo, '/gmao/defaut_niveau2/liste') && preg_match('#^/gmao/defaut_niveau2/liste(?:/(?P<page>\\d*))?$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_liste_defaut_niveau2')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\DefautNiveau2Controller::allDefautNiveau2Action',  'page' => 1,));
+                    }
+
+                    // gmao_moulage_modifier_defaut_niveau2
+                    if (0 === strpos($pathinfo, '/gmao/defaut_niveau2/modifier') && preg_match('#^/gmao/defaut_niveau2/modifier/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_modifier_defaut_niveau2')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\DefautNiveau2Controller::modifierDefautNiveau2Action',));
+                    }
+
+                    // gmao_moulage_supprimer_defaut_niveau2
+                    if (0 === strpos($pathinfo, '/gmao/defaut_niveau2/supprimer') && preg_match('#^/gmao/defaut_niveau2/supprimer/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_supprimer_defaut_niveau2')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\DefautNiveau2Controller::supprimerDefautNiveau2Action',));
+                    }
+
+                }
+
+            }
+
         }
 
         // homepage

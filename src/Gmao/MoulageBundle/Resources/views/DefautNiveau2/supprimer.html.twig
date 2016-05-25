@@ -1,0 +1,26 @@
+{% extends "GmaoMoulageBundle::layout.html.twig" %}
+
+{% block title %}
+  Supprimer nature de défaut - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2 class="ui dividing header"> Supprimer la nature de défaut</h2>
+
+  <div class="well">
+    <form method="post" action="{{ path('gmao_moulage_supprimer_defaut_niveau2', {'id': def_niv2.id}) }}"  >
+      Êtes-vous sûr de vouloir supprimer définitivement cette nature de défaut?
+      <button type="submit" class="negative ui button" >Valider</button>
+    </form>
+  </div>
+
+  <p>
+    <a href="{{ path('gmao_moulage_liste_defaut_niveau2') }}" class="ui orange button">
+      <i class="glyphicon glyphicon-arrow-left"></i>
+      Retour vers la page liste nature de défaut
+    </a>
+  </p>
+
+
+{% endblock %}

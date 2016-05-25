@@ -144,3 +144,26 @@ gmao_moulage_supprimer_defaut_niveau1:
     defaults: { _controller: GmaoMoulageBundle:DefautNiveau1:supprimerDefautNiveau1 }
     requirements:
       id: \d+
+ 
+ # Routes defaut Niveau2
+gmao_moulage_ajouter_defaut_niveau2:
+    path:     /defaut_niveau2/ajouter
+    defaults: { _controller: GmaoMoulageBundle:DefautNiveau2:ajouterDefautNiveau2 }
+
+gmao_moulage_liste_defaut_niveau2:
+    path:     /defaut_niveau2/liste/{page}
+    defaults: { _controller: GmaoMoulageBundle:DefautNiveau2:allDefautNiveau2, page: 1 }
+    requirements:
+      page: \d*
+
+gmao_moulage_modifier_defaut_niveau2:
+    path: /defaut_niveau2/modifier/{id}
+    defaults: { _controller: GmaoMoulageBundle:DefautNiveau2:modifierDefautNiveau2 }
+    requirements:
+      id: \d+
+
+gmao_moulage_supprimer_defaut_niveau2:
+    path: /defaut_niveau2/supprimer/{id}
+    defaults: { _controller: GmaoMoulageBundle:DefautNiveau2:supprimerDefautNiveau2 }
+    requirements:
+      id: \d+

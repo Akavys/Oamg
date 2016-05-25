@@ -1,0 +1,40 @@
+<?php
+
+namespace Gmao\MoulageBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * DefautNiveau2
+ *
+ * @ORM\Table(name="defaut_niveau2")
+ * @ORM\Entity(repositoryClass="Gmao\MoulageBundle\Repository\DefautNiveau2Repository")
+ */
+class DefautNiveau2 {
+	/**
+	 *
+	 * @var int @ORM\Column(name="id", type="integer")
+	 *      @ORM\Id
+	 *      @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	private $id;
+	
+	/**
+	 *
+	 * @var string @ORM\Column(name="nomDefautNiveau2", type="string", length=255)
+	 */
+	private $nomDefautNiveau2;
+	
+	/**
+	 *
+	 * @var bool @ORM\Column(name="etatDefautNiveau2", type="boolean")
+	 */
+	private $etatDefautNiveau2;
+	
+    /**
+    * @ORM\ManyToMany(targetEntity="DefautNiveau1", cascade={"persist"})
+    */
+	private $defautsNiveau1;
+	
+	
+}

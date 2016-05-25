@@ -2,12 +2,10 @@
 
 namespace Gmao\MoulageBundle\Controller;
 
-use Gmao\MoulageBundle\Entity\Equipe;
-use Gmao\MoulageBundle\Form\EquipeType;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 use Gmao\MoulageBundle\Entity\DefautNiveau1;
 use Gmao\MoulageBundle\Form\DefautNiveau1Type;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefautNiveau1Controller extends Controller {
 

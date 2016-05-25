@@ -13,7 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
 class DefautNiveau2 {
 	/**
 	 *
-	 * @var int @ORM\Column(name="id", type="integer")
+	 * @var int 
+	 *      @ORM\Column(name="id", type="integer")
 	 *      @ORM\Id
 	 *      @ORM\GeneratedValue(strategy="AUTO")
 	 */
@@ -21,18 +22,20 @@ class DefautNiveau2 {
 	
 	/**
 	 *
-	 * @var string @ORM\Column(name="nomDefautNiveau2", type="string", length=255)
+	 * @var string 
+	 *     @ORM\Column(name="nomDefautNiveau2", type="string", length=255)
 	 */
 	private $nomDefautNiveau2;
 	
 	/**
 	 *
-	 * @var bool @ORM\Column(name="etatDefautNiveau2", type="boolean")
+	 * @var bool 
+	 *     @ORM\Column(name="etatDefautNiveau2", type="boolean")
 	 */
 	private $etatDefautNiveau2;
 	
     /**
-    * @ORM\ManyToMany(targetEntity="DefautNiveau1", cascade={"persist"})
+    *      @ORM\ManyToMany(targetEntity="DefautNiveau1", cascade={"persist"})
     */
 	private $defautsNiveau1;
 	

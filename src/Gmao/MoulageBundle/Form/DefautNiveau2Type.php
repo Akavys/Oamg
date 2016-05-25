@@ -22,7 +22,7 @@ class DefautNiveau2Type extends AbstractType
         $builder
             ->add('nomDefautNiveau2', TextType::class, array('label'=>"Nom nature de défaut", 'attr' => array('placeholder' => 'Ex.: Bavure')))
             ->add('etatDefautNiveau2', CheckboxType::class, array('required'=>false, 'label'=>"Etat nature de défaut")) 
-            ->add('defautNiveau1', EntityType::class, array(
+            ->add('defautsNiveau1', EntityType::class, array(
             		'class' => 'GmaoMoulageBundle:DefautNiveau1',
             		'choice_label' => 'nomDefautNiveau1',
             		'multiple' => true,

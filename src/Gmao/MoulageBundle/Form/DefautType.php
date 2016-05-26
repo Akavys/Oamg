@@ -20,10 +20,7 @@ class DefautType extends AbstractType {
 	 * @param array $options        	
 	 */
 	public function buildForm(FormBuilderInterface $builder, array $options) {
-		//$idDefautNiveau1 = 2;
-		
-		$builder
-		->add ( 'defautNiveau1', EntityType::class, array (
+		$builder->add ( 'defautNiveau1', EntityType::class, array (
 				'label' => "Type de défaut",
 				'class' => 'GmaoMoulageBundle:DefautNiveau1',
 				'choice_label' => 'nomDefautNiveau1',
@@ -31,98 +28,41 @@ class DefautType extends AbstractType {
 				'query_builder' => function (DefautNiveau1Repository $repo_dn1) {
 					return $repo_dn1->getLsTrueDefautNiveau1 ();
 				} 
-		) )
-// 		->add ( 'defautNiveau2', EntityType::class, array (
-// 				'label' => "Nature de défaut",
-// 				'class' => 'GmaoMoulageBundle:DefautNiveau2',
-// 				'choice_label' => 'nomDefautNiveau2',
-// 				'multiple' => false,
-// 				'query_builder' => function (DefautNiveau2Repository $repo_dn2) use ($idDefautNiveau1) {
-// 					return $repo_dn2->getLsTrueDefautNiveau2 ( $idDefautNiveau1 );
-// 				} 
-// 		) )
-;
-		
-		
-		
-		
+		) );
 		
 		$formModifier = function (FormInterface $form, DefautNiveau1 $defautNiveau1 = null) {
-		
 			
-			$defautNiveau1 = null === $defautNiveau1 ? array() : $defautNiveau1->getId();
-		
-			var_dump($defautNiveau1);
-			$form->add('defautNiveau2', EntityType::class, array(
-				'label' => "Nature de défaut",
-				'class' => 'GmaoMoulageBundle:DefautNiveau2',
-				'choice_label' => 'nomDefautNiveau2',
-				'multiple' => false,
-				'query_builder' => function (DefautNiveau2Repository $repo_dn2) use ($defautNiveau1) {
-					return $repo_dn2->getLsTrueDefautNiveau2 ( $defautNiveau1 );
-				} ,
-				));
+			$defautNiveau1 = null === $defautNiveau1 ? array () : $defautNiveau1->getId ();
+			
+			$form->add ( 'defautNiveau2', EntityType::class, array (
+					'label' => "Nature de défaut",
+					'class' => 'GmaoMoulageBundle:DefautNiveau2',
+					'choice_label' => 'nomDefautNiveau2',
+					'multiple' => false,
+					'query_builder' => function (DefautNiveau2Repository $repo_dn2) use ($defautNiveau1) {
+						return $repo_dn2->getLsTrueDefautNiveau2 ( $defautNiveau1 );
+					} 
+			) );
 		};
 		
+		$builder->addEventListener ( FormEvents::PRE_SET_DATA, function (FormEvent $event) use ($formModifier) {
+			
+			// this would be your entity, i.e. SportMeetup
+			$data = $event->getData ();
+			
+			$formModifier ( $event->getForm (), $data->getId () );
+		} );
 		
-		$builder->addEventListener(
-				FormEvents::PRE_SET_DATA,
-				function (FormEvent $event) use ($formModifier) {
-					 
-					// this would be your entity, i.e. SportMeetup
-					$data = $event->getData();
-		
-					$formModifier($event->getForm(), $data->getId());
-				}
-				);
-		
-		$builder->get('defautNiveau1')->addEventListener(
-				FormEvents::POST_SUBMIT,
-				function (FormEvent $event) use ($formModifier) {
-					// It's important here to fetch $event->getForm()->getData(), as
-					// $event->getData() will get you the client data (that is, the ID)
-					$defautNiveau1 = $event->getForm()->getData();
-		
-					// since we've added the listener to the child, we'll have to pass on
-					// the parent to the callback functions!
-					$formModifier($event->getForm()->getParent(), $defautNiveau1);
-				}
-				);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		//$builder->addEventListener(FormEvents::PRE_SUBMIT, array($this, 'onPreSubmit'));
+		$builder->get ( 'defautNiveau1' )->addEventListener ( FormEvents::POST_SUBMIT, function (FormEvent $event) use ($formModifier) {
+			// It's important here to fetch $event->getForm()->getData(), as
+			// $event->getData() will get you the client data (that is, the ID)
+			$defautNiveau1 = $event->getForm ()->getData ();
+			
+			// since we've added the listener to the child, we'll have to pass on
+			// the parent to the callback functions!
+			$formModifier ( $event->getForm ()->getParent (), $defautNiveau1 );
+		} );
 	}
-	
-// 	public function onPreSubmit(FormEvent $event) {
-// 		$form = $event->getForm();
-// 		$data = $event->getData();
-	
-// 		$defautNiveau1Id = $data['defautNiveau1'];
-// 		if($defautNiveau1Id != null){
-// 			$form->remove('defautNiveau2');
-// 			$form->add ( 'defautNiveau2', EntityType::class, array (
-// 				'label' => "Nature de défaut",
-// 				'class' => 'GmaoMoulageBundle:DefautNiveau2',
-// 				'choice_label' => 'nomDefautNiveau2',
-// 				'multiple' => false,
-// 				'query_builder' => function (DefautNiveau2Repository $repo_dn2) use ($defautNiveau1Id) {
-// 					return $repo_dn2->getLsTrueDefautNiveau2 ( $defautNiveau1Id );
-// 				} 
-// 		) );
-// 		}
-// 	}
 	
 	/**
 	 *

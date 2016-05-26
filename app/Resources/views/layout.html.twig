@@ -15,7 +15,21 @@
 <link rel="stylesheet" href="{{ asset('css/semantic.min.css') }}"
 	type="text/css" />
 
+{% endblock %} 
+
+{% block javascripts %}
+	
+	<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript"
+		src="{{ asset('js/bootstrap-paginator.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+	
+	<!-- semantic ui -->
+	<script type="text/javascript" src="{{ asset('js/semantic.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/semantic.min.js') }}"></script>
+
 {% endblock %}
+
 </head>
 
 <body>
@@ -189,62 +203,7 @@
 			<p>GMAO Moulage - DELPHI CONNECTION SYSTEMS FRANCE</p>
 		</footer>
 	</div>
-	{% block javascripts %}
-	<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript"
-		src="{{ asset('js/bootstrap-paginator.min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
 
-	<!-- semantic ui -->
-	<script type="text/javascript" src="{{ asset('js/semantic.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/semantic.min.js') }}"></script>
-
-
-
-
-
-    
-    
-    
-    <script>
-var $defautNiveau1 = $('#defaut_defautNiveau1');
-// When sport gets selected ...
-$defautNiveau1.change(function() {
-  // ... retrieve the corresponding form.
-  var $form = $(this).closest('form');
-  // Simulate form data, but only include the selected sport value.
-  var data = {};
-  data[$defautNiveau1.attr('name')] = $defautNiveau1.val();
-  // Submit data via AJAX to the form's action path.
-  $.ajax({
-    url : $form.attr('action'),
-    type: $form.attr('method'),
-    data : data,
-    success: function(html) {
-      // Replace current position field ...
-      $('#defaut_defautNiveau2').replaceWith(
-        // ... with the returned one from the AJAX response.
-        $(html).find('#defaut_defautNiveau2')
-      );
-      // Position field now displays the appropriate positions.
-    }
-  });
-});
-</script>
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-	{% endblock %} {% block javascriptsss %} {% endblock %}
+	{% block javascriptsss %} {% endblock %}
 </body>
 </html>

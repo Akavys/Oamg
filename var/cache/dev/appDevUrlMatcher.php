@@ -303,11 +303,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_supprimer_defaut')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\DefautController::supprimerDefautAction',));
                 }
 
-                // gmao_moulage_ajaxtest_defaut
-                if ($pathinfo === '/gmao/defaut/ajax_test') {
-                    return array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\DefautController::testAjaxAction',  '_route' => 'gmao_moulage_ajaxtest_defaut',);
-                }
-
             }
 
         }

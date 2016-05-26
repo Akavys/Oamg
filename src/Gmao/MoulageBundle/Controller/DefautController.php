@@ -103,42 +103,6 @@ class DefautController extends Controller {
 				'nombrePage' => ceil ( count ( $defs ) / 10 ) 
 		) );
 	}
-	public function testAjaxAction(Request $request) {
-		$defautNiveau1Id = $request->request->get ( 'idDefautNiveau1' );
-		//$defautNiveau1Id = $request->request->get ( 'defautNiveau1_id' );
-		
-		$em = $this->getDoctrine ()->getManager ();
-		
-		$rsm = new ResultSetMapping ();
-		$rsm->addScalarResult ( 'id', 'id' );
-		$rsm->addScalarResult ( 'nomDefautNiveau2', 'nomDefautNiveau2' );
-		
-		$sql = "SELECT defaut_niveau2.* FROM defaut_niveau2 
-				INNER JOIN defaut_niveau2_defaut_niveau1 
-				ON defaut_niveau2.id = defaut_niveau2_defaut_niveau1.defaut_niveau2_id 
-				INNER JOIN defaut_niveau1 ON defaut_niveau2_defaut_niveau1.defaut_niveau1_id = defaut_niveau1.id 
-				WHERE 1 = 1 ";
-		
-		if ($defautNiveau1Id != '')
-			$sql .= " AND defaut_niveau1.id = :defautNiveau1_id ";
-		
-		$query = $em->createNativeQuery ( $sql, $rsm );
-		
-		if ($defautNiveau1Id != '')
-			$query->setParameter ( 'defautNiveau1_id', $defautNiveau1Id );
-		
-		$defautsNiveau2 = $query->getResult ();
-		
-		$defautsNiveau2List = array ();
-		foreach ( $defautsNiveau2 as $def_niv2 ) {
-			$p = array ();
-			$p ['id'] = $def_niv2['id'];
-			$p ['nomDefautNiveau2'] = $def_niv2['nomDefautNiveau2'];
-			$defautsNiveau2List [] = $p;
-		}
-		
-		return new JsonResponse ( $defautsNiveau2List );
-	}
 }
 
 ?>

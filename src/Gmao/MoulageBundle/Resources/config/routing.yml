@@ -190,7 +190,3 @@ gmao_moulage_supprimer_defaut:
     defaults: { _controller: GmaoMoulageBundle:Defaut:supprimerDefaut }
     requirements:
       id: \d+
-      
-gmao_moulage_ajaxtest_defaut:
-    path:     /defaut/ajax_test
-    defaults: { _controller: GmaoMoulageBundle:Defaut:testAjax } 

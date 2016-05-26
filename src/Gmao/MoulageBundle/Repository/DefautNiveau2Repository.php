@@ -25,4 +25,13 @@ class DefautNiveau2Repository extends \Doctrine\ORM\EntityRepository
 		return new Paginator ( $query );
 	}
 	
+	public function getLsTrueDefautNiveau2($idDefautNiveau1) {
+		$qb = $this->createQueryBuilder ( 'dn2' )
+		->join('dn2.defautsNiveau1', 'dn1')
+		->where ( 'dn2.etatDefautNiveau2 = 1' )
+		->andWhere('dn1.id = :idDefautNiveau1')
+		->setParameter('idDefautNiveau1', $idDefautNiveau1);
+		return $qb;
+	}
+	
 }

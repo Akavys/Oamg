@@ -1,0 +1,26 @@
+{% extends "GmaoMoulageBundle::layout.html.twig" %}
+
+{% block title %}
+  Supprimer défaut - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2 class="ui dividing header"> Supprimer ce défaut</h2>
+
+  <div class="well">
+    <form method="post" action="{{ path('gmao_moulage_supprimer_defaut', {'id': def.id}) }}"  >
+      Êtes-vous sûr de vouloir supprimer définitivement ce défaut?
+      <button type="submit" class="negative ui button" >Valider</button>
+    </form>
+  </div>
+
+  <p>
+    <a href="{{ path('gmao_moulage_liste_defaut') }}" class="ui orange button">
+      <i class="glyphicon glyphicon-arrow-left"></i>
+      Retour vers la page liste des défauts
+    </a>
+  </p>
+
+
+{% endblock %}

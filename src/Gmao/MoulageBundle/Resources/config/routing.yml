@@ -167,3 +167,30 @@ gmao_moulage_supprimer_defaut_niveau2:
     defaults: { _controller: GmaoMoulageBundle:DefautNiveau2:supprimerDefautNiveau2 }
     requirements:
       id: \d+
+
+ # Routes Defaut
+gmao_moulage_ajouter_defaut:
+    path:     /defaut/ajouter
+    defaults: { _controller: GmaoMoulageBundle:Defaut:ajouterDefaut }
+
+gmao_moulage_liste_defaut:
+    path:     /defaut/liste/{page}
+    defaults: { _controller: GmaoMoulageBundle:Defaut:allDefaut, page: 1 }
+    requirements:
+      page: \d*
+
+gmao_moulage_modifier_defaut:
+    path: /defaut/modifier/{id}
+    defaults: { _controller: GmaoMoulageBundle:Defaut:modifierDefaut }
+    requirements:
+      id: \d+
+
+gmao_moulage_supprimer_defaut:
+    path: /defaut/supprimer/{id}
+    defaults: { _controller: GmaoMoulageBundle:Defaut:supprimerDefaut }
+    requirements:
+      id: \d+
+      
+gmao_moulage_ajaxtest_defaut:
+    path:     /defaut/ajax_test
+    defaults: { _controller: GmaoMoulageBundle:Defaut:testAjax } 

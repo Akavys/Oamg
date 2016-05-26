@@ -125,6 +125,18 @@
 							<li><a href="{{ path('gmao_moulage_ajouter_defaut_niveau2') }}">Ajouter
 									nature défaut</a></li>
 						</ul></li>
+					<li class="dropdown"><a
+						href="{{ path('gmao_moulage_liste_defaut', {'page': 1}) }}"
+						class="dropdown-toggle" data-toggle="dropdown" role="button"
+						aria-haspopup="true" aria-expanded="false">Défaut <span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a
+								href="{{ path('gmao_moulage_liste_defaut', {'page': 1}) }}">
+									Défaut</a></li>
+							<li><a href="{{ path('gmao_moulage_ajouter_defaut') }}">Ajouter
+									défaut</a></li>
+						</ul></li>
 				</ul>
 
 			</div>
@@ -156,10 +168,15 @@
 					<li><a href="{{ path('gmao_moulage_liste_equipe') }}">Équipe</a></li>
 				</ul>
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="{{ path('gmao_moulage_liste_defaut_niveau1') }}">Type de défaut</a></li>
+					<li><a href="{{ path('gmao_moulage_liste_defaut_niveau1') }}">Type
+							de défaut</a></li>
 				</ul>
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="{{ path('gmao_moulage_liste_defaut_niveau2') }}">Nature de défaut</a></li>
+					<li><a href="{{ path('gmao_moulage_liste_defaut_niveau2') }}">Nature
+							de défaut</a></li>
+				</ul>
+				<ul class="nav nav-pills nav-stacked">
+					<li><a href="{{ path('gmao_moulage_liste_defaut') }}"> Défaut</a></li>
 				</ul>
 			</div>
 			<div id="content" class="col-sm-9 col-md-10 main">{% block body %} {%
@@ -182,6 +199,54 @@
 	<script type="text/javascript" src="{{ asset('js/semantic.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/semantic.min.js') }}"></script>
 
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        var url             = "{{ path('gmao_moulage_ajaxtest_defaut') }}";
+        var defaut_niveau1Element     = '#defaut_defautNiveau1';
+        var defaut_niveau2Element   = '#defaut_defautNiveau2';
+
+        $(defaut_niveau1Element).on('change', function(){
+            var defaut_niveau1_id = $(this).val();
+            
+            $.ajax({  type: "POST",
+                url: url,
+                data: {'idDefautNiveau1':defaut_niveau1_id},
+                dataType: 'JSON',
+                timeout: 30000,
+                success: function (data) {
+                    
+                    //réinitialise la liste des joueurs
+                    $(defaut_niveau2Element).html('<option value> -- Tous -- </option>');
+
+                    //met à jour la liste des joueurs
+                    $.each(data, function(index){
+                            var id      = data[index].id;
+                            var name    = data[index].nomDefautNiveau2;
+                            $(defaut_niveau2Element).append('<option value="'+id+'">'+name+'</option>');
+                    });
+                },
+                error: function(){
+                    alert('Pas Bien NON NON!');
+                }
+            });
+        });
+    });
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 	{% endblock %} {% block javascriptsss %} {% endblock %}
 </body>
 </html>

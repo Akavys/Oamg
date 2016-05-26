@@ -202,40 +202,38 @@
 
 
 
-<script type="text/javascript">
 
-    $(document).ready(function(){
-        var url             = "{{ path('gmao_moulage_ajaxtest_defaut') }}";
-        var defaut_niveau1Element     = '#defaut_defautNiveau1';
-        var defaut_niveau2Element   = '#defaut_defautNiveau2';
+    
+    
+    
+    <script>
+var $defautNiveau1 = $('#defaut_defautNiveau1');
+// When sport gets selected ...
+$defautNiveau1.change(function() {
+  // ... retrieve the corresponding form.
+  var $form = $(this).closest('form');
+  // Simulate form data, but only include the selected sport value.
+  var data = {};
+  data[$defautNiveau1.attr('name')] = $defautNiveau1.val();
+  // Submit data via AJAX to the form's action path.
+  $.ajax({
+    url : $form.attr('action'),
+    type: $form.attr('method'),
+    data : data,
+    success: function(html) {
+      // Replace current position field ...
+      $('#defaut_defautNiveau2').replaceWith(
+        // ... with the returned one from the AJAX response.
+        $(html).find('#defaut_defautNiveau2')
+      );
+      // Position field now displays the appropriate positions.
+    }
+  });
+});
+</script>
 
-        $(defaut_niveau1Element).on('change', function(){
-            var defaut_niveau1_id = $(this).val();
-            
-            $.ajax({  type: "POST",
-                url: url,
-                data: {'idDefautNiveau1':defaut_niveau1_id},
-                dataType: 'JSON',
-                timeout: 30000,
-                success: function (data) {
-                    
-                    //réinitialise la liste des joueurs
-                    $(defaut_niveau2Element).html('<option value> -- Tous -- </option>');
 
-                    //met à jour la liste des joueurs
-                    $.each(data, function(index){
-                            var id      = data[index].id;
-                            var name    = data[index].nomDefautNiveau2;
-                            $(defaut_niveau2Element).append('<option value="'+id+'">'+name+'</option>');
-                    });
-                },
-                error: function(){
-                    alert('Pas Bien NON NON!');
-                }
-            });
-        });
-    });
-    </script>
+
     
     
     

@@ -10,4 +10,12 @@ namespace Gmao\MoulageBundle\Repository;
  */
 class AlveoleRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function getLsAlveoleTrueParMoule($idMoule) {
+		$qb = $this->createQueryBuilder ( 'alv' )
+		->join('alv.moule_alveole', 'moule_alv')
+		->where ( 'alv.etatAlveole = 1' )
+		->andWhere('moule_alv.id = :idMoule')
+		->setParameter('idMoule', $idMoule);
+		return $qb;
+	}
 }

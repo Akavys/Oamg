@@ -12,6 +12,8 @@ use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormInterface;
 use Gmao\MoulageBundle\Entity\DefautNiveau1;
+use Gmao\MoulageBundle\Repository\EmpreinteRepository;
+use Gmao\MoulageBundle\Repository\AlveoleRepository;
 
 class DefautType extends AbstractType {
 	/**
@@ -22,13 +24,31 @@ class DefautType extends AbstractType {
 	public function buildForm(FormBuilderInterface $builder, array $options) {
 		$builder->add ( 'defautNiveau1', EntityType::class, array (
 				'label' => "Type de défaut",
+				'placeholder' => "Type défaut",
 				'class' => 'GmaoMoulageBundle:DefautNiveau1',
 				'choice_label' => 'nomDefautNiveau1',
 				'multiple' => false,
 				'query_builder' => function (DefautNiveau1Repository $repo_dn1) {
 					return $repo_dn1->getLsTrueDefautNiveau1 ();
 				} 
-		) );
+		) )->add ( 'empreintes', EntityType::class, array (
+				'class' => 'GmaoMoulageBundle:Empreinte',
+				'choice_label' => 'nomEmpreinte',
+				'multiple' => true,
+				'expanded' => true,
+				'query_builder' => function (EmpreinteRepository $repo_emp) {
+					return $repo_emp->getLsEmpreinteTrueParMoule ( 1 );
+				} 
+		) )->add ( 'alveoles', EntityType::class, array (
+				'class' => 'GmaoMoulageBundle:Alveole',
+				'choice_label' => 'nomAlveole',
+				'multiple' => true,
+				'expanded' => true,
+				'query_builder' => function (AlveoleRepository $repo_alv) {
+					return $repo_alv->getLsAlveoleTrueParMoule ( 1 );
+				} 
+		) )->add ( 'imageDefaut', ImageDefautType::class)
+		;
 		
 		$formModifier = function (FormInterface $form, DefautNiveau1 $defautNiveau1 = null) {
 			
@@ -36,6 +56,7 @@ class DefautType extends AbstractType {
 			
 			$form->add ( 'defautNiveau2', EntityType::class, array (
 					'label' => "Nature de défaut",
+					'placeholder' => "Nature défaut",
 					'class' => 'GmaoMoulageBundle:DefautNiveau2',
 					'choice_label' => 'nomDefautNiveau2',
 					'multiple' => false,
@@ -62,6 +83,8 @@ class DefautType extends AbstractType {
 			// the parent to the callback functions!
 			$formModifier ( $event->getForm ()->getParent (), $defautNiveau1 );
 		} );
+		
+		$builder;
 	}
 	
 	/**

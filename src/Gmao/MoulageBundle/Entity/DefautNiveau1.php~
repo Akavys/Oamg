@@ -1,0 +1,101 @@
+<?php
+
+namespace Gmao\MoulageBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * DefautNiveau1
+ *
+ * @ORM\Table(name="defaut_niveau1")
+ * @ORM\Entity(repositoryClass="Gmao\MoulageBundle\Repository\DefautNiveau1Repository")
+ */
+class DefautNiveau1
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomDefautNiveau1", type="string", length=255)
+     */
+    private $nomDefautNiveau1;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="etatDefautNiveau1", type="boolean")
+     */
+    private $etatDefautNiveau1;
+
+    /**
+     *      @ORM\ManyToMany(targetEntity="DefautNiveau2", cascade={"persist"})
+     */
+    private $defautsNiveau2;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nomDefautNiveau1
+     *
+     * @param string $nomDefautNiveau1
+     *
+     * @return DefautNiveau1
+     */
+    public function setNomDefautNiveau1($nomDefautNiveau1)
+    {
+        $this->nomDefautNiveau1 = $nomDefautNiveau1;
+    
+        return $this;
+    }
+
+    /**
+     * Get nomDefautNiveau1
+     *
+     * @return string
+     */
+    public function getNomDefautNiveau1()
+    {
+        return $this->nomDefautNiveau1;
+    }
+
+    /**
+     * Set etatDefautNiveau1
+     *
+     * @param boolean $etatDefautNiveau1
+     *
+     * @return DefautNiveau1
+     */
+    public function setEtatDefautNiveau1($etatDefautNiveau1)
+    {
+        $this->etatDefautNiveau1 = $etatDefautNiveau1;
+    
+        return $this;
+    }
+
+    /**
+     * Get etatDefautNiveau1
+     *
+     * @return boolean
+     */
+    public function getEtatDefautNiveau1()
+    {
+        return $this->etatDefautNiveau1;
+    }
+}
+

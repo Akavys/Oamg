@@ -10,4 +10,12 @@ namespace Gmao\MoulageBundle\Repository;
  */
 class EmpreinteRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function getLsEmpreinteTrueParMoule($idMoule) {
+		$qb = $this->createQueryBuilder ( 'emp' )
+		->join('emp.moule_empreinte', 'moule_emp')
+		->where ( 'emp.etatEmpreinte = 1' )
+		->andWhere('moule_emp.id = :idMoule')
+		->setParameter('idMoule', $idMoule);
+		return $qb;
+	}
 }

@@ -36,6 +36,21 @@ class Defaut
      *  @ORM\JoinColumn(nullable=false)
      */
     private $defautNiveau2;
+    
+    /**
+     *  @ORM\ManyToMany(targetEntity="Empreinte", cascade={"persist"})
+     */
+    private $empreintes;
+    
+    /**
+     *  @ORM\ManyToMany(targetEntity="Alveole", cascade={"persist"})
+     */
+    private $alveoles;
+    
+    /**
+     *   @ORM\OneToOne(targetEntity="ImageDefaut", cascade={"persist"})
+     */
+	private $imageDefaut;
 
 
     /**
@@ -70,5 +85,104 @@ class Defaut
     public function getDefautNiveau1()
     {
         return $this->defautNiveau1;
+    }
+
+    /**
+     * Set defautNiveau2
+     *
+     * @param \Gmao\MoulageBundle\Entity\DefautNiveau2 $defautNiveau2
+     *
+     * @return Defaut
+     */
+    public function setDefautNiveau2(\Gmao\MoulageBundle\Entity\DefautNiveau2 $defautNiveau2)
+    {
+        $this->defautNiveau2 = $defautNiveau2;
+    
+        return $this;
+    }
+
+    /**
+     * Get defautNiveau2
+     *
+     * @return \Gmao\MoulageBundle\Entity\DefautNiveau2
+     */
+    public function getDefautNiveau2()
+    {
+        return $this->defautNiveau2;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->empreintes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add empreinte
+     *
+     * @param \Gmao\MoulageBundle\Entity\Empreinte $empreinte
+     *
+     * @return Defaut
+     */
+    public function addEmpreinte(\Gmao\MoulageBundle\Entity\Empreinte $empreinte)
+    {
+        $this->empreintes[] = $empreinte;
+    
+        return $this;
+    }
+
+    /**
+     * Remove empreinte
+     *
+     * @param \Gmao\MoulageBundle\Entity\Empreinte $empreinte
+     */
+    public function removeEmpreinte(\Gmao\MoulageBundle\Entity\Empreinte $empreinte)
+    {
+        $this->empreintes->removeElement($empreinte);
+    }
+
+    /**
+     * Get empreintes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEmpreintes()
+    {
+        return $this->empreintes;
+    }
+
+    /**
+     * Add alveole
+     *
+     * @param \Gmao\MoulageBundle\Entity\Alveole $alveole
+     *
+     * @return Defaut
+     */
+    public function addAlveole(\Gmao\MoulageBundle\Entity\Alveole $alveole)
+    {
+        $this->alveoles[] = $alveole;
+    
+        return $this;
+    }
+
+    /**
+     * Remove alveole
+     *
+     * @param \Gmao\MoulageBundle\Entity\Alveole $alveole
+     */
+    public function removeAlveole(\Gmao\MoulageBundle\Entity\Alveole $alveole)
+    {
+        $this->alveoles->removeElement($alveole);
+    }
+
+    /**
+     * Get alveoles
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAlveoles()
+    {
+        return $this->alveoles;
     }
 }

@@ -7,8 +7,6 @@ use Gmao\MoulageBundle\Entity\DefautNiveau2;
 use Gmao\MoulageBundle\Form\DefautType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Doctrine\ORM\Query\ResultSetMapping;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DefautController extends Controller {
 	public function ajouterDefautAction(Request $request) {

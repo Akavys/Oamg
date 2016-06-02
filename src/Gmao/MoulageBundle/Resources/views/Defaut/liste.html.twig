@@ -59,6 +59,14 @@
             <td>{{ d.id }}</td>
 {#             <td>{{ def_niv2.nomDefautNiveau2 }}#}
 {# 			<td>{% for dn1 in def_niv2.defautsNiveau1 %} {{ dn1.nomDefautNiveau1 }} {% endfor %}</td>#}
+{% if d.imageDefaut != null %}
+<td><img src="{{ asset(d.imageDefaut.uploadDir ~ '/' ~ d.imageDefaut.id ~ '.' ~ d.imageDefaut.url) }}"
+  alt="{{ d.imageDefaut.alt }}" width="20px" height="20px" />
+{% else %}
+<td>Pas d'image</td>
+{% endif %}
+{# <td> <img src="{{ asset(d.imageDefaut ~ 'uploads/img/' ~ d.imageDefaut ~ '.' ~ d.imageDefaut) }}" alt="{{ d.imageDefaut }}"/>#}
+</td>
             <td>{% if d.id == 1 %}<h4><span class="label label-success">Active</span></h4> {% else %}<h4><span class="label label-danger">Inactive</span></h4>{% endif %}</td>
             <td><form action="{{ path('gmao_moulage_modifier_defaut', {'id': d.id }) }}" method="post" >
                   <button type="submit" class="btn btn-warning">

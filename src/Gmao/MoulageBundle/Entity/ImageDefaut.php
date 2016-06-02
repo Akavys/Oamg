@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
  *
  * @ORM\Table(name="image_defaut")
  * @ORM\Entity(repositoryClass="Gmao\MoulageBundle\Repository\ImageDefautRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class ImageDefaut {
 	/**
@@ -34,18 +35,23 @@ class ImageDefaut {
 	 * @ORM\Column(name="alt", type="string", length=255)
 	 */
 	private $alt;
-	
-	
+
 
 	private $file;
 	
 	// On ajoute cet attribut pour y stocker le nom du fichier temporairement
 	private $tempFilename;
 	
+	
+	public function getFile(){
+		return $this->file;
+	}
+	
 	// On modifie le setter de File, pour prendre en compte l'upload d'un fichier lorsqu'il en existe déjà un autre
 	public function setFile(UploadedFile $file) {
+		var_dump($file);
 		$this->file = $file;
-		
+
 		// On vérifie si on avait déjà un fichier pour cette entité
 		if (null !== $this->url) {
 			// On sauvegarde l'extension du fichier pour le supprimer plus tard

@@ -1,0 +1,21 @@
+{% extends "GmaoMoulageBundle::layout.html.twig" %}
+
+{% block title %}
+  Modifier une FNC - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2 class="ui dividing header">Modifier une FNC</h2>
+
+  {% include "GmaoMoulageBundle:Fnc:formulaire.html.twig" %}
+
+  <p>
+    <a href="{{ path('gmao_moulage_liste_fnc') }}" class="ui orange button">
+      <i class="glyphicon glyphicon-arrow-left"></i>
+      Retour vers la page liste des FNC
+    </a>
+  </p>
+
+
+{% endblock %}

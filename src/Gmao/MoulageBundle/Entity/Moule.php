@@ -94,6 +94,11 @@ class Moule
     * @ORM\ManyToMany(targetEntity="Reference", cascade={"persist"})
     */
     private $references;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Fnc", mappedBy="moule_fnc")
+     */
+    private $fncs_moule;
 
     /**
      * Constructor
@@ -443,5 +448,39 @@ class Moule
     public function getReferences()
     {
         return $this->references;
+    }
+
+    /**
+     * Add fncsMoule
+     *
+     * @param \Gmao\MoulageBundle\Entity\Fnc $fncsMoule
+     *
+     * @return Moule
+     */
+    public function addFncsMoule(\Gmao\MoulageBundle\Entity\Fnc $fncsMoule)
+    {
+        $this->fncs_moule[] = $fncsMoule;
+    
+        return $this;
+    }
+
+    /**
+     * Remove fncsMoule
+     *
+     * @param \Gmao\MoulageBundle\Entity\Fnc $fncsMoule
+     */
+    public function removeFncsMoule(\Gmao\MoulageBundle\Entity\Fnc $fncsMoule)
+    {
+        $this->fncs_moule->removeElement($fncsMoule);
+    }
+
+    /**
+     * Get fncsMoule
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFncsMoule()
+    {
+        return $this->fncs_moule;
     }
 }

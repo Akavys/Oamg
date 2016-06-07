@@ -305,6 +305,29 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            if (0 === strpos($pathinfo, '/gmao/fnc')) {
+                // gmao_moulage_ajouter_fnc
+                if ($pathinfo === '/gmao/fnc/ajouter') {
+                    return array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\FncController::ajouterFncAction',  '_route' => 'gmao_moulage_ajouter_fnc',);
+                }
+
+                // gmao_moulage_liste_fnc
+                if (0 === strpos($pathinfo, '/gmao/fnc/liste') && preg_match('#^/gmao/fnc/liste(?:/(?P<page>\\d*))?$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_liste_fnc')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\FncController::allFncAction',  'page' => 1,));
+                }
+
+                // gmao_moulage_modifier_fnc
+                if (0 === strpos($pathinfo, '/gmao/fnc/modifier') && preg_match('#^/gmao/fnc/modifier/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_modifier_fnc')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\FncController::modifierFncAction',));
+                }
+
+                // gmao_moulage_supprimer_fnc
+                if (0 === strpos($pathinfo, '/gmao/fnc/supprimer') && preg_match('#^/gmao/fnc/supprimer/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'gmao_moulage_supprimer_fnc')), array (  '_controller' => 'Gmao\\MoulageBundle\\Controller\\FncController::supprimerFncAction',));
+                }
+
+            }
+
         }
 
         // homepage

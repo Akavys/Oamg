@@ -94,6 +94,11 @@ class Moule
     * @ORM\ManyToMany(targetEntity="Reference", cascade={"persist"})
     */
     private $references;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Fnc", mappedBy="moule_fnc")
+     */
+    private $fncs_moule;
 
     /**
      * Constructor
@@ -409,5 +414,73 @@ class Moule
     public function getPresses()
     {
         return $this->presses;
+    }
+
+    /**
+     * Add reference
+     *
+     * @param \Gmao\MoulageBundle\Entity\Reference $reference
+     *
+     * @return Moule
+     */
+    public function addReference(\Gmao\MoulageBundle\Entity\Reference $reference)
+    {
+        $this->references[] = $reference;
+
+        return $this;
+    }
+
+    /**
+     * Remove reference
+     *
+     * @param \Gmao\MoulageBundle\Entity\Reference $reference
+     */
+    public function removeReference(\Gmao\MoulageBundle\Entity\Reference $reference)
+    {
+        $this->references->removeElement($reference);
+    }
+
+    /**
+     * Get references
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getReferences()
+    {
+        return $this->references;
+    }
+
+    /**
+     * Add fncsMoule
+     *
+     * @param \Gmao\MoulageBundle\Entity\Fnc $fncsMoule
+     *
+     * @return Moule
+     */
+    public function addFncsMoule(\Gmao\MoulageBundle\Entity\Fnc $fncsMoule)
+    {
+        $this->fncs_moule[] = $fncsMoule;
+    
+        return $this;
+    }
+
+    /**
+     * Remove fncsMoule
+     *
+     * @param \Gmao\MoulageBundle\Entity\Fnc $fncsMoule
+     */
+    public function removeFncsMoule(\Gmao\MoulageBundle\Entity\Fnc $fncsMoule)
+    {
+        $this->fncs_moule->removeElement($fncsMoule);
+    }
+
+    /**
+     * Get fncsMoule
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFncsMoule()
+    {
+        return $this->fncs_moule;
     }
 }

@@ -190,3 +190,26 @@ gmao_moulage_supprimer_defaut:
     defaults: { _controller: GmaoMoulageBundle:Defaut:supprimerDefaut }
     requirements:
       id: \d+
+      
+ # Routes FNC
+gmao_moulage_ajouter_fnc:
+    path:     /fnc/ajouter
+    defaults: { _controller: GmaoMoulageBundle:Fnc:ajouterFnc }
+
+gmao_moulage_liste_fnc:
+    path:     /fnc/liste/{page}
+    defaults: { _controller: GmaoMoulageBundle:Fnc:allFnc, page: 1 }
+    requirements:
+      page: \d*
+
+gmao_moulage_modifier_fnc:
+    path: /fnc/modifier/{id}
+    defaults: { _controller: GmaoMoulageBundle:Fnc:modifierFnc }
+    requirements:
+      id: \d+
+
+gmao_moulage_supprimer_fnc:
+    path: /fnc/supprimer/{id}
+    defaults: { _controller: GmaoMoulageBundle:Fnc:supprimerFnc }
+    requirements:
+      id: \d+

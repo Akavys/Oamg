@@ -28,5 +28,11 @@ class MouleRepository extends \Doctrine\ORM\EntityRepository
 
     return new Paginator($query);
   }
+  
+  
+  public function getLsTrueMoule() {
+  	$qb = $this->createQueryBuilder ( 'm' )->where ( 'm.etatMoule = 1' );
+  	return $qb;
+  }
 
 }

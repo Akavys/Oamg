@@ -151,6 +151,19 @@
 							<li><a href="{{ path('gmao_moulage_ajouter_defaut') }}">Ajouter
 									défaut</a></li>
 						</ul></li>
+						
+					<li class="dropdown"><a
+						href="{{ path('gmao_moulage_liste_fnc', {'page': 1}) }}"
+						class="dropdown-toggle" data-toggle="dropdown" role="button"
+						aria-haspopup="true" aria-expanded="false">FNC <span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a
+								href="{{ path('gmao_moulage_liste_fnc', {'page': 1}) }}">
+									FNC</a></li>
+							<li><a href="{{ path('gmao_moulage_ajouter_fnc') }}">Ajouter
+									FNC</a></li>
+						</ul></li>
 				</ul>
 
 			</div>
@@ -191,6 +204,9 @@
 				</ul>
 				<ul class="nav nav-pills nav-stacked">
 					<li><a href="{{ path('gmao_moulage_liste_defaut') }}"> Défaut</a></li>
+				</ul>
+				<ul class="nav nav-pills nav-stacked">
+					<li><a href="{{ path('gmao_moulage_liste_fnc') }}"> FNC</a></li>
 				</ul>
 			</div>
 			<div id="content" class="col-sm-9 col-md-10 main">{% block body %} {%

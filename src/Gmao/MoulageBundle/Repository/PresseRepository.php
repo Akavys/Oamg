@@ -31,4 +31,14 @@ class PresseRepository extends \Doctrine\ORM\EntityRepository {
 		$qb = $this->createQueryBuilder('p')->where('p.etatPresse = 1');
 		return $qb;
 	}
+	
+	public function getLsPresseParMoule($idMoule) {
+		$qb = $this->createQueryBuilder ( 'p' )
+		->join('p.moules', 'm')
+		->where ( 'p.etatPresse = 1' )
+		->andWhere('m.id = :idMoule')
+		->setParameter('idMoule', $idMoule);
+		return $qb;
+	}
+
 }

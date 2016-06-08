@@ -12,6 +12,9 @@ class FncController extends Controller {
   public function ajouterFncAction(Request $request) {
 
     $fnc = new Fnc();
+    
+    $fnc->setDateCreation(new \DateTime());
+    
     $form = $this->createForm(FncType::class, $fnc);
 
     if ($request->getMethod()=='POST') {

@@ -86,14 +86,15 @@ class Moule
     private $alveoles;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Presse", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Presse", cascade={"persist"}, mappedBy="moules")
      */
     private $presses;
 
     /**
-    * @ORM\ManyToMany(targetEntity="Reference", cascade={"persist"})
+    * @ORM\ManyToMany(targetEntity="Reference", cascade={"persist"}, mappedBy="moules")
     */
     private $references;
+    
     
     /**
      * @ORM\OneToMany(targetEntity="Fnc", mappedBy="moule_fnc")

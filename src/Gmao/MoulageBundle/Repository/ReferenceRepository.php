@@ -33,6 +33,17 @@ class ReferenceRepository extends \Doctrine\ORM\EntityRepository {
 		$qb = $this->createQueryBuilder('r')->where('r.etatReference = 1');
 		return $qb;
 	}
+	
+	public function getLsReferenceParMoule($idMoule) {
+		$qb = $this->createQueryBuilder ( 'r' )
+		->join('r.moules', 'm')
+		->where ( 'r.etatReference = 1' )
+		->andWhere('m.id = :idMoule')
+		->setParameter('idMoule', $idMoule);
+		return $qb;
+	}
+	
+	
 }
 
 ?>

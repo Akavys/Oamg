@@ -23,4 +23,10 @@ class EquipeRepository extends \Doctrine\ORM\EntityRepository {
 		
 		return new Paginator ( $query );
 	}
+	
+	public function getLsTrueEquipe() {
+		$qb = $this->createQueryBuilder('e')->where('e.etatEquipe = 1');
+		return $qb;
+	}
+	
 }

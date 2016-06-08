@@ -86,14 +86,15 @@ class Moule
     private $alveoles;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Presse", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Presse", cascade={"persist"}, mappedBy="moules")
      */
     private $presses;
 
     /**
-    * @ORM\ManyToMany(targetEntity="Reference", cascade={"persist"})
+    * @ORM\ManyToMany(targetEntity="Reference", cascade={"persist"}, mappedBy="moules")
     */
     private $references;
+    
     
     /**
      * @ORM\OneToMany(targetEntity="Fnc", mappedBy="moule_fnc")
@@ -108,6 +109,7 @@ class Moule
         $this->empreintes = new \Doctrine\Common\Collections\ArrayCollection();
         $this->alveoles = new \Doctrine\Common\Collections\ArrayCollection();
         $this->presses = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->references = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

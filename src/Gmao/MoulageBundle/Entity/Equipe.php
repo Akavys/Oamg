@@ -34,6 +34,11 @@ class Equipe
      * @ORM\Column(name="etatEquipe", type="boolean")
      */
     private $etatEquipe;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Fnc", mappedBy="equipe_fnc")
+     */
+    private $fncs_equipe;
 
 
     /**
@@ -93,5 +98,45 @@ class Equipe
     {
         return $this->etatEquipe;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->fncs_equipe = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add fncsEquipe
+     *
+     * @param \Gmao\MoulageBundle\Entity\Fnc $fncsEquipe
+     *
+     * @return Equipe
+     */
+    public function addFncsEquipe(\Gmao\MoulageBundle\Entity\Fnc $fncsEquipe)
+    {
+        $this->fncs_equipe[] = $fncsEquipe;
+    
+        return $this;
+    }
+
+    /**
+     * Remove fncsEquipe
+     *
+     * @param \Gmao\MoulageBundle\Entity\Fnc $fncsEquipe
+     */
+    public function removeFncsEquipe(\Gmao\MoulageBundle\Entity\Fnc $fncsEquipe)
+    {
+        $this->fncs_equipe->removeElement($fncsEquipe);
+    }
+
+    /**
+     * Get fncsEquipe
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFncsEquipe()
+    {
+        return $this->fncs_equipe;
+    }
+}

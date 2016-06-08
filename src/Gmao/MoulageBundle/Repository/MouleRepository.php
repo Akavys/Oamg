@@ -35,4 +35,13 @@ class MouleRepository extends \Doctrine\ORM\EntityRepository
   	return $qb;
   }
 
+  
+  public function getLsPresseParMoule($idMoule) {
+  	$qb = $this->createQueryBuilder ( 'p' )
+  	->join('m.presses', 'p')
+  	->where ( 'p.etatPresse = 1' )
+  	->andWhere('m.id = :idMoule')
+  	->setParameter('idMoule', $idMoule);
+  	return $qb;
+  }
 }

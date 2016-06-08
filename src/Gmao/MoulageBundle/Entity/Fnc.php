@@ -37,9 +37,27 @@ class Fnc
     
     /**
      * @ORM\ManyToOne(targetEntity="Moule", inversedBy="fncs_moule")
-     * @ORM\JoinColumn(name="fnc_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="moule_id", referencedColumnName="id")
      */
      private $moule_fnc;
+     
+     /**
+      * @ORM\ManyToOne(targetEntity="Presse", inversedBy="fncs_presse")
+      * @ORM\JoinColumn(name="presse_id", referencedColumnName="id")
+      */
+     private $presse_fnc;
+     
+     /**
+      * @ORM\ManyToOne(targetEntity="Reference", inversedBy="fncs_reference")
+      * @ORM\JoinColumn(name="reference_id", referencedColumnName="id")
+      */
+     private $reference_fnc;
+     
+     /**
+      * @ORM\ManyToOne(targetEntity="Equipe", inversedBy="fncs_equipe")
+      * @ORM\JoinColumn(name="equipe_id", referencedColumnName="id")
+      */
+     private $equipe_fnc;
 
 
     /**
@@ -122,5 +140,77 @@ class Fnc
     public function getMouleFnc()
     {
         return $this->moule_fnc;
+    }
+
+    /**
+     * Set presseFnc
+     *
+     * @param \Gmao\MoulageBundle\Entity\Presse $presseFnc
+     *
+     * @return Fnc
+     */
+    public function setPresseFnc(\Gmao\MoulageBundle\Entity\Presse $presseFnc = null)
+    {
+        $this->presse_fnc = $presseFnc;
+    
+        return $this;
+    }
+
+    /**
+     * Get presseFnc
+     *
+     * @return \Gmao\MoulageBundle\Entity\Presse
+     */
+    public function getPresseFnc()
+    {
+        return $this->presse_fnc;
+    }
+
+    /**
+     * Set referenceFnc
+     *
+     * @param \Gmao\MoulageBundle\Entity\Reference $referenceFnc
+     *
+     * @return Fnc
+     */
+    public function setReferenceFnc(\Gmao\MoulageBundle\Entity\Reference $referenceFnc = null)
+    {
+        $this->reference_fnc = $referenceFnc;
+    
+        return $this;
+    }
+
+    /**
+     * Get referenceFnc
+     *
+     * @return \Gmao\MoulageBundle\Entity\Reference
+     */
+    public function getReferenceFnc()
+    {
+        return $this->reference_fnc;
+    }
+
+    /**
+     * Set equipeFnc
+     *
+     * @param \Gmao\MoulageBundle\Entity\Equipe $equipeFnc
+     *
+     * @return Fnc
+     */
+    public function setEquipeFnc(\Gmao\MoulageBundle\Entity\Equipe $equipeFnc = null)
+    {
+        $this->equipe_fnc = $equipeFnc;
+    
+        return $this;
+    }
+
+    /**
+     * Get equipeFnc
+     *
+     * @return \Gmao\MoulageBundle\Entity\Equipe
+     */
+    public function getEquipeFnc()
+    {
+        return $this->equipe_fnc;
     }
 }

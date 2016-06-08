@@ -50,6 +50,17 @@ class Reference
      */
     private $etatReference;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Fnc", mappedBy="reference_fnc")
+     */
+    private $fncs_reference;
+    
+    /**
+     * @ORM\ManyToMany(targetEntity="Moule", inversedBy="references")
+     * @ORM\JoinTable(name="moule_reference")
+     */
+    private $moules;
+    
 
     /**
      * Get id
@@ -155,5 +166,80 @@ class Reference
     public function getEtatReference()
     {
         return $this->etatReference;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->fncs_reference = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add fncsReference
+     *
+     * @param \Gmao\MoulageBundle\Entity\Fnc $fncsReference
+     *
+     * @return Reference
+     */
+    public function addFncsReference(\Gmao\MoulageBundle\Entity\Fnc $fncsReference)
+    {
+        $this->fncs_reference[] = $fncsReference;
+    
+        return $this;
+    }
+
+    /**
+     * Remove fncsReference
+     *
+     * @param \Gmao\MoulageBundle\Entity\Fnc $fncsReference
+     */
+    public function removeFncsReference(\Gmao\MoulageBundle\Entity\Fnc $fncsReference)
+    {
+        $this->fncs_reference->removeElement($fncsReference);
+    }
+
+    /**
+     * Get fncsReference
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFncsReference()
+    {
+        return $this->fncs_reference;
+    }
+
+    /**
+     * Add moule
+     *
+     * @param \Gmao\MoulageBundle\Entity\Moule $moule
+     *
+     * @return Reference
+     */
+    public function addMoule(\Gmao\MoulageBundle\Entity\Moule $moule)
+    {
+        $this->moules[] = $moule;
+    
+        return $this;
+    }
+
+    /**
+     * Remove moule
+     *
+     * @param \Gmao\MoulageBundle\Entity\Moule $moule
+     */
+    public function removeMoule(\Gmao\MoulageBundle\Entity\Moule $moule)
+    {
+        $this->moules->removeElement($moule);
+    }
+
+    /**
+     * Get moules
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMoules()
+    {
+        return $this->moules;
     }
 }

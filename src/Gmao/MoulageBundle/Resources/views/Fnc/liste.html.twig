@@ -22,12 +22,12 @@
 
   <div class="row">
     <div class="col-sm-10 col-md-10">
-      <h2 class="ui dividing header">Liste des équipes</h2>
+      <h2 class="ui dividing header">Liste des FNC </h2>
     </div>
     <div class="col-sm-2 col-md-2" style="align-right">
-      <a class="ui primary button " href="{{ path('gmao_moulage_ajouter_equipe') }}">
+      <a class="ui primary button " href="{{ path('gmao_moulage_ajouter_fnc') }}">
         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-          Ajouter une équipe
+          Ajouter une FNC
       </a>
     </div>
   </div>
@@ -36,7 +36,10 @@
   <table id="example" class="ui celled table">
         <thead>
             <tr>
-                <th>Id équipe</th>
+                <th>Id Fnc</th>
+                <th>Moule</th>
+                <th>Référence</th>
+                <th>Presse</th>
                 <th>Équipe</th>
                 <th>Etat</th>
                 <th>Modifier</th>
@@ -45,7 +48,10 @@
         </thead>
         <tfoot>
             <tr>
-                <th>Id équipe</th>
+                <th>Id Fnc</th>
+                <th>Moule</th>
+                <th>Référence</th>
+                <th>Presse</th>
                 <th>Équipe</th>
                 <th>Etat</th>
                 <th>Modifier</th>
@@ -54,19 +60,22 @@
         </tfoot>
         <tbody>
 
-        {% for equipe in equipes %}
+        {% for fnc in fncs %}
         <tr>
-            <td>{{ equipe.id }}</td>
-            <td>{{ equipe.nomEquipe }}
-
-            <td>{% if equipe.etatEquipe == true %}<h4><span class="label label-success">Active</span></h4> {% else %}<h4><span class="label label-danger">Inactive</span></h4>{% endif %}</td>
-            <td><form action="{{ path('gmao_moulage_modifier_equipe', {'id': equipe.id }) }}" method="post" >
+            <td>{{ fnc.id }}</td>
+            <td>{{ fnc.mouleFnc.nomMoule }}</td>
+            <td>{{ fnc.referenceFnc.nomReference }}</td>
+            <td>{{ fnc.presseFnc.nomPresse }}</td>
+            <td>{{ fnc.equipeFnc.nomEquipe}}</td>
+			<td>Création</td>
+            
+            <td><form action="{{ path('gmao_moulage_modifier_fnc', {'id': fnc.id }) }}" method="post" >
                   <button type="submit" class="btn btn-warning">
                     <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                   </button>
                 </form>
             </td>
-            <td><form action="{{ path('gmao_moulage_supprimer_equipe', {'id': equipe.id }) }}" method="get" >
+            <td><form action="{{ path('gmao_moulage_supprimer_fnc', {'id': fnc.id }) }}" method="get" >
                   <button type="submit" class="btn btn-danger">
                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                   </button>
@@ -79,10 +88,10 @@
         </tbody>
     </table>
 
-      <center><div id="pag_equipe_data1"></div></center>
+      <center><div id="pag_fnc_data1"></div></center>
 
       <div id="form_num_page">
-        <form class="form-inline" id="recherche_num_page" action="{{ path('gmao_moulage_liste_equipe', {'page': 1}) }}" method="post">
+        <form class="form-inline" id="recherche_num_page" action="{{ path('gmao_moulage_liste_fnc', {'page': 1}) }}" method="post">
           <div class="form-group">
           <label for="pag">Aller à la page</label>
           <input class="form-control" id="pag" name="pag" placeholder="N°Page"></input>
@@ -102,10 +111,10 @@
       currentPage: {{page}},
       totalPages: {{nombrePage}},
       pageUrl: function(type, page, current){
-          return "{{ path('gmao_moulage_liste_equipe', {'page': 1}) }}/"+page;
+          return "{{ path('gmao_moulage_liste_fnc', {'page': 1}) }}/"+page;
       }
     }
-    $('#pag_equipe_data1').bootstrapPaginator(options);
+    $('#pag_fnc_data1').bootstrapPaginator(options);
 
 </script>
 {% endblock %}

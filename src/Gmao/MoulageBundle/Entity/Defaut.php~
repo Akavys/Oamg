@@ -51,6 +51,13 @@ class Defaut
      *   @ORM\OneToOne(targetEntity="ImageDefaut", cascade={"persist"})
      */
 	private $imageDefaut;
+	
+	/**
+	 * @ORM\ManyToOne(targetEntity="Fnc", inversedBy="defauts_fnc")
+	 * @ORM\JoinColumn(name="fnc_id", referencedColumnName="id")
+	 */
+	private $fnc_defaut;
+	
 
 
     /**
@@ -184,5 +191,29 @@ class Defaut
     public function getAlveoles()
     {
         return $this->alveoles;
+    }
+
+    /**
+     * Set imageDefaut
+     *
+     * @param \Gmao\MoulageBundle\Entity\ImageDefaut $imageDefaut
+     *
+     * @return Defaut
+     */
+    public function setImageDefaut(\Gmao\MoulageBundle\Entity\ImageDefaut $imageDefaut = null)
+    {
+        $this->imageDefaut = $imageDefaut;
+    
+        return $this;
+    }
+
+    /**
+     * Get imageDefaut
+     *
+     * @return \Gmao\MoulageBundle\Entity\ImageDefaut
+     */
+    public function getImageDefaut()
+    {
+        return $this->imageDefaut;
     }
 }

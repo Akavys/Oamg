@@ -14,6 +14,8 @@ use Symfony\Component\Form\FormInterface;
 use Gmao\MoulageBundle\Entity\Moule;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Gmao\MoulageBundle\Form\DefautType;
 
 class FncType extends AbstractType
 {
@@ -47,6 +49,7 @@ class FncType extends AbstractType
            			return $repo_e->getLsTrueEquipe();
            			}
            		) )
+           	->add('defauts_fnc', CollectionType::class, array('entry_type' => DefautType::class, 'allow_add' => true, 'allow_delete' => true))
         ;
            	
            	
@@ -81,9 +84,15 @@ class FncType extends AbstractType
            			
            		// this would be your entity, i.e. SportMeetup
            		$data = $event->getData ();
-           		//	var_dump($data);
-
-           		$formModifier ( $event->getForm (), $data->getId () );
+           		
+           		if ($data->getId() === null){
+           			$formModifier ( $event->getForm (), $data->getId () );
+           		} else {
+           			$m = new Moule();
+           			$formModifier ( $event->getForm (), $m->getId () );
+           			
+           		}
+           		
            	} );
            	
            		$builder->get ( 'moule_fnc' )->addEventListener ( FormEvents::POST_SUBMIT, function (FormEvent $event) use ($formModifier) {

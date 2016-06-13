@@ -58,8 +58,14 @@ class Fnc
       * @ORM\JoinColumn(name="equipe_id", referencedColumnName="id")
       */
      private $equipe_fnc;
+     
+     /**
+      * @ORM\OneToMany(targetEntity="Defaut", mappedBy="fnc_defaut")
+      */
+     private $defauts_fnc;
 
-
+  
+     
     /**
      * Get id
      *
@@ -212,5 +218,46 @@ class Fnc
     public function getEquipeFnc()
     {
         return $this->equipe_fnc;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->defauts_fnc = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add defautsFnc
+     *
+     * @param \Gmao\MoulageBundle\Entity\Defaut $defautsFnc
+     *
+     * @return Fnc
+     */
+    public function addDefautsFnc(\Gmao\MoulageBundle\Entity\Defaut $defautsFnc)
+    {
+        $this->defauts_fnc[] = $defautsFnc;
+    
+        return $this;
+    }
+
+    /**
+     * Remove defautsFnc
+     *
+     * @param \Gmao\MoulageBundle\Entity\Defaut $defautsFnc
+     */
+    public function removeDefautsFnc(\Gmao\MoulageBundle\Entity\Defaut $defautsFnc)
+    {
+        $this->defauts_fnc->removeElement($defautsFnc);
+    }
+
+    /**
+     * Get defautsFnc
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDefautsFnc()
+    {
+        return $this->defauts_fnc;
     }
 }

@@ -51,6 +51,13 @@ class Defaut
      *   @ORM\OneToOne(targetEntity="ImageDefaut", cascade={"persist"})
      */
 	private $imageDefaut;
+	
+	/**
+	 * @ORM\ManyToOne(targetEntity="Fnc", inversedBy="defauts_fnc")
+	 * @ORM\JoinColumn(name="fnc_id", referencedColumnName="id")
+	 */
+	private $fnc_defaut;
+	
 
 
     /**
@@ -208,5 +215,29 @@ class Defaut
     public function getImageDefaut()
     {
         return $this->imageDefaut;
+    }
+
+    /**
+     * Set fncDefaut
+     *
+     * @param \Gmao\MoulageBundle\Entity\Fnc $fncDefaut
+     *
+     * @return Defaut
+     */
+    public function setFncDefaut(\Gmao\MoulageBundle\Entity\Fnc $fncDefaut = null)
+    {
+        $this->fnc_defaut = $fncDefaut;
+    
+        return $this;
+    }
+
+    /**
+     * Get fncDefaut
+     *
+     * @return \Gmao\MoulageBundle\Entity\Fnc
+     */
+    public function getFncDefaut()
+    {
+        return $this->fnc_defaut;
     }
 }

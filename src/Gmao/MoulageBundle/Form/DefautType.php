@@ -14,6 +14,7 @@ use Symfony\Component\Form\FormInterface;
 use Gmao\MoulageBundle\Entity\DefautNiveau1;
 use Gmao\MoulageBundle\Repository\EmpreinteRepository;
 use Gmao\MoulageBundle\Repository\AlveoleRepository;
+use Gmao\MoulageBundle\Entity\Defaut;
 
 class DefautType extends AbstractType {
 	/**
@@ -47,8 +48,7 @@ class DefautType extends AbstractType {
 				'query_builder' => function (AlveoleRepository $repo_alv) {
 					return $repo_alv->getLsAlveoleTrueParMoule ( 1 );
 				} 
-		) )->add ( 'imageDefaut', ImageDefautType::class)
-		;
+		) )->add ( 'imageDefaut', ImageDefautType::class );
 		
 		$formModifier = function (FormInterface $form, DefautNiveau1 $defautNiveau1 = null) {
 			
@@ -70,8 +70,18 @@ class DefautType extends AbstractType {
 			
 			// this would be your entity, i.e. SportMeetup
 			$data = $event->getData ();
-			
-			$formModifier ( $event->getForm (), $data->getId () );
+
+			if ($data === null){
+				$d = new DefautNiveau1 ();
+				$formModifier ( $event->getForm (), $d->getId () );
+			} else {
+				if ($data->getId () === null) {
+					$formModifier ( $event->getForm (), $data->getId () );
+				} else {
+					$d = new DefautNiveau1 ();
+					$formModifier ( $event->getForm (), $d->getId () );
+				}
+			}
 		} );
 		
 		$builder->get ( 'defautNiveau1' )->addEventListener ( FormEvents::POST_SUBMIT, function (FormEvent $event) use ($formModifier) {

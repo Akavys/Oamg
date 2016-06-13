@@ -58,8 +58,14 @@ class Fnc
       * @ORM\JoinColumn(name="equipe_id", referencedColumnName="id")
       */
      private $equipe_fnc;
+     
+     /**
+      * @ORM\OneToMany(targetEntity="Defaut", mappedBy="fnc_defaut")
+      */
+     private $defauts_fnc;
 
-
+  
+     
     /**
      * Get id
      *
@@ -188,5 +194,29 @@ class Fnc
     public function getReferenceFnc()
     {
         return $this->reference_fnc;
+    }
+
+    /**
+     * Set equipeFnc
+     *
+     * @param \Gmao\MoulageBundle\Entity\Equipe $equipeFnc
+     *
+     * @return Fnc
+     */
+    public function setEquipeFnc(\Gmao\MoulageBundle\Entity\Equipe $equipeFnc = null)
+    {
+        $this->equipe_fnc = $equipeFnc;
+    
+        return $this;
+    }
+
+    /**
+     * Get equipeFnc
+     *
+     * @return \Gmao\MoulageBundle\Entity\Equipe
+     */
+    public function getEquipeFnc()
+    {
+        return $this->equipe_fnc;
     }
 }
